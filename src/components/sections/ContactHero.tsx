@@ -10,11 +10,11 @@ type Props = {
   breadcrumb?: { home: string; current: string };
 };
 
-export function TeamHero({
+export function ContactHero({
   eyebrow,
   title,
   subtitle,
-  imageSrc = "/images/hero/team-hero.jpg",
+  imageSrc = "/images/hero/contact-us.jpg",
   imageAlt = "",
   breadcrumb,
 }: Props) {

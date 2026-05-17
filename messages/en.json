@@ -523,6 +523,11 @@
     "pageTitle": "Contact",
     "eyebrow": "CONTACT",
     "title": "Get in Touch",
+    "hero": {
+      "eyebrow": "CONTACT",
+      "title": "Get in Touch",
+      "subtitle": "Please contact us directly for enquiries on transport, insurance, dispute resolution, and related matters."
+    },
     "officeEyebrow": "ISTANBUL OFFICE",
     "officeName": "Erçin Bilgin Bektaşoğlu",
     "addressLine1": "Cumhuriyet Cad. Cumhuriyet Apt. 17/7",

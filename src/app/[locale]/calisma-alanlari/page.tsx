@@ -55,6 +55,10 @@ export default async function PracticeAreasPage({
         eyebrow={t("practiceAreas.hero.eyebrow")}
         title={t("practiceAreas.hero.title")}
         subtitle={t("practiceAreas.hero.subtitle")}
+        breadcrumb={{
+          home: t("nav.home"),
+          current: t("practiceAreas.pageTitle"),
+        }}
       />
       <PracticeAreasGrid
         areas={areas}
