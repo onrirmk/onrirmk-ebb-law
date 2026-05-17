@@ -1,0 +1,572 @@
+{
+  "common": {
+    "readMore": "Devamını oku",
+    "learnMore": "Daha fazla bilgi",
+    "submit": "Gönder",
+    "loading": "Yükleniyor…"
+  },
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "practiceAreas": "Çalışma Alanları",
+    "team": "Ekibimiz",
+    "contact": "İletişim"
+  },
+  "languageSwitcher": {
+    "label": "Dil",
+    "tr": "Türkçe",
+    "en": "English"
+  },
+  "home": {
+    "practicePreview": {
+      "title": "ÇALIŞMA ALANLARIMIZ",
+      "subtitle": "Büromuza en sık başvurulan altı temel alan. Tüm pratiğimiz on alanı kapsıyor.",
+      "viewAll": "Tüm çalışma alanlarını gör",
+      "featuredSlugs": [
+        "dispute-resolution",
+        "insurance-and-reinsurance",
+        "aviation",
+        "shipping",
+        "trade-and-commodities",
+        "corporate-and-commercial"
+      ]
+    },
+    "teamPreview": {
+      "title": "EKİBİMİZ",
+      "subtitle": "İki on yılı aşkın birlikte çalışan üç kurucu ortağın önderliğinde.",
+      "viewAll": "Tüm ekibi gör"
+    },
+    "cta": {
+      "eyebrow": "İLETİŞİM",
+      "title": "Bize Ulaşın",
+      "description": "Taşımacılık, sigorta, uyuşmazlık çözümü ve ilgili konulardaki başvurularınız için doğrudan bizimle iletişime geçebilirsiniz.",
+      "primaryButton": "Bize Ulaşın",
+      "secondaryButton": "Çalışma Alanları"
+    }
+  },
+  "hero": {
+    "titleLine1": "20 Yıllık Güvenilir Hukuki Mükemmellik",
+    "titleLine2": "Sigorta ve Taşımacılık Hukukunda Birinci Sınıf",
+    "imageAlt": "İstanbul, Orhan Cem Çetin fotoğrafı",
+    "previousSlide": "Önceki görsel",
+    "nextSlide": "Sonraki görsel"
+  },
+  "welcome": {
+    "title": "HOŞGELDİNİZ",
+    "paragraphs": [
+      "Erçin Bilgin Bektaşoğlu; taşımacılık, sigorta ve uluslararası ticaret alanlarında uzmanlaşmış önde gelen bir Türk hukuk bürosudur. Son yıllarda büromuz; enerji, genel şirketler hukuku, iş hukuku ve gayrimenkul gibi ilişkili alanlarda da uygulamasını genişletmiştir. Özellikle uyuşmazlık çözümü alanında tanınan büromuz, başlıca uluslararası hukuk rehberlerinde bu kategoride yer almakta olup; dava süreçleri, arabuluculuk, yerel ve uluslararası tahkim konularında geniş deneyime sahiptir.",
+      "Erçin Bilgin Bektaşoğlu, Chambers & Partners ve Legal 500 gibi uluslararası rehberlerde tutarlı biçimde övgüyle anılmaktadır. Bu referanslara ilişkin güncel bağlantılara \"Haberler\" bölümünden ulaşabilirsiniz. Hızlı ve yaratıcı çözümler sunan güvenilir bir iş ortağı olmayı hedefliyor; yüksek standartlarda, verimli ve takım çalışmasına dayalı hizmet vermeyi amaçlıyoruz."
+    ]
+  },
+  "awards": {
+    "title": "Ödüller",
+    "items": [
+      { "key": "top-tier-firm", "label": "EMEA Top Tier Firm 2025" },
+      { "key": "hall-of-fame", "label": "EMEA Hall of Fame 2025" },
+      { "key": "leading-partner", "label": "EMEA Leading Partner 2025" },
+      { "key": "next-generation-partner", "label": "EMEA Next Generation Partner 2025" },
+      { "key": "recommended-lawyer", "label": "EMEA Recommended Lawyer 2025" }
+    ]
+  },
+  "testimonial": {
+    "title": "Referans",
+    "previous": "Önceki referans",
+    "next": "Sonraki referans",
+    "goToLabel": "{index} numaralı referansa git",
+    "items": [
+      { "quote": "Erçin Bilgin Bektaşoğlu, müvekkillerinin hedeflerini iyi anlamakta; bir uyuşmazlık çıktığında yalnızca kapsamlı hukuki danışmanlık sunmakla kalmayıp bunu uygulanabilir bir uyuşmazlık çözüm stratejisine dönüştürmektedir." },
+      { "quote": "Uyuşmazlık çözümündeki ticari sezgileri, onları Türk hukuk piyasasındaki emsallerinden ayıran temel özelliktir." },
+      { "quote": "EBB, yerel uzmanlığı gerçek anlamda uluslararası bir bakış açısıyla birleştirmektedir — bu yargı çevresinde nadir bir niteliktir." }
+    ]
+  },
+  "about": {
+    "pageTitle": "Hakkımızda",
+    "title": "HAKKIMIZDA",
+    "hero": {
+      "eyebrow": "HAKKIMIZDA",
+      "title": "Yirmi Yıllık Güvenilir Hukuki Danışmanlık"
+    },
+    "stats": [
+      { "value": "20", "label": "Yıl" },
+      { "value": "3", "label": "Kurucu Ortak" },
+      { "value": "13", "label": "Avukat & Stajyer" },
+      { "value": "Uluslararası", "label": "Müvekkil Yelpazesi" }
+    ],
+    "subheaders": [
+      "HİKAYEMİZ",
+      "MÜVEKKİLLERİMİZ",
+      "ULUSLARARASI ERİŞİM",
+      "YAKLAŞIMIMIZ",
+      "DİLLER & ULAŞILABİLİRLİK"
+    ],
+    "founders": {
+      "eyebrow": "KURUCU ORTAKLAR",
+      "title": "Büronun Arkasındaki İsimler",
+      "subtitle": "Erçin Bilgin Bektaşoğlu'nu 2006'da kurmadan önce on yılı aşkın süre birlikte çalışan üç kurucu ortak."
+    },
+    "timeline": {
+      "eyebrow": "DÖNÜM NOKTALARI",
+      "title": "Yirmi Yıllık Pratik",
+      "items": [
+        { "year": "2006", "text": "Erçin Bilgin Bektaşoğlu, daha önce birlikte çalışmış üç ortak tarafından 1 Eylül'de kuruldu." },
+        { "year": "2010", "text": "Legal 500'de ilk tanınma — gemi finansmanı pratiği 'mükemmel' olarak nitelendirildi." },
+        { "year": "2012", "text": "Yeni Türk Ticaret Kanunu reformu — uygulamasını şekillendiren erken uzmanlar arasında." },
+        { "year": "2025", "text": "Legal 500 EMEA Hall of Fame'de yer aldı; taşımacılık ve sigortada Top Tier Firm." }
+      ]
+    },
+    "cta": {
+      "title": "Büro ile Çalışmak",
+      "subtitle": "Yeni bir konuyu görüşmek veya bilgi almak için bizimle iletişime geçebilirsiniz.",
+      "button": "Bize Ulaşın"
+    },
+    "previewReadMore": "Hakkımızda daha fazlası",
+    "paragraphs": [
+      "Feyzi Erçin, Burcu Çelikçapa-Bilgin ve Dilek Bektaşoğlu-Sanlı, on yılı aşkın süre boyunca birlikte çalışmış; kariyerlerinin son yıllarını bugün artık faaliyet göstermeyen büyük bir hukuk bürosunda ortak olarak geçirmiştir. 2006 yılında kendi bürolarını kurmaya karar veren ortaklarımız tarafından Erçin Bilgin Bektaşoğlu, 1 Eylül 2006 tarihinde kurulmuştur. Kuruluşundan bu yana geçen 20 yılda büromuz başlangıçtaki büyüklüğünü ikiye katlamış olup; üç ortak, dokuz avukat ve dört stajyerden oluşmaktadır.",
+      "Müvekkil portföyümüz arasında sigortacılar, reasürörler, P&I Kulüpleri, tersaneler, gemi sahipleri, liman işletmecileri, taşıma işleri organizatörleri, tüccarlar, bankalar ve finans kurumları yer almaktadır. Müvekkillerimizin büyük çoğunluğu yurt dışında, özellikle Birleşik Krallık, Almanya ve Hollanda'da bulunmaktadır.",
+      "Büromuzun pek çok önde gelen uluslararası hukuk firmasıyla yakın bağlantıları bulunmakta; yerel müvekkillerimize yabancı yargı çevrelerinde de anında destek sunabilmekteyiz. Çalışmalarımızın büyük kısmı dava nitelikli olup; taşımacılık ve uyuşmazlık çözümü uygulamamız uluslararası basında övgüyle anılmaktadır.",
+      "Büro üyeleri ayrıca; sigorta poliçeleri, ticari sözleşmeler, menkul kıymet ve bankacılık işlemleri, taşıma ve lojistik sözleşmeleri başta olmak üzere dava dışı konularda da müvekkillere danışmanlık vermektedir. Yerel müvekkillerimize — gerek idari gerek ticari kuruluşlara — talep ettikleri seminer ve bilgilendirme oturumlarını sunmaya özen göstermekteyiz.",
+      "Büro üyelerimiz İngilizce, Almanca ve Fransızca dillerinde akıcı şekilde hizmet vermektedir. Müvekkillerimize 7/24 esasıyla hizmet veriyor, mesai dışı iletişim bilgilerimizi avukatlarımızın kişisel sayfalarında paylaşıyoruz. Amacımız küresel standartlarda, verimli ve takım çalışmasına dayalı hizmet sunmaktır."
+    ]
+  },
+  "practiceAreas": {
+    "pageTitle": "Çalışma Alanları",
+    "sectionEyebrow": "ÇALIŞMA ALANLARI",
+    "listIntro": "Ekibimiz on temel çalışma alanında müvekkillerine danışmanlık vermektedir.",
+    "sidebarLabel": "Tüm Çalışma Alanları",
+    "stats": {
+      "areasValue": "10",
+      "areasLabel": "Çalışma Alanı",
+      "yearsValue": "20+",
+      "yearsLabel": "Yıllık Deneyim",
+      "scopeValue": "Uluslararası",
+      "scopeLabel": "Müvekkil Yelpazesi"
+    },
+    "cta": {
+      "title": "{area} konularını ekibimizle görüşün",
+      "subtitle": "Bir konu veya vekalet için doğrudan bizimle iletişime geçebilirsiniz.",
+      "button": "Bize Ulaşın"
+    },
+    "areas": {
+      "dispute-resolution": {
+        "title": "Uyuşmazlık Çözümü",
+        "summary": "Taşımacılık, sigorta, bankacılık ve ticari uyuşmazlıklarda dava, arabuluculuk ile yerel ve uluslararası tahkim.",
+        "paragraphs": [
+          "Büromuz dava odaklı bir hukuk bürosu olarak tanınmaktadır. Ortaklarımızın yirmi yıllık deneyiminde uyuşmazlık çözümü uygulaması, dava sayısı ve çeşitliliği bakımından önemli ölçüde gelişmiştir. Büromuzun dava deneyimi; taşımacılık ve sigortadan yüksek profilli bankacılık dolandırıcılıklarına, uluslararası ticarete, ürün sorumluluğu taleplerine ve ticari uyuşmazlıklara uzanmaktadır.",
+          "Çalışmalarımız arabuluculuğu, yerel ve uluslararası tahkimi kapsar; ICC ve Londra tahkimleri ile İstanbul Ticaret Odası tahkimlerinde aktif rol almaktayız. Bütün avukatlarımız dava deneyimine sahip olup Yargıtay nezdinde de deneyimlidir. Türkiye'nin pek çok şehrinde ve dünya genelinde geniş bir muhabir avukat ağına sahibiz.",
+          "Her müvekkil ve dava için özel stratejiler hazırlamayı; sulh müzakeresi ile dava yolu arasındaki doğru tercihi bulmayı amaçlıyoruz. Dava sürecinin kaçınılmaz olduğu hallerde ücretlendirmede esnek davranıyor ve gerçekçi maliyet değerlendirmeleri sunuyoruz. Ortaklar, avukatlar ve stajyerler; araştırma, dilekçe hazırlığı ve duruşma katılımını davaya göre paylaşır.",
+          "Büromuz özellikle icra aşamasında güçlüdür; kıdemli avukatımız Pınar Özeyranlı duruşma ve icra müdürlüğü süreçlerine adanmıştır. Gemi haczi büromuzun özel uzmanlık alanlarındandır. Dilek Bektaşoğlu-Sanlı, son on yılda gemi haczi konusunda pek çok makalenin yazarı ve konuşmacı olmuş; bu alanda uzmanlığını pekiştirmiştir.",
+          "Aynı şekilde yabancı mahkeme kararlarının ve tahkim kararlarının tenfizi, büro üyelerinin sürekli yürüttüğü bir uygulama alanıdır; büromuz tek bir tenfiz davasını dahi kaybetmemiş kusursuz bir sicile sahiptir."
+        ]
+      },
+      "insurance-and-reinsurance": {
+        "title": "Sigorta ve Reasürans",
+        "summary": "Sigortacılar, reasürörler ve brokerlar için poliçe hazırlığı, düzenleyici danışmanlık, teminat ve hasar yönetimi.",
+        "paragraphs": [
+          "Dava nitelikli ve dava dışı sigorta ve reasürans işleri uygulamamızın temel iş alanıdır. Büromuz; sektörün önde gelen yerel ve uluslararası sigortacıları, reasürörleri, sendikaları, brokerları ve aracıları adına hareket etmektedir.",
+          "Müvekkillerimize; kurumsal planlama, ürün geliştirme, poliçe hazırlığı, mevzuat danışmanlığı, teminat değerlendirmesi ile hasar ve müdafaa süreçleri başta olmak üzere geniş bir yelpazede destek sunuyoruz.",
+          "Havacılık, bankacılık, kaza, enerji ve mühendislik, inşaat, finansal hatlar, dolandırıcılık, deniz, ürün sorumluluğu, mesleki sorumluluk, mal, siyasi risk ve düzenleyici risk başta olmak üzere farklı branşlarda deneyim sahibiyiz."
+        ]
+      },
+      "aviation": {
+        "title": "Havacılık",
+        "summary": "Londra reasürans piyasası, hava taşıyıcıları, yer hizmetleri sağlayıcıları ve yerel sigortacılar için köklü havacılık uygulaması.",
+        "paragraphs": [
+          "Türkiye'nin havacılık piyasası sürekli gelişmekte; mevzuat uluslararası sözleşmelerle ve AB düzenlemeleriyle uyumlu hâle getirilmek üzere yenilenmektedir. Türkiye artık bir \"Montreal ülkesi\" konumundadır ve büromuz kuruluşundan bu yana havacılık alanındaki itibarını bilinçli biçimde geliştirmiştir; havacılık, Erçin Bilgin Bektaşoğlu'nun en tanınan uygulama alanlarından biridir.",
+          "Büromuz havacılık alanında uzmanlaşmış büyük Londra hukuk firmalarına destek vermekte ve Londra reasürans piyasası adına sıklıkla iş yürütmektedir. Bunun yanında hava taşıyıcıları, yer hizmetleri sağlayıcıları ve yerel sigortacıları temsil ediyoruz. Yürüttüğümüz işler; kazalar ve şahsi yaralanmalardan kargo taleplerine, yolcu haklarına ve düzenleyici danışmanlığa uzanmaktadır.",
+          "Havacılık ekibinin liderliğini Feyzi Erçin üstlenmekte olup büyük havacılık kazalarının yerel takibinde geniş deneyime sahiptir. Londra sigortacıları adına 2003 Türk Hava Yolları total loss davasını ve 2007 Atlas Jet kazasını takip etmiş; çeşitli helikopter ve genel havacılık kazalarında talimat almıştır.",
+          "Toplu davalar, maddi ve manevi tazminat talepleri, aktüeryal hesaplamalar ve uçak kazalarının yerel soruşturulması deneyimlerinin parçasıdır. Feyzi Erçin ayrıca boarding redleri, kuş çarpması, jet blast ve kiralama uyuşmazlıkları gibi geniş bir konu yelpazesinde de talepleri yürütmektedir.",
+          "Who's Who Legal'ın Havacılık Marketplace Analizi onu büyük hasarların ve teminat uyuşmazlıklarının yönetiminde \"son derece yetkin ve pragmatik\" bir avukat olarak nitelendirmiştir. Erçin Bilgin Bektaşoğlu, 2007'de İstanbul'da düzenlenen IATA Legal Symposium'un Başlıca Sponsorlarından biri olmuş; Feyzi Erçin sempozyumda konuşmacı olarak yer almıştır ve sempozyuma her yıl katılmaktadır."
+        ]
+      },
+      "shipping": {
+        "title": "Denizcilik",
+        "summary": "Wet ve dry denizcilik; kazalar, çatışmalar, çarter ve kargo davaları — 7/24 hizmet.",
+        "paragraphs": [
+          "Büromuz ortakları tüm denizcilik işlerinde yirmi yıla varan kapsamlı deneyime sahiptir. Chambers & Partners 2016 Edition'ın da teyit ettiği üzere büromuz, \"kaliteye odaklanan çok iyi bir büro. Ekip denizcilik uyuşmazlıklarına odaklanıyor; ancak bu alanın dışında da oldukça başarılı\" olarak tanımlanmıştır.",
+          "Wet (kaza) denizcilik çalışmaları başlıca uzmanlık alanlarımızdan biridir; ortaklarımız Feyzi Erçin ve Burcu Çelikçapa-Bilgin total loss, çatışma, petrol sızıntısı, korsanlık ve kurtarma davalarını da kapsayan önemli deniz kazalarının soruşturma ve tam takibinde yer almıştır. Her iki ortağımız da yerel kurtarıcıların kurtarma taleplerinin müzakeresinde köklü bir uygulamaya sahiptir.",
+          "Büromuz, önde gelen P&I Kulüplerinin bir kısmı adına denizcilik kazası işlerini yürütmekte; idari, devlet ve üçüncü kişi taleplerini önemli tutarlarda azaltarak savunmaktadır. Wet denizcilik bölümü; sualtı yapı hasarlarından kirlilik davalarına kadar geniş bir wet denizcilik dava deneyimine sahip Feyzi Erçin tarafından yönetilmektedir.",
+          "Bütün ortaklarımızın çarter uyuşmazlıkları, kontaminasyon davaları dahil kargo talepleri, alacak tahsili, total loss, mürettebat ve şahsi yaralanma talepleri, konşimento meseleleri, rehin haklarının kullanılması ve Türk hukukunda sorumluluğun sınırlandırılması gibi dry denizcilik konularında deneyimi bulunmaktadır.",
+          "2012'de yürürlüğe giren yeni Türk Ticaret Kanunu, Türk hukukunu uluslararası sözleşmelerle kısmen uyumlu hâle getirmiştir. Büromuz ortakları, 2001'den bu yana mevzuat sürecini yakından takip etmiş; uygulamasına ve içtihat oluşumuna katkı sunmaya devam etmektedir.",
+          "Anlık kriz yönetimi sağlamak için 7/24 esasıyla çalışmaktayız; mesai dışı iletişim bilgilerimizi avukatlarımızın kişisel sayfalarında paylaşıyoruz. Bir kaza talimatı ulaştığında büro üyelerinden biri derhal kaza mahalline intikal etmek üzere harekete geçer."
+        ]
+      },
+      "logistics-and-transport": {
+        "title": "Lojistik ve Taşımacılık",
+        "summary": "Taşıma işleri organizatörleri, depo işletmecileri, terminal operatörleri ve taşıyıcılar için dava ve dava dışı hizmetler.",
+        "paragraphs": [
+          "Türkiye, son on yılda lojistik hizmetlerinde en cazip pazarlardan biri olarak öne çıkmakta; büromuz lojistik hizmetlerine ilişkin talimatlarda kayda değer bir artış görmektedir. Burcu Çelikçapa-Bilgin liderliğindeki taşımacılık ve lojistik bölümümüz, sektörün tüm aktörlerine dava ve dava dışı konularda hukuki destek sunmaktadır.",
+          "Karayolu taşımacılığı, çok modlu taşımacılık, depolama ve terminal işletme sözleşmelerinin yapılandırılması ve yönetimi konularında danışmanlık vermekteyiz. Müvekkil profilimiz; yerel ve uluslararası taşıma işleri organizatörlerini, depo işletmecilerini, liman ve terminal işletmecilerini, taşıma sorumluluk sigortacılarını, karayolu ve demiryolu taşıyıcılarını ile tedarik zinciri işleten kurumsal müvekkilleri kapsamaktadır.",
+          "Yerel mevzuata uyum, devlet onayları için başvurular ile yerel gümrük ve liman idareleriyle hukuki ilişkilerin yönetimi gibi kurumsal danışmanlık hizmetleri de sunuyoruz.",
+          "Dava boyutunda lojistik sektöründeki deneyimimiz; liman, terminal ve depo sorumluluğu, sözleşmeden doğan uyuşmazlıklar, alt taşıyıcılara ve taşıma işleri organizatörlerine karşı rücu davaları ile vergi ve gümrük sorumluluklarından doğan uyuşmazlıkları kapsamaktadır."
+        ]
+      },
+      "finance": {
+        "title": "Finans",
+        "summary": "Gemi, yat, havacılık, yapılandırılmış ve ticaret finansmanı — sözleşme ve teminatların hazırlığı, müzakeresi ve icrası.",
+        "paragraphs": [
+          "Dilek Bektaşoğlu-Sanlı liderliğindeki finans ekibimiz; bankalar ve leasing şirketleri başta olmak üzere önde gelen uluslararası ve yerel finans kurumları, kurumsal müvekkiller ve tersaneler tarafından talimat almaktadır. Uzmanlık alanımız; kredi ve leasing sözleşmeleri ile teminat belgelerinin yapılandırılması, hazırlığı ve müzakeresini kapsamaktadır.",
+          "Büromuz, mevcut kredi işlemlerinin yeniden yapılandırılması ile temerrüde düşen kredilere ilişkin dava süreçlerinde — ipotek ve diğer teminatların paraya çevrilmesi dahil — müvekkillerine destek sunmaktadır.",
+          "Büromuz; gemi finansmanı, yat finansmanı, havacılık finansmanı, yapılandırılmış ve proje finansmanı ile ticaret finansmanı alanlarında kapsamlı uzmanlığa sahiptir.",
+          "Legal 500'ün 2010 baskısında şöyle yazılmıştır: \"Büromuzun gemi finansmanı uzmanı Dilek Bektaşoğlu-Sanlı 'mükemmel bir profesyonel' olarak öne çıkmaktadır.\""
+        ]
+      },
+      "trade-and-commodities": {
+        "title": "Ticaret ve Emtia",
+        "summary": "Alım-satım sözleşmeleri, yaptırımlar, gümrük ve akreditifler konusunda tüccarlara ve bankalara danışmanlık.",
+        "paragraphs": [
+          "Büromuzun uzmanlığı ticaret ve emtia uyuşmazlıklarını kapsamaktadır. Bu uzmanlık; yumuşak ve sert emtialara ilişkin alım-satım sözleşmelerinin yanı sıra dağıtım, acentelik ve kira sözleşmelerinin hazırlık ve müzakeresini içermektedir.",
+          "Yerel ve yabancı müvekkillere düzenleyici konularda da yardımcı oluyor; ticaret yaptırımları, gümrük kuralları ve vergilendirme alanlarında danışmanlık sunuyoruz. Akreditif ve diğer ödeme araçları kapsamında bankalara ve tüccarlara verilen destek de büromuzun uzmanlık alanı içindedir.",
+          "Büromuz; emtia — özellikle motorin ürünleri — işlemleri, satış ve depolanmasına ilişkin lisans, vergi ve resim, gümrük ile ithalat/ihracat ve transit rejim konularında kapsamlı bilgi birikimine sahiptir."
+        ]
+      },
+      "corporate-and-commercial": {
+        "title": "Şirketler ve Ticaret Hukuku",
+        "summary": "Şirket kuruluşu, kurumsal yönetim, ortaklar arası uyuşmazlıklar ve ticari sözleşmeler.",
+        "paragraphs": [
+          "Şirketler ve ticaret hukuku, büromuzun geliştirdiği bir diğer uygulama alanıdır. Diğerlerinin yanı sıra; yabancı sermayeli şirketlerin kuruluşu, kurumsal yönetim konusunda genel danışmanlık, ortaklar arası uyuşmazlıklar, yöneticilerin sorumluluğu, borç yeniden yapılandırması ve kurumsal davalar konularında hizmet sunuyoruz.",
+          "Büromuz; pay sahipleri sözleşmeleri, pay devri, pay rehni ve ortak girişim sözleşmeleri gibi çeşitli kurumsal işlemlerin sözleşme hazırlığı konusunda da deneyime sahiptir."
+        ]
+      },
+      "real-estate-and-property": {
+        "title": "Gayrimenkul Hukuku",
+        "summary": "Yabancı uyrukluların Türkiye'de mülk edinmesi — durum tespiti, izinler, satış sözleşmeleri ve miras işlemleri.",
+        "paragraphs": [
+          "Büromuzun son yıllarda daha aktif olduğu alanlardan biri gayrimenkul hukukudur. Erçin Bilgin Bektaşoğlu, birçok yabancı uyruklunun Türkiye'de mülk edinmesine destek olmuştur. Durum tespiti aşamasında destek sunmakta, gerekli izinlerin alınması sürecini yürütmekte ve satış sözleşmesini müzakere etmekteyiz.",
+          "Türkiye'nin yabancı uyruklulara ilişkin mevzuatı — belirli uyruklara ve bölgelere göre — sık sık değişmekte olduğundan, müvekkillerin planladıkları işlemin erken aşamalarında bir avukattan destek almayı değerlendirmeleri yerinde olur. Büromuz, ülke genelinde çeşitli emlak danışmanlarıyla iş birliği yaparak verileri doğrulamakta ve müvekkillere alternatifler sunmaktadır.",
+          "Büromuz; doğabilecek tüm vergi yükümlülükleri dahil olmak üzere miras ve tapu devri süreçlerinin gerektirdiği işlemleri yürütebilmektedir."
+        ]
+      },
+      "employment-and-labour": {
+        "title": "İş ve Çalışma Hukuku",
+        "summary": "İş sözleşmeleri, çalışma hukuku danışmanlığı ve işten doğan davalar — büyük ve orta ölçekli kuruluşlar için.",
+        "paragraphs": [
+          "Büromuz; iş sözleşmelerinin hazırlanması, çalışma hukukuna ilişkin meselelerde danışmanlık ve işten doğan davaların yürütülmesi konularında deneyim sahibidir.",
+          "Çeşitli sektörlerde faaliyet gösteren büyük ve orta ölçekli kuruluşlara hizmet veriyoruz."
+        ]
+      }
+    }
+  },
+  "team": {
+    "pageTitle": "Ekibimiz",
+    "hero": {
+      "eyebrow": "EKİBİMİZ",
+      "title": "Ekibimizle Tanışın"
+    },
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Büromuz; ulaştırma, sigorta ve uluslararası ticaret alanlarında derin uzmanlığa sahip ortakları, avukatları ve stajyerleri bir araya getirir. Her üye, yerel pazar bilgisini uluslararası bir bakış açısıyla harmanlayarak müvekkillerimize farklı yargı bölgelerinde ihtilaflı ve ihtilafsız konularda destek sunar.",
+    "emailLabel": "E-posta",
+    "phoneLabel": "Telefon",
+    "linkedinLabel": "LinkedIn Profili",
+    "backToTeam": "Ekibe Geri Dön",
+    "eyebrows": {
+      "expertise": "UZMANLIK ALANLARI",
+      "biography": "BİYOGRAFİ",
+      "education": "EĞİTİM",
+      "memberships": "MESLEKİ ÜYELİKLER",
+      "languages": "DİLLER"
+    },
+    "members": [
+      {
+        "slug": "lorem-ipsum",
+        "name": "Lorem Ipsum",
+        "position": "Kurucu Ortak",
+        "email": "lorem.ipsum@ebb-law.com",
+        "phone": "+90 212 297 41 01",
+        "linkedinUrl": "#",
+        "bio": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Uluslararası taşımacılık hukuku, uyuşmazlık çözümü ve denizcilik tahkimi alanlarında yirmi yılı aşkın deneyime sahiptir.",
+          "Yargıtay nezdinde emsal niteliğindeki davalarda baş avukat olarak görev almış; büyük armatör şirketleri uluslararası tahkim süreçlerinde temsil etmiştir.",
+          "Chambers & Partners ve Legal 500 tarafından önde gelen uygulayıcılar arasında gösterilmiştir."
+        ],
+        "practiceAreas": ["dispute-resolution", "shipping", "insurance-and-reinsurance"],
+        "education": [
+          { "year": "1998", "institution": "İstanbul Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2001", "institution": "King's College London", "degree": "LL.M. Denizcilik Hukuku" }
+        ],
+        "memberships": [
+          "İstanbul Barosu",
+          "Uluslararası Barolar Birliği",
+          "London Maritime Arbitrators Association"
+        ],
+        "languages": ["Türkçe", "İngilizce", "Almanca"]
+      },
+      {
+        "slug": "dolor-sit",
+        "name": "Dolor Sit",
+        "position": "Yönetici Ortak",
+        "email": "dolor.sit@ebb-law.com",
+        "phone": "+90 212 297 41 02",
+        "linkedinUrl": "#",
+        "bio": [
+          "Sigorta ve reasürans hukuku alanında yirmi yılı aşkın deneyime sahiptir. Sigortacılar, P&I Kulüpleri ve brokerlere karmaşık teminat uyuşmazlıklarında danışmanlık verir.",
+          "Büyük kazalara ilişkin sınır ötesi hasar yönetimi süreçlerini yönetmiş; Londra ve Avrupa muhabirleri ile yakın işbirliği içinde çalışmıştır.",
+          "Türk sigorta piyasasında uzun yıllara dayanan tanınırlığa sahiptir."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "shipping", "aviation"],
+        "education": [
+          { "year": "1999", "institution": "Galatasaray Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2002", "institution": "Queen Mary University of London", "degree": "LL.M. Sigorta Hukuku" }
+        ],
+        "memberships": [
+          "İstanbul Barosu",
+          "AIDA – Uluslararası Sigorta Hukuku Derneği",
+          "Türk Sigorta Hukuku Derneği"
+        ],
+        "languages": ["Türkçe", "İngilizce", "Fransızca"]
+      },
+      {
+        "slug": "amet-consectetur",
+        "name": "Amet Consectetur",
+        "position": "Ortak",
+        "email": "amet.consectetur@ebb-law.com",
+        "phone": "+90 212 297 41 03",
+        "linkedinUrl": "#",
+        "bio": [
+          "Büronun havacılık uygulamasını yönetir; uluslararası hava taşıyıcıları, yer hizmetleri sağlayıcıları ve Londra reasürörlerine danışmanlık verir.",
+          "Yüksek profilli havacılık kazalarının yerel yönetiminde görev almış, geniş kapsamlı yolcu davalarında müvekkilleri temsil etmiştir.",
+          "Who's Who Legal tarafından Türkiye'nin önde gelen havacılık avukatlarından biri olarak gösterilmiştir."
+        ],
+        "practiceAreas": ["aviation", "insurance-and-reinsurance", "dispute-resolution"],
+        "education": [
+          { "year": "2001", "institution": "Ankara Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2004", "institution": "Leiden Üniversitesi", "degree": "Advanced LL.M. Hava ve Uzay Hukuku" }
+        ],
+        "memberships": [
+          "İstanbul Barosu",
+          "European Air Law Association",
+          "International Aviation Law Institute"
+        ],
+        "languages": ["Türkçe", "İngilizce", "Felemenkçe"]
+      },
+      {
+        "slug": "adipiscing-elit",
+        "name": "Adipiscing Elit",
+        "position": "Ortak",
+        "email": "adipiscing.elit@ebb-law.com",
+        "phone": "+90 212 297 41 04",
+        "linkedinUrl": "#",
+        "bio": [
+          "Finans ve kurumsal uygulamayı yönetir; bankalara, leasing şirketlerine ve kurumsal müvekkillere yapılandırılmış gemi ve havacılık finansmanı konularında danışmanlık verir.",
+          "Sınır ötesi finansman işlemlerinde, yat finansmanı, proje finansmanı ve ticaret finansmanı dahil olmak üzere geniş tecrübeye sahiptir.",
+          "Legal 500 tarafından gemi finansmanı alanında 'mükemmel bir profesyonel' olarak nitelendirilmiştir."
+        ],
+        "practiceAreas": ["finance", "corporate-and-commercial", "trade-and-commodities"],
+        "education": [
+          { "year": "2000", "institution": "Marmara Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2003", "institution": "University College London", "degree": "LL.M. Bankacılık ve Finans Hukuku" }
+        ],
+        "memberships": [
+          "İstanbul Barosu",
+          "International Bar Association – Bankacılık Hukuku Komitesi",
+          "Türk Bankacılık Hukuku Derneği"
+        ],
+        "languages": ["Türkçe", "İngilizce", "Almanca"]
+      },
+      {
+        "slug": "sed-eiusmod",
+        "name": "Sed Eiusmod",
+        "position": "Kıdemli Avukat",
+        "email": "sed.eiusmod@ebb-law.com",
+        "phone": "+90 212 297 41 05",
+        "linkedinUrl": "#",
+        "bio": [
+          "Uyuşmazlık çözümü, denizcilik kazaları ve icra alanlarında on iki yıllık deneyime sahip kıdemli avukattır.",
+          "Gemi haczi, yabancı mahkeme kararlarının ve tahkim kararlarının tenfizi konularında özel uzmanlığa sahiptir."
+        ],
+        "practiceAreas": ["dispute-resolution", "shipping", "logistics-and-transport"],
+        "education": [
+          { "year": "2010", "institution": "Bilkent Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2012", "institution": "Southampton Üniversitesi", "degree": "LL.M. Denizcilik Hukuku" }
+        ],
+        "memberships": [
+          "İstanbul Barosu",
+          "Young Maritime Arbitrators Association"
+        ],
+        "languages": ["Türkçe", "İngilizce"]
+      },
+      {
+        "slug": "tempor-incididunt",
+        "name": "Tempor Incididunt",
+        "position": "Kıdemli Avukat",
+        "email": "tempor.incididunt@ebb-law.com",
+        "phone": "+90 212 297 41 06",
+        "linkedinUrl": "#",
+        "bio": [
+          "Lojistik, taşımacılık ve ticaret alanlarında on bir yıllık tecrübeye sahip kıdemli avukattır.",
+          "Multimodal taşıma, depolama ve dağıtım sözleşmelerinin hazırlanması ve müzakere edilmesinde deneyimlidir."
+        ],
+        "practiceAreas": ["logistics-and-transport", "trade-and-commodities", "corporate-and-commercial"],
+        "education": [
+          { "year": "2011", "institution": "Koç Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2013", "institution": "Erasmus Üniversitesi Rotterdam", "degree": "LL.M. Uluslararası Ticaret Hukuku" }
+        ],
+        "memberships": [
+          "İstanbul Barosu",
+          "FIATA Hukuk Çalışma Grubu"
+        ],
+        "languages": ["Türkçe", "İngilizce", "Felemenkçe"]
+      },
+      {
+        "slug": "labore-magna",
+        "name": "Labore Magna",
+        "position": "Avukat",
+        "email": "labore.magna@ebb-law.com",
+        "phone": "+90 212 297 41 07",
+        "linkedinUrl": "#",
+        "bio": [
+          "Ticari uyuşmazlık, kurumsal hukuk ve iş hukuku alanlarında yedi yıllık deneyime sahip avukattır.",
+          "Ticari sözleşme hazırlama, iş hukuku danışmanlığı ve iş davaları konularında çalışır."
+        ],
+        "practiceAreas": ["corporate-and-commercial", "employment-and-labour", "dispute-resolution"],
+        "education": [
+          { "year": "2015", "institution": "Galatasaray Üniversitesi Hukuk Fakültesi", "degree": "LL.B." }
+        ],
+        "memberships": ["İstanbul Barosu"],
+        "languages": ["Türkçe", "İngilizce", "Fransızca"]
+      },
+      {
+        "slug": "aliqua-enim",
+        "name": "Aliqua Enim",
+        "position": "Avukat",
+        "email": "aliqua.enim@ebb-law.com",
+        "phone": "+90 212 297 41 08",
+        "linkedinUrl": "#",
+        "bio": [
+          "Sigorta ve reasürans alanında altı yıllık tecrübeye sahip avukattır.",
+          "Poliçe metinlerinin hazırlanması, hasar portföyü yönetimi ve teminat uyuşmazlıklarında temsil görevleri üstlenir."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "aviation", "dispute-resolution"],
+        "education": [
+          { "year": "2016", "institution": "İstanbul Üniversitesi Hukuk Fakültesi", "degree": "LL.B." }
+        ],
+        "memberships": ["İstanbul Barosu", "AIDA Türkiye"],
+        "languages": ["Türkçe", "İngilizce"]
+      },
+      {
+        "slug": "veniam-quis",
+        "name": "Veniam Quis",
+        "position": "Avukat",
+        "email": "veniam.quis@ebb-law.com",
+        "phone": "+90 212 297 41 09",
+        "linkedinUrl": "#",
+        "bio": [
+          "Finans ve gayrimenkul uygulamalarına destek veren beş yıllık deneyime sahip avukattır.",
+          "Sınır ötesi gayrimenkul ve kurumsal varlık satın alma süreçlerinde çalışmıştır."
+        ],
+        "practiceAreas": ["real-estate-and-property", "finance", "corporate-and-commercial"],
+        "education": [
+          { "year": "2017", "institution": "Bahçeşehir Üniversitesi Hukuk Fakültesi", "degree": "LL.B." }
+        ],
+        "memberships": ["İstanbul Barosu"],
+        "languages": ["Türkçe", "İngilizce", "İspanyolca"]
+      },
+      {
+        "slug": "nostrud-exercitation",
+        "name": "Nostrud Exercitation",
+        "position": "Stajyer",
+        "email": "nostrud.exercitation@ebb-law.com",
+        "phone": "+90 212 297 41 10",
+        "linkedinUrl": "#",
+        "bio": [
+          "Uyuşmazlık çözümü ve denizcilik ekiplerine araştırma, evrak hazırlığı ve duruşma katılımı konularında destek veren stajyer avukattır.",
+          "İstanbul Barosu zorunlu staj sürecini sürdürmektedir."
+        ],
+        "practiceAreas": ["dispute-resolution", "shipping"],
+        "education": [
+          { "year": "2023", "institution": "İstanbul Üniversitesi Hukuk Fakültesi", "degree": "LL.B." }
+        ],
+        "memberships": ["İstanbul Barosu (Stajyer)"],
+        "languages": ["Türkçe", "İngilizce"]
+      },
+      {
+        "slug": "ullamco-laboris",
+        "name": "Ullamco Laboris",
+        "position": "Stajyer",
+        "email": "ullamco.laboris@ebb-law.com",
+        "phone": "+90 212 297 41 11",
+        "linkedinUrl": "#",
+        "bio": [
+          "Kurumsal ekibe sözleşme incelemesi, due diligence ve kurumsal başvurular konusunda destek veren stajyer avukattır.",
+          "Uluslararası ticari tahkim alanında güçlü bir ilgisi bulunmaktadır."
+        ],
+        "practiceAreas": ["corporate-and-commercial", "trade-and-commodities"],
+        "education": [
+          { "year": "2023", "institution": "Koç Üniversitesi Hukuk Fakültesi", "degree": "LL.B." }
+        ],
+        "memberships": ["İstanbul Barosu (Stajyer)"],
+        "languages": ["Türkçe", "İngilizce", "Almanca"]
+      },
+      {
+        "slug": "aliquip-commodo",
+        "name": "Aliquip Commodo",
+        "position": "Stajyer",
+        "email": "aliquip.commodo@ebb-law.com",
+        "phone": "+90 212 297 41 12",
+        "linkedinUrl": "#",
+        "bio": [
+          "Sigorta ve havacılık ekiplerine hasar yönetimi, mevzuat araştırması ve poliçe incelemesi konularında destek veren stajyer avukattır.",
+          "Ortakların gözetiminde stajını sürdürmektedir."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "aviation"],
+        "education": [
+          { "year": "2024", "institution": "Galatasaray Üniversitesi Hukuk Fakültesi", "degree": "LL.B." }
+        ],
+        "memberships": ["İstanbul Barosu (Stajyer)"],
+        "languages": ["Türkçe", "İngilizce", "Fransızca"]
+      }
+    ]
+  },
+  "contact": {
+    "pageTitle": "İletişim",
+    "eyebrow": "İLETİŞİM",
+    "title": "Bize Ulaşın",
+    "officeEyebrow": "İSTANBUL OFİS",
+    "officeName": "Erçin Bilgin Bektaşoğlu",
+    "addressLine1": "Cumhuriyet Cad. Cumhuriyet Apt. 17/7",
+    "addressLine2": "Taksim 34437",
+    "addressLine3": "İstanbul, Türkiye",
+    "workingHours": "Hafta içi: 09:00 — 18:00",
+    "showOnMap": "Haritada Göster",
+    "directContactTitle": "DOĞRUDAN İLETİŞİM",
+    "formEyebrow": "İLETİŞİM FORMU",
+    "formDescription": "Başvurunuzu aşağıdaki form üzerinden iletebilirsiniz.",
+    "fields": {
+      "name": "Ad",
+      "surname": "Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "practiceArea": "Hangi çalışma alanıyla ilgileniyorsunuz?",
+      "practiceAreaPlaceholder": "Bir çalışma alanı seçin",
+      "message": "Mesajınız"
+    },
+    "consent": "Gizlilik politikasını okudum ve kabul ediyorum.",
+    "privacyPolicy": "gizlilik politikası",
+    "submit": "Mesaj Gönder",
+    "submitting": "Gönderiliyor…",
+    "successMessage": "Teşekkürler. Mesajınız tarafımıza ulaşmıştır.",
+    "info": {
+      "email": "mail@ebb-law.com",
+      "phone": "+90 212 297 41 01"
+    }
+  },
+  "footer": {
+    "exploreTitle": "Keşfet",
+    "practiceAreasTitle": "Çalışma Alanları",
+    "phoneLabel": "Telefon",
+    "faxLabel": "Faks",
+    "emailLabel": "E-posta",
+    "webLabel": "Web",
+    "address": {
+      "line1": "Cumhuriyet Cad.",
+      "line2": "Cumhuriyet Apt. 17/7 Taksim",
+      "line3": "34437 - İstanbul"
+    },
+    "email": "mail@ebb-law.com",
+    "phone": "+90 212 297 41 01",
+    "fax": "+90 212 297 42 02",
+    "webUrl": "www.ebb-law.com",
+    "callUs": "Bizi arayın",
+    "emailUs": "Bize e-posta gönderin",
+    "visitWebsite": "Web sitesini ziyaret et",
+    "copyright": "© {year} Erçin Bilgin Bektaşoğlu Hukuk Bürosu. Tüm hakları saklıdır."
+  }
+}

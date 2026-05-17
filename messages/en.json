@@ -1,0 +1,572 @@
+{
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "submit": "Submit Now",
+    "loading": "Loading…"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "practiceAreas": "Practice Areas",
+    "team": "Our Team",
+    "contact": "Contact"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "tr": "Türkçe",
+    "en": "English"
+  },
+  "home": {
+    "practicePreview": {
+      "title": "OUR PRACTICE",
+      "subtitle": "Six core areas where the firm is most often instructed. Our full practice spans ten.",
+      "viewAll": "View all practice areas",
+      "featuredSlugs": [
+        "dispute-resolution",
+        "insurance-and-reinsurance",
+        "aviation",
+        "shipping",
+        "trade-and-commodities",
+        "corporate-and-commercial"
+      ]
+    },
+    "teamPreview": {
+      "title": "OUR TEAM",
+      "subtitle": "Led by three founding partners with more than two decades of shared practice.",
+      "viewAll": "Meet the full team"
+    },
+    "cta": {
+      "eyebrow": "CONTACT",
+      "title": "Get in Touch",
+      "description": "Please contact us directly for enquiries on transport, insurance, dispute resolution, and related matters.",
+      "primaryButton": "Contact Us",
+      "secondaryButton": "Practice Areas"
+    }
+  },
+  "hero": {
+    "titleLine1": "Celebrating 20 Years of Trusted Legal Excellence",
+    "titleLine2": "Top Tier Law Firm in Insurance and Transport Law",
+    "imageAlt": "Istanbul, photographed by Orhan Cem Çetin",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "welcome": {
+    "title": "WELCOME",
+    "paragraphs": [
+      "Erçin Bilgin Bektaşoğlu is a leading Turkish law firm in the core areas of transport, insurance and international trade. The firm has expanded its practice also in other related sectors such as energy, general corporate, labour and real estate over the recent years. We are particularly known as a dispute resolution firm, ranked in major legal guides as such, with experience in all aspects of litigation, mediation, local and international arbitration.",
+      "Erçin Bilgin Bektaşoğlu has been consistently praised in international directories such as Chambers & Partners and Legal 500. You may find the most updated relevant links to such references, in the \"News\" section. We are dedicated to be reliable partners and introduce fast and creative solutions. Our aim is to provide efficient and teamwork oriented service at high standards."
+    ]
+  },
+  "awards": {
+    "title": "Awards",
+    "items": [
+      { "key": "top-tier-firm", "label": "EMEA Top Tier Firm 2025" },
+      { "key": "hall-of-fame", "label": "EMEA Hall of Fame 2025" },
+      { "key": "leading-partner", "label": "EMEA Leading Partner 2025" },
+      { "key": "next-generation-partner", "label": "EMEA Next Generation Partner 2025" },
+      { "key": "recommended-lawyer", "label": "EMEA Recommended Lawyer 2025" }
+    ]
+  },
+  "testimonial": {
+    "title": "Testimonial",
+    "previous": "Previous testimonial",
+    "next": "Next testimonial",
+    "goToLabel": "Go to testimonial {index}",
+    "items": [
+      { "quote": "Erçin Bilgin Bektaşoğlu is good at understanding their clients' objectives, so when a dispute arises they not only give comprehensive legal advice but build that into an actionable dispute resolution strategy." },
+      { "quote": "Their commercial awareness in dispute resolution sets them apart from peers in the Turkish legal market." },
+      { "quote": "EBB combines local expertise with a genuinely international outlook — rare in this jurisdiction." }
+    ]
+  },
+  "about": {
+    "pageTitle": "About Us",
+    "title": "ABOUT US",
+    "hero": {
+      "eyebrow": "ABOUT US",
+      "title": "Two Decades of Trusted Counsel"
+    },
+    "stats": [
+      { "value": "20", "label": "Years" },
+      { "value": "3", "label": "Founding Partners" },
+      { "value": "13", "label": "Lawyers & Trainees" },
+      { "value": "International", "label": "Client Base" }
+    ],
+    "subheaders": [
+      "OUR STORY",
+      "OUR CLIENTS",
+      "INTERNATIONAL REACH",
+      "OUR APPROACH",
+      "LANGUAGES & AVAILABILITY"
+    ],
+    "founders": {
+      "eyebrow": "FOUNDING PARTNERS",
+      "title": "The People Behind the Firm",
+      "subtitle": "Three founding partners with more than a decade of shared practice prior to setting up Erçin Bilgin Bektaşoğlu in 2006."
+    },
+    "timeline": {
+      "eyebrow": "MILESTONES",
+      "title": "A Twenty-Year Practice",
+      "items": [
+        { "year": "2006", "text": "Erçin Bilgin Bektaşoğlu founded on 1 September by three partners with prior shared practice." },
+        { "year": "2010", "text": "First recognition in Legal 500 — ship finance practice singled out as 'excellent'." },
+        { "year": "2012", "text": "New Turkish Commercial Code reform — among the early specialists shaping its practice." },
+        { "year": "2025", "text": "Recognized in Legal 500 EMEA Hall of Fame; Top Tier Firm in transport and insurance." }
+      ]
+    },
+    "cta": {
+      "title": "Working with the Firm",
+      "subtitle": "Please contact us to discuss a new matter or to make an enquiry.",
+      "button": "Contact Us"
+    },
+    "previewReadMore": "Read about our firm",
+    "paragraphs": [
+      "Feyzi Erçin, Burcu Çelikçapa-Bilgin and Dilek Bektaşoğlu-Sanlı had been working together for more than a decade and had spent the last several years of their careers as partners in a major, now defunct, law firm. In 2006, they decided to set up their own Firm and Erçin Bilgin Bektaşoğlu was established on 1 September 2006. In the 20 years since it was founded, the Firm has more than doubled its initial size and now consists of three partners, nine associates and four trainees.",
+      "We have a broad range of clientele, including underwriters, reinsurers, P&I Clubs, shipyards, shipowners, port operators, freight forwarders, traders, banks and finance institutions. Our Clients are mostly based outside Turkey and particularly in the U.K., Germany and the Netherlands.",
+      "The Firm has close links with many leading international law firms and is able to offer its local Clients immediate assistance in foreign jurisdictions. The majority of our work is contentious and we are proud to have received praise from international press on our transport and dispute resolution practice.",
+      "Members of the Firm advise Clients also in respect of non-contentious work on insurance policies, commercial contracts, securities and banking transactions, contracts of carriage and logistics. We are dedicated to provide our local Clients, both administrative and commercial bodies, with seminars and briefings as they request.",
+      "English, German and French are fluently spoken by the members of the Firm. We serve our Clients on a 24-hour a day basis and our after office hours contact details can be found in the personal links. Our aim is to provide efficient and teamwork oriented service at global standards."
+    ]
+  },
+  "practiceAreas": {
+    "pageTitle": "Practice Areas",
+    "sectionEyebrow": "PRACTICE AREAS",
+    "listIntro": "Our team advises clients across ten core practice areas.",
+    "sidebarLabel": "All Practice Areas",
+    "stats": {
+      "areasValue": "10",
+      "areasLabel": "Practice Areas",
+      "yearsValue": "20+",
+      "yearsLabel": "Years of Experience",
+      "scopeValue": "International",
+      "scopeLabel": "Client Base"
+    },
+    "cta": {
+      "title": "Discuss {area} with our team",
+      "subtitle": "Please contact us directly to discuss a matter or instruction.",
+      "button": "Contact Us"
+    },
+    "areas": {
+      "dispute-resolution": {
+        "title": "Dispute Resolution",
+        "summary": "Litigation, mediation, and domestic and international arbitration across transport, insurance, banking and commercial disputes.",
+        "paragraphs": [
+          "The firm is well known as a litigating firm. In the name partners' twenty years of experience, the dispute resolution practice has significantly increased in number and variety of cases. The Firm's litigation experience ranges from transport and insurance to high profile banking frauds, international trade and product liability claims and commercial disputes.",
+          "The involvement extends to mediation, domestic and international arbitration with presence in ICC and London arbitrations, as well as the Istanbul Chamber of Commerce. All our lawyers have litigation practice and have Supreme Court experience. We also have a wide range of correspondents in various cities in Turkey, as well as all over the world.",
+          "We aim to prepare tailor made strategies for each specific Client and case, aiming to find the correct choice between negotiating a settlement and pursuing litigation. Where litigation is unavoidable, we are flexible in fees and prepare realistic cost assessments. Partners, associates and trainees share the research, drafting of pleadings and attendance to Court according to the case.",
+          "The Firm is especially strong at the enforcement stage and senior associate Pınar Özeyranlı is dedicated to Court and Enforcement Office attendance. Arrest of ships is a particular area of expertise. Dilek Bektaşoğlu-Sanlı has been a speaker and author of various arrest articles within the past decade and is an expert on arrest of ships.",
+          "Similarly, enforcement of foreign judgments and arbitration awards is a practice that members of the firm have carried out all the time and the Firm has a perfect track record of not having failed in a single enforcement case."
+        ]
+      },
+      "insurance-and-reinsurance": {
+        "title": "Insurance and Reinsurance",
+        "summary": "Core practice covering policy drafting, regulatory advice, coverage and claims for insurers, reinsurers and brokers.",
+        "paragraphs": [
+          "Contentious and non-contentious insurance and reinsurance work is the core business of our practice. The firm acts for leading local and international insurers, reinsurers, syndicates, brokers, and intermediaries of the insurance sector.",
+          "We provide assistance to our clients on a wide range of issues, including corporate planning, product development, policy drafting, regulatory advice, coverage advice and attending claims and defense.",
+          "We have experience in relation to different lines, including aviation, banking, casualty, energy and engineering, construction, financial lines, fraud, marine, product liability, professional liability, property, political risk and regulatory risk."
+        ]
+      },
+      "aviation": {
+        "title": "Aviation",
+        "summary": "Long-standing aviation practice acting for London reinsurers, air carriers, ground handlers and local insurers.",
+        "paragraphs": [
+          "Turkey's aviation market develops continuously, and the legislation aims to comply with international conventions and EU regulations. Turkey is now a \"Montreal country\" and the firm has intentionally developed its reputation in this area significantly since it was founded — aviation is one of the areas Erçin Bilgin Bektaşoğlu is renowned for.",
+          "The Firm assists major London law firms specialising in aviation and frequently acts for the London reinsurance market. In addition, it represents air carriers, ground handlers and local insurers. The undertaken work ranges from casualties and personal injury to cargo claims and passenger rights to regulatory advice.",
+          "Feyzi Erçin leads the aviation team and has extensive experience on the local handling of major aviation accidents. On behalf of London insurers, he was handling the Turkish Airlines total loss in 2003 and is continuing to handle the major 2007 Atlas Jet crash. In addition, he is instructed in respect of various helicopter and general aviation accidents.",
+          "Class actions, claims for material and moral damages, actuarial calculations and local investigation of aircraft accidents are all part of his experience. Feyzi Erçin also handles various claims in an extended range of subjects such as denied boarding, bird strike, jet blast and chartering disputes.",
+          "Who's Who Legal has described him in their Aviation Marketplace Analysis as \"a very capable and pragmatic\" lawyer with a \"great reputation\" in handling major losses and coverage disputes. Erçin Bilgin Bektaşoğlu was one of the Principal Sponsors of the IATA Legal Symposium 2007 in Istanbul, where Feyzi Erçin was a speaker. He regularly attends the Symposium ever since."
+        ]
+      },
+      "shipping": {
+        "title": "Shipping",
+        "summary": "Wet and dry shipping work — casualties, collisions, charterparty and cargo claims — on a 24-hour basis.",
+        "paragraphs": [
+          "The partners of the Firm have had extensive experience for up to twenty years in all shipping work. As Chambers & Partners' 2016 Edition confirms, we are \"a very good firm with a focus on quality. The team concentrates on shipping disputes, but does very well outside this area too.\"",
+          "Wet shipping work is a major area of expertise and name partners Feyzi Erçin and Burcu Çelikçapa-Bilgin have been involved in the investigation and complete handling of significant marine casualties, involving total losses, collisions, oilspills, piracy and salvage. Both have long standing practice of negotiating salvage claims of the local salvors.",
+          "The Firm handles shipping casualty work on behalf of some of the major P&I Clubs, defending and reducing governmental, administrative and third party claims in significant sums. The wet shipping department is headed by Feyzi Erçin who has a wide range of experience in a variety of wet shipping litigation, ranging from underwater structure damages to pollution claims.",
+          "All partners of the firm have dry shipping experience on charterparty disputes, cargo claims including contamination cases, debt recovery, total losses, crew and personal injury claims, Bills of Lading matters, exercise of liens and limitation of liability under Turkish law.",
+          "The introduction of the new Commercial Code in 2012 has made Turkish law partly identical with international conventions. Partners of the Firm have followed up the process of the legislation closely since 2001 and continue to attend to its practice and the establishment of precedents.",
+          "We operate on a 24-hour basis to provide immediate crisis management and our out of office hours contact details can be found in the personal links. A member of the Firm will always be mobilised promptly upon receipt of instructions of a casualty, to the accident site."
+        ]
+      },
+      "logistics-and-transport": {
+        "title": "Logistics and Transport",
+        "summary": "Contentious and non-contentious work for freight forwarders, warehouse operators, terminal operators and carriers.",
+        "paragraphs": [
+          "Turkey emerges as one of the most attractive markets for logistics services over the last decade and our firm has seen a significant increase in instructions related to all logistics services. Led by Burcu Çelikçapa-Bilgin, the transport and logistics department provides legal assistance on contentious and non-contentious matters to all actors of the logistics sector.",
+          "We advise on the structuring and management of carriage by road, multimodal transport, warehousing and terminal operation contracts. Our client profile includes local and international freight forwarders, warehouse operators, port and terminal operators, transport liability insurers, road and rail carriers and corporate clients who operate supply chains.",
+          "We also provide corporate advice including regulatory compliance with local legislation, applications for government approvals and management of legal relationships with local customs and port authorities.",
+          "On the litigation side, our experience in the logistics sector covers port, terminal and warehouse liability, contractual disputes, recourse actions against sub-carriers and freight forwarders as well as disputes arising from tax and custom liabilities."
+        ]
+      },
+      "finance": {
+        "title": "Finance",
+        "summary": "Ship, yacht, aviation, structured and trade finance — drafting, negotiating and enforcing security.",
+        "paragraphs": [
+          "The finance team led by Dilek Bektaşoğlu-Sanlı is instructed by leading international and local finance institutions, including banks and leasing companies, corporate bodies and shipyards. Our expertise covers structuring, drafting and negotiating loan and leasing contracts and security documents.",
+          "The firm assists clients in relation to the restructuring of the existing loan transactions and litigation of defaulted facilities, including foreclosure of mortgage and other securities.",
+          "The Firm has extensive expertise in ship finance, yacht finance, aviation finance, structured and project finance, and trade finance.",
+          "The 2010 edition of Legal 500 wrote: \"The firm's ship finance specialist, Dilek Bektaşoğlu-Sanlı, is singled out as an 'excellent professional'.\""
+        ]
+      },
+      "trade-and-commodities": {
+        "title": "Trade and Commodities",
+        "summary": "Sale and purchase agreements, sanctions, customs and letters of credit advice for traders and banks.",
+        "paragraphs": [
+          "The Firm's expertise covers trade and commodities disputes. The expertise includes drafting and negotiating sale and purchase agreements of soft and hard commodities, as well as distribution, agency and rental contracts.",
+          "We also assist local and foreign Clients in respect of regulatory matters and provide advice on trade sanctions, custom rules and taxation. Assisting banks and traders in the area of letters of credit and other payment instruments falls within the expertise of the Firm as well.",
+          "The Firm has extensive knowledge as regards licensing, tax and duty, customs and import/export, and the transit regime relating to operations, sale and storage of commodities and, in particular, gasoil products."
+        ]
+      },
+      "corporate-and-commercial": {
+        "title": "Corporate and Commercial",
+        "summary": "Company formation, corporate governance, shareholder disputes and commercial contracts.",
+        "paragraphs": [
+          "Corporate and commercial matters are another practice of our firm developed. Among others, we provide services on the following main areas: founding of companies with foreign capital, general advice in corporate management, shareholders disputes, directors' liability, debt restructuring and corporate litigation.",
+          "Our firm has also experience in drafting contracts of various corporate transactions; such as shareholders' agreements, share transfer, share pledge, and joint venture agreements."
+        ]
+      },
+      "real-estate-and-property": {
+        "title": "Real Estate and Property",
+        "summary": "Acquisition and transfer of property for foreign nationals — due diligence, permits, sale agreements and inheritance.",
+        "paragraphs": [
+          "One of the areas that the Firm has been more active in the recent years is real estate and property law. Erçin Bilgin Bektaşoğlu has assisted various foreign nationals to acquire property in Turkey. We provide assistance in the due diligence stage, carry out the process to obtain required permits and negotiate the sales agreement.",
+          "Turkey's laws with respect to foreign nationals frequently change, also with respect to specific nationalities and locations, wherefore Clients should consider asking for the assistance of a lawyer from early stages of their intended transaction. The Firm has contacts with various Real Estate agents all over the country to validate data and offer Clients alternatives.",
+          "The Firm is able to carry out the required procedures for inheritance and transfer of title, including all tax obligations that may arise."
+        ]
+      },
+      "employment-and-labour": {
+        "title": "Employment and Labour",
+        "summary": "Employment contracts, labour law advice and employment-related litigation for large and medium organisations.",
+        "paragraphs": [
+          "The firm has experience in drafting employment contracts, advising on labour law issues and dealing with employment related litigation.",
+          "We act for clients ranging from large to medium sized organisations in various industry sectors."
+        ]
+      }
+    }
+  },
+  "team": {
+    "pageTitle": "Our Team",
+    "hero": {
+      "eyebrow": "OUR TEAM",
+      "title": "Meet Our Team"
+    },
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our firm brings together partners, associates and trainees with deep expertise across transport, insurance and international trade. Each member combines local market knowledge with an international outlook, supporting clients on contentious and non-contentious matters across jurisdictions.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "linkedinLabel": "LinkedIn Profile",
+    "backToTeam": "Back to Team",
+    "eyebrows": {
+      "expertise": "EXPERTISE",
+      "biography": "BIOGRAPHY",
+      "education": "EDUCATION",
+      "memberships": "PROFESSIONAL MEMBERSHIPS",
+      "languages": "LANGUAGES"
+    },
+    "members": [
+      {
+        "slug": "lorem-ipsum",
+        "name": "Lorem Ipsum",
+        "position": "Founding Partner",
+        "email": "lorem.ipsum@ebb-law.com",
+        "phone": "+90 212 297 41 01",
+        "linkedinUrl": "#",
+        "bio": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Specializes in international transport law, dispute resolution, and maritime arbitration with over two decades of experience advising clients across Europe and the Middle East.",
+          "Has acted as lead counsel in landmark cases before the Turkish Court of Cassation and represented major shipping companies in international arbitration proceedings. Regularly publishes in legal journals and speaks at industry conferences on emerging issues in transport and trade law.",
+          "Recognized by Chambers & Partners and Legal 500 as a leading practitioner in dispute resolution and shipping law."
+        ],
+        "practiceAreas": ["dispute-resolution", "shipping", "insurance-and-reinsurance"],
+        "education": [
+          { "year": "1998", "institution": "Istanbul University Faculty of Law", "degree": "LL.B." },
+          { "year": "2001", "institution": "King's College London", "degree": "LL.M. in Maritime Law" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association",
+          "International Bar Association",
+          "London Maritime Arbitrators Association"
+        ],
+        "languages": ["Turkish", "English", "German"]
+      },
+      {
+        "slug": "dolor-sit",
+        "name": "Dolor Sit",
+        "position": "Managing Partner",
+        "email": "dolor.sit@ebb-law.com",
+        "phone": "+90 212 297 41 02",
+        "linkedinUrl": "#",
+        "bio": [
+          "Dolor sit amet, consectetur adipiscing elit. Manages the firm's day-to-day operations while maintaining an active practice in insurance and reinsurance law. More than twenty years of experience advising underwriters, P&I Clubs and brokers on complex coverage disputes.",
+          "Has led cross-border claims handling for major casualties involving total losses, collisions and pollution incidents, working closely with London and continental European correspondents. Frequently instructed on policy drafting and regulatory matters.",
+          "Holds a longstanding reputation in the Turkish insurance market and is regularly cited by Legal 500 and Chambers as a leader in the field."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "shipping", "aviation"],
+        "education": [
+          { "year": "1999", "institution": "Galatasaray University Faculty of Law", "degree": "LL.B." },
+          { "year": "2002", "institution": "Queen Mary University of London", "degree": "LL.M. in Insurance Law" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association",
+          "AIDA – International Insurance Law Association",
+          "Turkish Insurance Law Association"
+        ],
+        "languages": ["Turkish", "English", "French"]
+      },
+      {
+        "slug": "amet-consectetur",
+        "name": "Amet Consectetur",
+        "position": "Partner",
+        "email": "amet.consectetur@ebb-law.com",
+        "phone": "+90 212 297 41 03",
+        "linkedinUrl": "#",
+        "bio": [
+          "Consectetur adipiscing elit, sed do eiusmod tempor incididunt. Heads the firm's aviation practice, advising international air carriers, ground handlers and London reinsurers on major accidents, passenger claims and regulatory matters.",
+          "Has handled the local management of several high-profile aviation losses, including total hull claims and large-scale passenger litigation, and frequently advises on Montreal Convention disputes.",
+          "Recognized by Who's Who Legal as a leading aviation lawyer in Turkey."
+        ],
+        "practiceAreas": ["aviation", "insurance-and-reinsurance", "dispute-resolution"],
+        "education": [
+          { "year": "2001", "institution": "Ankara University Faculty of Law", "degree": "LL.B." },
+          { "year": "2004", "institution": "Leiden University", "degree": "Advanced LL.M. in Air and Space Law" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association",
+          "European Air Law Association",
+          "International Aviation Law Institute"
+        ],
+        "languages": ["Turkish", "English", "Dutch"]
+      },
+      {
+        "slug": "adipiscing-elit",
+        "name": "Adipiscing Elit",
+        "position": "Partner",
+        "email": "adipiscing.elit@ebb-law.com",
+        "phone": "+90 212 297 41 04",
+        "linkedinUrl": "#",
+        "bio": [
+          "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Leads the finance and corporate practice, advising banks, leasing companies and corporate clients on structured ship and aviation finance, loan restructurings and security enforcement.",
+          "Has acted on numerous cross-border financing transactions, including yacht finance, project finance and trade finance, and routinely handles foreclosure and recovery work for international lenders.",
+          "Singled out by Legal 500 as an 'excellent professional' in ship finance."
+        ],
+        "practiceAreas": ["finance", "corporate-and-commercial", "trade-and-commodities"],
+        "education": [
+          { "year": "2000", "institution": "Marmara University Faculty of Law", "degree": "LL.B." },
+          { "year": "2003", "institution": "University College London", "degree": "LL.M. in Banking and Finance Law" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association",
+          "International Bar Association – Banking Law Committee",
+          "Turkish Banking Law Association"
+        ],
+        "languages": ["Turkish", "English", "German"]
+      },
+      {
+        "slug": "sed-eiusmod",
+        "name": "Sed Eiusmod",
+        "position": "Senior Associate",
+        "email": "sed.eiusmod@ebb-law.com",
+        "phone": "+90 212 297 41 05",
+        "linkedinUrl": "#",
+        "bio": [
+          "Sed do eiusmod tempor incididunt ut labore. Senior associate with twelve years of experience focused on dispute resolution, shipping casualties and enforcement work. Regularly appears before Turkish commercial courts and arbitration tribunals.",
+          "Has particular expertise in arrest of ships, enforcement of foreign judgments and arbitration awards. Has spoken at industry events on Turkish enforcement procedure and casualty response."
+        ],
+        "practiceAreas": ["dispute-resolution", "shipping", "logistics-and-transport"],
+        "education": [
+          { "year": "2010", "institution": "Bilkent University Faculty of Law", "degree": "LL.B." },
+          { "year": "2012", "institution": "University of Southampton", "degree": "LL.M. in Maritime Law" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association",
+          "Young Maritime Arbitrators Association"
+        ],
+        "languages": ["Turkish", "English"]
+      },
+      {
+        "slug": "tempor-incididunt",
+        "name": "Tempor Incididunt",
+        "position": "Senior Associate",
+        "email": "tempor.incididunt@ebb-law.com",
+        "phone": "+90 212 297 41 06",
+        "linkedinUrl": "#",
+        "bio": [
+          "Tempor incididunt ut labore et dolore magna aliqua. Senior associate with eleven years of practice in logistics, transport and trade. Advises freight forwarders, terminal operators and corporate supply-chain clients on contentious and regulatory matters.",
+          "Experienced in drafting and negotiating multimodal transport, warehousing and distribution agreements, and represents clients in cargo claims, recourse actions and customs disputes."
+        ],
+        "practiceAreas": ["logistics-and-transport", "trade-and-commodities", "corporate-and-commercial"],
+        "education": [
+          { "year": "2011", "institution": "Koç University Law School", "degree": "LL.B." },
+          { "year": "2013", "institution": "Erasmus University Rotterdam", "degree": "LL.M. in International Trade Law" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association",
+          "FIATA Working Group on Legal Matters"
+        ],
+        "languages": ["Turkish", "English", "Dutch"]
+      },
+      {
+        "slug": "labore-magna",
+        "name": "Labore Magna",
+        "position": "Associate",
+        "email": "labore.magna@ebb-law.com",
+        "phone": "+90 212 297 41 07",
+        "linkedinUrl": "#",
+        "bio": [
+          "Labore et dolore magna aliqua. Associate with seven years of experience in commercial litigation, corporate work and employment matters. Supports the firm's dispute resolution team on a wide range of contractual and regulatory disputes.",
+          "Drafts and reviews commercial contracts, advises on employment policy and represents clients in labour-related litigation."
+        ],
+        "practiceAreas": ["corporate-and-commercial", "employment-and-labour", "dispute-resolution"],
+        "education": [
+          { "year": "2015", "institution": "Galatasaray University Faculty of Law", "degree": "LL.B." }
+        ],
+        "memberships": ["Istanbul Bar Association"],
+        "languages": ["Turkish", "English", "French"]
+      },
+      {
+        "slug": "aliqua-enim",
+        "name": "Aliqua Enim",
+        "position": "Associate",
+        "email": "aliqua.enim@ebb-law.com",
+        "phone": "+90 212 297 41 08",
+        "linkedinUrl": "#",
+        "bio": [
+          "Ut enim ad minim veniam, quis nostrud exercitation. Associate with six years of practice in insurance and reinsurance, with a particular focus on coverage advice and claims defence for international insurers.",
+          "Regularly drafts policy wordings, manages claim portfolios and represents clients in coverage disputes before Turkish commercial courts."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "aviation", "dispute-resolution"],
+        "education": [
+          { "year": "2016", "institution": "Istanbul University Faculty of Law", "degree": "LL.B." }
+        ],
+        "memberships": ["Istanbul Bar Association", "AIDA Türkiye"],
+        "languages": ["Turkish", "English"]
+      },
+      {
+        "slug": "veniam-quis",
+        "name": "Veniam Quis",
+        "position": "Associate",
+        "email": "veniam.quis@ebb-law.com",
+        "phone": "+90 212 297 41 09",
+        "linkedinUrl": "#",
+        "bio": [
+          "Veniam quis nostrud exercitation ullamco laboris. Associate with five years of experience supporting the finance and real estate practices. Advises on transactional matters, due diligence and regulatory compliance.",
+          "Has worked on a number of cross-border acquisitions involving foreign nationals investing in Turkish property and corporate assets."
+        ],
+        "practiceAreas": ["real-estate-and-property", "finance", "corporate-and-commercial"],
+        "education": [
+          { "year": "2017", "institution": "Bahçeşehir University Faculty of Law", "degree": "LL.B." }
+        ],
+        "memberships": ["Istanbul Bar Association"],
+        "languages": ["Turkish", "English", "Spanish"]
+      },
+      {
+        "slug": "nostrud-exercitation",
+        "name": "Nostrud Exercitation",
+        "position": "Trainee",
+        "email": "nostrud.exercitation@ebb-law.com",
+        "phone": "+90 212 297 41 10",
+        "linkedinUrl": "#",
+        "bio": [
+          "Nostrud exercitation ullamco laboris nisi ut aliquip. Trainee lawyer assisting the dispute resolution and shipping teams on research, document preparation and court attendance.",
+          "Currently completing the mandatory traineeship period of the Istanbul Bar Association."
+        ],
+        "practiceAreas": ["dispute-resolution", "shipping"],
+        "education": [
+          { "year": "2023", "institution": "Istanbul University Faculty of Law", "degree": "LL.B." }
+        ],
+        "memberships": ["Istanbul Bar Association (Trainee)"],
+        "languages": ["Turkish", "English"]
+      },
+      {
+        "slug": "ullamco-laboris",
+        "name": "Ullamco Laboris",
+        "position": "Trainee",
+        "email": "ullamco.laboris@ebb-law.com",
+        "phone": "+90 212 297 41 11",
+        "linkedinUrl": "#",
+        "bio": [
+          "Ullamco laboris nisi ut aliquip ex ea commodo. Trainee supporting the corporate and commercial team with contract review, due diligence and corporate filings.",
+          "Holds a strong interest in international commercial arbitration."
+        ],
+        "practiceAreas": ["corporate-and-commercial", "trade-and-commodities"],
+        "education": [
+          { "year": "2023", "institution": "Koç University Law School", "degree": "LL.B." }
+        ],
+        "memberships": ["Istanbul Bar Association (Trainee)"],
+        "languages": ["Turkish", "English", "German"]
+      },
+      {
+        "slug": "aliquip-commodo",
+        "name": "Aliquip Commodo",
+        "position": "Trainee",
+        "email": "aliquip.commodo@ebb-law.com",
+        "phone": "+90 212 297 41 12",
+        "linkedinUrl": "#",
+        "bio": [
+          "Aliquip ex ea commodo consequat. Trainee assisting the insurance and aviation teams on claim handling, regulatory research and policy review.",
+          "Recent graduate completing traineeship under the supervision of partners."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "aviation"],
+        "education": [
+          { "year": "2024", "institution": "Galatasaray University Faculty of Law", "degree": "LL.B." }
+        ],
+        "memberships": ["Istanbul Bar Association (Trainee)"],
+        "languages": ["Turkish", "English", "French"]
+      }
+    ]
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "eyebrow": "CONTACT",
+    "title": "Get in Touch",
+    "officeEyebrow": "ISTANBUL OFFICE",
+    "officeName": "Erçin Bilgin Bektaşoğlu",
+    "addressLine1": "Cumhuriyet Cad. Cumhuriyet Apt. 17/7",
+    "addressLine2": "Taksim 34437",
+    "addressLine3": "Istanbul, Türkiye",
+    "workingHours": "Weekdays: 09:00 — 18:00",
+    "showOnMap": "Show on Map",
+    "directContactTitle": "DIRECT CONTACT",
+    "formEyebrow": "CONTACT FORM",
+    "formDescription": "Use the form below to send us an enquiry.",
+    "fields": {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email",
+      "phone": "Phone",
+      "practiceArea": "What practice area are you interested in?",
+      "practiceAreaPlaceholder": "Select a practice area",
+      "message": "Your Message"
+    },
+    "consent": "I have read and accepted the privacy policy.",
+    "privacyPolicy": "privacy policy",
+    "submit": "Send Message",
+    "submitting": "Sending…",
+    "successMessage": "Thank you. We have received your message.",
+    "info": {
+      "email": "mail@ebb-law.com",
+      "phone": "+90 212 297 41 01"
+    }
+  },
+  "footer": {
+    "exploreTitle": "Explore",
+    "practiceAreasTitle": "Practice Areas",
+    "phoneLabel": "Phone",
+    "faxLabel": "Fax",
+    "emailLabel": "Email",
+    "webLabel": "Web",
+    "address": {
+      "line1": "Cumhuriyet Cad.",
+      "line2": "Cumhuriyet Apt. 17/7 Taksim",
+      "line3": "34437 - Istanbul"
+    },
+    "email": "mail@ebb-law.com",
+    "phone": "+90 212 297 41 01",
+    "fax": "+90 212 297 42 02",
+    "webUrl": "www.ebb-law.com",
+    "callUs": "Call us",
+    "emailUs": "Email us",
+    "visitWebsite": "Visit website",
+    "copyright": "© {year} Erçin Bilgin Bektaşoğlu Law Firm. All rights reserved."
+  }
+}
