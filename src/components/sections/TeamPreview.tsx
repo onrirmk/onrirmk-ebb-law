@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight, UserCircle2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { TeamMember } from "@/types/content";
@@ -6,7 +7,7 @@ type Props = {
   title: string;
   subtitle: string;
   viewAllLabel: string;
-  members: Pick<TeamMember, "slug" | "name" | "position">[];
+  members: Pick<TeamMember, "slug" | "name" | "position" | "photoSrc">[];
 };
 
 export function TeamPreview({
@@ -32,12 +33,22 @@ export function TeamPreview({
               className="group flex h-full flex-col overflow-hidden rounded-sm border border-[#1C1B1F]/10 bg-card transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(33,44,96,0.10)]"
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#EEF0F5] via-[#E5E8F0] to-[#DCE0EA]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <UserCircle2
-                    className="h-[88px] w-[88px] text-[#212C60]/25 md:h-[104px] md:w-[104px]"
-                    strokeWidth={1}
+                {m.photoSrc ? (
+                  <Image
+                    src={m.photoSrc}
+                    alt={m.name}
+                    fill
+                    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 90vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <UserCircle2
+                      className="h-[88px] w-[88px] text-[#212C60]/25 md:h-[104px] md:w-[104px]"
+                      strokeWidth={1}
+                    />
+                  </div>
+                )}
                 <span className="pointer-events-none absolute right-[10px] top-[10px] flex h-[28px] w-[28px] items-center justify-center rounded-full bg-white/90 text-[#212C60] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <ArrowUpRight className="h-[14px] w-[14px]" aria-hidden />
                 </span>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { TeamMemberDetail } from "@/components/sections/TeamMemberDetail";
+import { getMemberPhotoSrc } from "@/lib/team-photos";
 import { PRACTICE_AREA_SLUGS, routing, type PracticeAreaSlug } from "@/i18n/routing";
 import type { TeamMember } from "@/types/content";
 
@@ -10,7 +11,9 @@ type Params = { locale: string; slug: string };
 async function loadMember(locale: string, slug: string): Promise<TeamMember | null> {
   const t = await getTranslations({ locale });
   const members = t.raw("team.members") as TeamMember[];
-  return members.find((m) => m.slug === slug) ?? null;
+  const member = members.find((m) => m.slug === slug);
+  if (!member) return null;
+  return { ...member, photoSrc: member.photoSrc ?? getMemberPhotoSrc(member.slug) };
 }
 
 export async function generateStaticParams() {

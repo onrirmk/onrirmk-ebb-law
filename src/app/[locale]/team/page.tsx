@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionDivider } from "@/components/layout/SectionDivider";
 import { TeamHero } from "@/components/sections/TeamHero";
 import { TeamGrid } from "@/components/sections/TeamGrid";
+import { getMemberPhotoSrc } from "@/lib/team-photos";
 import type { TeamMember } from "@/types/content";
 
 export async function generateMetadata({
@@ -24,7 +25,10 @@ export default async function TeamPage({
   setRequestLocale(locale);
   const t = await getTranslations();
 
-  const members = t.raw("team.members") as TeamMember[];
+  const members = (t.raw("team.members") as TeamMember[]).map((m) => ({
+    ...m,
+    photoSrc: m.photoSrc ?? getMemberPhotoSrc(m.slug),
+  }));
 
   return (
     <>

@@ -9,6 +9,7 @@ import { TeamPreview } from "@/components/sections/TeamPreview";
 import { HomeCta } from "@/components/sections/HomeCta";
 import { SectionDivider } from "@/components/layout/SectionDivider";
 import { Link } from "@/i18n/navigation";
+import { getMemberPhotoSrc } from "@/lib/team-photos";
 import type { PracticeAreaSlug } from "@/i18n/routing";
 import type { TestimonialItem } from "@/components/sections/TestimonialSlider";
 import type { Award, TeamMember } from "@/types/content";
@@ -47,6 +48,7 @@ export default async function HomePage({
     slug: m.slug,
     name: m.name,
     position: m.position,
+    photoSrc: m.photoSrc ?? getMemberPhotoSrc(m.slug),
   }));
 
   return (
