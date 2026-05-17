@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { PageHeader } from "@/components/layout/PageHeader";
+import { PracticeAreasHero } from "@/components/sections/PracticeAreasHero";
 import { PracticeAreasGrid } from "@/components/sections/PracticeAreasGrid";
 import { PRACTICE_AREA_SLUGS } from "@/i18n/routing";
 import type { PracticeAreaSummary } from "@/types/content";
@@ -51,9 +51,10 @@ export default async function PracticeAreasPage({
 
   return (
     <>
-      <PageHeader
-        title={t("practiceAreas.sectionEyebrow")}
-        description={t("practiceAreas.listIntro")}
+      <PracticeAreasHero
+        eyebrow={t("practiceAreas.hero.eyebrow")}
+        title={t("practiceAreas.hero.title")}
+        subtitle={t("practiceAreas.hero.subtitle")}
       />
       <PracticeAreasGrid
         areas={areas}
