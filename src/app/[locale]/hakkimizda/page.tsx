@@ -6,6 +6,7 @@ import { AboutNarrative } from "@/components/sections/AboutNarrative";
 import { AboutFoundersGrid } from "@/components/sections/AboutFoundersGrid";
 import { AboutTimeline } from "@/components/sections/AboutTimeline";
 import { AboutCta } from "@/components/sections/AboutCta";
+import { getMemberPhotoSrc } from "@/lib/team-photos";
 import type { TeamMember } from "@/types/content";
 
 export async function generateMetadata({
@@ -39,6 +40,7 @@ export default async function AboutPage({
     slug: m.slug,
     name: m.name,
     position: m.position,
+    photoSrc: m.photoSrc ?? getMemberPhotoSrc(m.slug),
   }));
 
   return (
