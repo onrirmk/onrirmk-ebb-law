@@ -20,6 +20,11 @@ export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
+  const isActiveLink = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -78,16 +83,24 @@ export function Navbar() {
           className="absolute left-[861px] top-[59px] hidden h-[24px] items-center md:flex"
         >
           <ul className="flex items-center gap-[36px]">
-            {NAV_LINKS.map((link) => (
-              <li key={link.key}>
-                <Link
-                  href={link.href}
-                  className={`font-sans text-[18px] font-medium leading-[28px] tracking-wide ${linkColorClass} transition-opacity hover:opacity-80`}
-                >
-                  {t(link.key)}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = isActiveLink(link.href);
+              return (
+                <li key={link.key}>
+                  <Link
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`font-sans text-[18px] font-medium leading-[28px] tracking-wide ${linkColorClass} transition-opacity hover:opacity-80 ${
+                      isActive
+                        ? "underline decoration-2 underline-offset-[10px]"
+                        : ""
+                    }`}
+                  >
+                    {t(link.key)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -127,7 +140,7 @@ export function Navbar() {
         <nav aria-label="Mobile" className="px-[24px] pt-[80px]">
           <ul className="flex flex-col gap-[24px]">
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = isActiveLink(link.href);
               return (
                 <li key={link.key}>
                   <Link
@@ -135,7 +148,9 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? "page" : undefined}
                     className={`font-sans text-[24px] font-medium leading-[32px] tracking-wide text-[#212C60] ${
-                      isActive ? "underline underline-offset-[6px]" : ""
+                      isActive
+                        ? "underline decoration-2 underline-offset-[8px]"
+                        : ""
                     }`}
                   >
                     {t(link.key)}
