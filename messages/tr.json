@@ -538,8 +538,7 @@
       "practiceAreaPlaceholder": "Bir çalışma alanı seçin",
       "message": "Mesajınız"
     },
-    "consent": "Gizlilik politikasını okudum ve kabul ediyorum.",
-    "privacyPolicy": "gizlilik politikası",
+    "consent": "Gizlilik ve KVKK koşullarını okudum ve kabul ediyorum.",
     "submit": "Mesaj Gönder",
     "submitting": "Gönderiliyor…",
     "successMessage": "Teşekkürler. Mesajınız tarafımıza ulaşmıştır.",

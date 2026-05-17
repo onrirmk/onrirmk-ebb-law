@@ -71,7 +71,6 @@ export default async function ContactPage({
               practiceAreaPlaceholder: t("contact.fields.practiceAreaPlaceholder"),
               message: t("contact.fields.message"),
               consent: t("contact.consent"),
-              privacyPolicy: t("contact.privacyPolicy"),
               submit: t("contact.submit"),
               submitting: t("contact.submitting"),
               successMessage: t("contact.successMessage"),
