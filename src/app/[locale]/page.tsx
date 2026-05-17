@@ -56,8 +56,6 @@ export default async function HomePage({
         titleLine2={t("hero.titleLine2")}
         imageSrc={HERO_IMAGE}
         imageAlt={t("hero.imageAlt")}
-        previousSlideLabel={t("hero.previousSlide")}
-        nextSlideLabel={t("hero.nextSlide")}
       />
       <WelcomeSection
         title={t("welcome.title")}

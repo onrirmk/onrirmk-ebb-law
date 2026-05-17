@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type {
   PracticeAreaDetailContent,
@@ -16,6 +16,7 @@ type Props = {
   area: PracticeAreaDetailContent;
   allAreas: PracticeAreaSummary[];
   sidebarLabel: string;
+  backLabel: string;
   cta: CtaContent;
 };
 
@@ -23,6 +24,7 @@ export function PracticeAreaDetail({
   area,
   allAreas,
   sidebarLabel,
+  backLabel,
   cta,
 }: Props) {
   const [firstParagraph, ...restParagraphs] = area.paragraphs;
@@ -64,6 +66,13 @@ export function PracticeAreaDetail({
       </aside>
 
       <div className="md:col-span-8 lg:col-span-9">
+        <Link
+          href="/calisma-alanlari"
+          className="mb-[32px] inline-flex items-center gap-[8px] text-[14px] font-semibold uppercase tracking-wide text-[#212C60]/70 transition-colors hover:text-[#212C60]"
+        >
+          <ArrowLeft className="h-[14px] w-[14px]" aria-hidden />
+          {backLabel}
+        </Link>
         <article className="max-w-[760px]">
           {firstParagraph ? (
             <p className="text-[19px] leading-[1.65] text-foreground/90 md:text-[20px] md:leading-[1.6]">

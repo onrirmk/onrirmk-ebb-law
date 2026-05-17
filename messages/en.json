@@ -19,9 +19,9 @@
   },
   "home": {
     "practicePreview": {
-      "title": "OUR PRACTICE",
+      "title": "PRACTICE AREAS",
       "subtitle": "Six core areas where the firm is most often instructed. Our full practice spans ten.",
-      "viewAll": "View all practice areas",
+      "viewAll": "View all 10 practice areas",
       "featuredSlugs": [
         "dispute-resolution",
         "insurance-and-reinsurance",
@@ -133,6 +133,7 @@
     "sectionEyebrow": "PRACTICE AREAS",
     "listIntro": "Our team advises clients across ten core practice areas.",
     "sidebarLabel": "All Practice Areas",
+    "backToPracticeAreas": "Back to Practice Areas",
     "stats": {
       "areasValue": "10",
       "areasLabel": "Practice Areas",
@@ -538,8 +539,7 @@
       "practiceAreaPlaceholder": "Select a practice area",
       "message": "Your Message"
     },
-    "consent": "I have read and accepted the privacy policy.",
-    "privacyPolicy": "privacy policy",
+    "consent": "I have read and agree to the privacy and KVKK terms.",
     "submit": "Send Message",
     "submitting": "Sending…",
     "successMessage": "Thank you. We have received your message.",

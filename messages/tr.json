@@ -19,9 +19,9 @@
   },
   "home": {
     "practicePreview": {
-      "title": "ÇALIŞMA ALANLARIMIZ",
+      "title": "ÇALIŞMA ALANLARI",
       "subtitle": "Büromuza en sık başvurulan altı temel alan. Tüm pratiğimiz on alanı kapsıyor.",
-      "viewAll": "Tüm çalışma alanlarını gör",
+      "viewAll": "10 çalışma alanının tamamını gör",
       "featuredSlugs": [
         "dispute-resolution",
         "insurance-and-reinsurance",
@@ -133,6 +133,7 @@
     "sectionEyebrow": "ÇALIŞMA ALANLARI",
     "listIntro": "Ekibimiz on temel çalışma alanında müvekkillerine danışmanlık vermektedir.",
     "sidebarLabel": "Tüm Çalışma Alanları",
+    "backToPracticeAreas": "Çalışma Alanlarına Dön",
     "stats": {
       "areasValue": "10",
       "areasLabel": "Çalışma Alanı",
@@ -538,8 +539,7 @@
       "practiceAreaPlaceholder": "Bir çalışma alanı seçin",
       "message": "Mesajınız"
     },
-    "consent": "Gizlilik politikasını okudum ve kabul ediyorum.",
-    "privacyPolicy": "gizlilik politikası",
+    "consent": "Gizlilik ve KVKK koşullarını okudum ve kabul ediyorum.",
     "submit": "Mesaj Gönder",
     "submitting": "Gönderiliyor…",
     "successMessage": "Teşekkürler. Mesajınız tarafımıza ulaşmıştır.",

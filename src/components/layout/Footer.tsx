@@ -9,6 +9,7 @@ const NAV_LINKS: NavLink[] = [
   { key: "home", href: "/" },
   { key: "about", href: "/hakkimizda" },
   { key: "practiceAreas", href: "/calisma-alanlari" },
+  { key: "team", href: "/team" },
   { key: "contact", href: "/iletisim" },
 ];
 

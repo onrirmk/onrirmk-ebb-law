@@ -70,6 +70,7 @@ export default async function PracticeAreaDetailPage({
         area={area}
         allAreas={allAreas}
         sidebarLabel={t("practiceAreas.sidebarLabel")}
+        backLabel={t("practiceAreas.backToPracticeAreas")}
         cta={{
           title: t("practiceAreas.cta.title", { area: area.title }),
           subtitle: t("practiceAreas.cta.subtitle"),
