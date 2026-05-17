@@ -21,7 +21,7 @@ const PLACEHOLDER_GRADIENTS = [
 
 export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
   return (
-    <section className="container-page pb-20 pt-8 md:pb-28 md:pt-10">
+    <section className="container-page pb-20 pt-[48px] md:pb-28 md:pt-[72px]">
       {stats && stats.length > 0 ? (
         <div className="mb-12 grid grid-cols-1 gap-y-6 border-y border-[#1C1B1F]/10 py-8 sm:grid-cols-3 sm:divide-x sm:divide-[#1C1B1F]/10 md:mb-16 md:py-10">
           {stats.map((stat, i) => (
