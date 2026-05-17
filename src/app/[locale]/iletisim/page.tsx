@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { PageHeader } from "@/components/layout/PageHeader";
+import { ContactHero } from "@/components/sections/ContactHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { OfficeCard } from "@/components/sections/OfficeCard";
 import { ContactMap } from "@/components/sections/ContactMap";
@@ -36,9 +36,14 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHeader
-        eyebrow={t("contact.eyebrow")}
-        title={t("contact.title")}
+      <ContactHero
+        eyebrow={t("contact.hero.eyebrow")}
+        title={t("contact.hero.title")}
+        subtitle={t("contact.hero.subtitle")}
+        breadcrumb={{
+          home: t("nav.home"),
+          current: t("contact.pageTitle"),
+        }}
       />
 
       <section className="mx-auto max-w-[1280px] px-[24px] pb-[64px] md:px-[100px] md:pb-[80px]">

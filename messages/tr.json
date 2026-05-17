@@ -523,6 +523,11 @@
     "pageTitle": "İletişim",
     "eyebrow": "İLETİŞİM",
     "title": "Bize Ulaşın",
+    "hero": {
+      "eyebrow": "İLETİŞİM",
+      "title": "Bize Ulaşın",
+      "subtitle": "Taşımacılık, sigorta, uyuşmazlık çözümü ve ilgili konulardaki başvurularınız için doğrudan bizimle iletişime geçebilirsiniz."
+    },
     "officeEyebrow": "İSTANBUL OFİS",
     "officeName": "Erçin Bilgin Bektaşoğlu",
     "addressLine1": "Cumhuriyet Cad. Cumhuriyet Apt. 17/7",

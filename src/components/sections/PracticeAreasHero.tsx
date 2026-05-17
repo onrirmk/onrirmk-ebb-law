@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroBreadcrumb } from "./HeroBreadcrumb";
 
 type Props = {
   eyebrow: string;
@@ -6,6 +7,7 @@ type Props = {
   subtitle?: string;
   imageSrc?: string;
   imageAlt?: string;
+  breadcrumb?: { home: string; current: string };
 };
 
 export function PracticeAreasHero({
@@ -14,6 +16,7 @@ export function PracticeAreasHero({
   subtitle,
   imageSrc = "/images/hero/practice-areas-hero.jpg",
   imageAlt = "",
+  breadcrumb,
 }: Props) {
   return (
     <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden bg-[#212C60] md:min-h-[480px]">
@@ -32,6 +35,12 @@ export function PracticeAreasHero({
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/45"
       />
       <div className="relative mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center px-[24px] text-center md:px-[100px]">
+        {breadcrumb ? (
+          <HeroBreadcrumb
+            homeLabel={breadcrumb.home}
+            current={breadcrumb.current}
+          />
+        ) : null}
         <p className="font-sans text-[13px] font-semibold uppercase leading-[18px] tracking-[0.3em] text-white/80 md:text-[14px] md:leading-[20px]">
           {eyebrow}
         </p>

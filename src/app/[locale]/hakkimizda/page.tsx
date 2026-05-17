@@ -48,6 +48,10 @@ export default async function AboutPage({
       <AboutHero
         eyebrow={t("about.hero.eyebrow")}
         title={t("about.hero.title")}
+        breadcrumb={{
+          home: t("nav.home"),
+          current: t("about.pageTitle"),
+        }}
       />
       <AboutStats stats={stats} />
       <AboutNarrative paragraphs={paragraphs} subheaders={subheaders} />
