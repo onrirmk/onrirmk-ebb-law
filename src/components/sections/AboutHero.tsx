@@ -12,7 +12,7 @@ export function AboutHero({
   eyebrow,
   title,
   subtitle,
-  imageSrc = "/images/about/about-hero.jpg",
+  imageSrc = "/images/hero/about-hero.jpg",
   imageAlt = "",
 }: Props) {
   return (

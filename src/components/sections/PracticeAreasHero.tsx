@@ -12,7 +12,7 @@ export function PracticeAreasHero({
   eyebrow,
   title,
   subtitle,
-  imageSrc = "/images/practice-areas/practice-areas-hero.jpg",
+  imageSrc = "/images/hero/practice-areas-hero.jpg",
   imageAlt = "",
 }: Props) {
   return (
