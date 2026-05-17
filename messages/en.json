@@ -267,29 +267,6 @@
     },
     "members": [
       {
-        "slug": "seray-kaya",
-        "name": "Seray Kaya",
-        "position": "Senior Associate",
-        "email": "seray.kaya@ebb-law.com",
-        "phone": "+90 212 297 41 01",
-        "linkedinUrl": "#",
-        "bio": [
-          "Seray Kaya is a graduate of Üsküdar American Academy and Koç University Law School. She joined Erçin Bilgin Bektaşoğlu Law Firm in 2017 and was admitted to the Istanbul Bar Association in 2018.",
-          "She has completed the Insurance Law LLM programme at Queen Mary University of London in 2022 with distinction. Her dissertation, focusing on the reinsurance law implications of different regimes on risk control clauses under English and Turkish laws, has been published in the British Insurance Law Association Journal in 2023.",
-          "Seray is part of Dilek Bektaşoğlu Sanlı's team and specialises in insurance and transport law. On the insurance side, she assists clients with regulatory matters in addition to coverage, claims handling, and recovery processes across various lines of business, with a particular focus on liability insurance matters. In addition to her experience in commercial dispute resolution, Seray's shipping and transport practice also includes drafting, reviewing, and negotiating commercial agreements, including shipbuilding and ship repair contracts.",
-          "She acts for a range of national and international clients, including reinsurers, underwriters, insurance brokers and policyholders from various sectors, as well as shipowners, charterers, cargo interests and shipyards."
-        ],
-        "practiceAreas": ["insurance-and-reinsurance", "shipping", "dispute-resolution"],
-        "education": [
-          { "year": "2017", "institution": "Koç University Law School", "degree": "LL.B." },
-          { "year": "2022", "institution": "Queen Mary University of London", "degree": "LL.M. in Insurance Law (with distinction)" }
-        ],
-        "memberships": [
-          "Istanbul Bar Association"
-        ],
-        "languages": ["Turkish", "English"]
-      },
-      {
         "slug": "dolor-sit",
         "name": "Dolor Sit",
         "position": "Managing Partner",
@@ -360,6 +337,28 @@
           "Turkish Banking Law Association"
         ],
         "languages": ["Turkish", "English", "German"]
+      },
+      {
+        "slug": "seray-kaya",
+        "name": "Seray Kaya",
+        "position": "Senior Associate",
+        "email": "seray.kaya@ebb-law.com",
+        "phone": "+90 212 297 41 01",
+        "bio": [
+          "Seray Kaya is a graduate of Üsküdar American Academy and Koç University Law School. She joined Erçin Bilgin Bektaşoğlu Law Firm in 2017 and was admitted to the Istanbul Bar Association in 2018.",
+          "She has completed the Insurance Law LLM programme at Queen Mary University of London in 2022 with distinction. Her dissertation, focusing on the reinsurance law implications of different regimes on risk control clauses under English and Turkish laws, has been published in the British Insurance Law Association Journal in 2023.",
+          "Seray is part of Dilek Bektaşoğlu Sanlı's team and specialises in insurance and transport law. On the insurance side, she assists clients with regulatory matters in addition to coverage, claims handling, and recovery processes across various lines of business, with a particular focus on liability insurance matters. In addition to her experience in commercial dispute resolution, Seray's shipping and transport practice also includes drafting, reviewing, and negotiating commercial agreements, including shipbuilding and ship repair contracts.",
+          "She acts for a range of national and international clients, including reinsurers, underwriters, insurance brokers and policyholders from various sectors, as well as shipowners, charterers, cargo interests and shipyards."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "shipping", "dispute-resolution"],
+        "education": [
+          { "year": "2017", "institution": "Koç University Law School", "degree": "LL.B." },
+          { "year": "2022", "institution": "Queen Mary University of London", "degree": "LL.M. in Insurance Law (with distinction)" }
+        ],
+        "memberships": [
+          "Istanbul Bar Association"
+        ],
+        "languages": ["Turkish", "English"]
       },
       {
         "slug": "sed-eiusmod",

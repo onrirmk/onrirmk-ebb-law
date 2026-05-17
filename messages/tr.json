@@ -267,29 +267,6 @@
     },
     "members": [
       {
-        "slug": "seray-kaya",
-        "name": "Seray Kaya",
-        "position": "Kıdemli Avukat",
-        "email": "seray.kaya@ebb-law.com",
-        "phone": "+90 212 297 41 01",
-        "linkedinUrl": "#",
-        "bio": [
-          "Seray Kaya, Üsküdar Amerikan Lisesi ve Koç Üniversitesi Hukuk Fakültesi mezunudur. 2017 yılında Erçin Bilgin Bektaşoğlu Hukuk Bürosu'na katılmış, 2018 yılında İstanbul Barosu'na kaydolmuştur.",
-          "Queen Mary University of London bünyesindeki Sigorta Hukuku LL.M. programını 2022 yılında üstün başarıyla tamamlamıştır. İngiliz ve Türk hukukları çerçevesinde risk kontrol klozları üzerindeki farklı rejimlerin reasürans hukuku açısından sonuçlarına odaklanan yüksek lisans tezi, 2023 yılında British Insurance Law Association Journal'da yayımlanmıştır.",
-          "Seray, Dilek Bektaşoğlu Sanlı'nın ekibinde yer almakta olup sigorta ve taşıma hukuku alanlarında uzmanlaşmıştır. Sigorta tarafında, çeşitli branşlarda teminat, hasar yönetimi ve rücu süreçlerinin yanı sıra düzenleyici işlerde de müvekkillerine destek vermekte; özellikle sorumluluk sigortası konularına ağırlık vermektedir. Ticari uyuşmazlık çözümündeki deneyimine ek olarak Seray'ın denizcilik ve taşıma uygulaması; gemi inşa ve gemi tamir sözleşmeleri dahil ticari sözleşmelerin hazırlanması, incelenmesi ve müzakeresini de kapsamaktadır.",
-          "Çeşitli sektörlerden reasürörler, sigortacılar, sigorta brokerları ve sigortalıların yanı sıra donatanlar, kiracılar, yük sahipleri ve tersaneler dahil olmak üzere yerli ve yabancı pek çok müvekkile hizmet vermektedir."
-        ],
-        "practiceAreas": ["insurance-and-reinsurance", "shipping", "dispute-resolution"],
-        "education": [
-          { "year": "2017", "institution": "Koç Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
-          { "year": "2022", "institution": "Queen Mary University of London", "degree": "Sigorta Hukuku LL.M. (üstün başarı)" }
-        ],
-        "memberships": [
-          "İstanbul Barosu"
-        ],
-        "languages": ["Türkçe", "İngilizce"]
-      },
-      {
         "slug": "dolor-sit",
         "name": "Dolor Sit",
         "position": "Yönetici Ortak",
@@ -360,6 +337,28 @@
           "Türk Bankacılık Hukuku Derneği"
         ],
         "languages": ["Türkçe", "İngilizce", "Almanca"]
+      },
+      {
+        "slug": "seray-kaya",
+        "name": "Seray Kaya",
+        "position": "Kıdemli Avukat",
+        "email": "seray.kaya@ebb-law.com",
+        "phone": "+90 212 297 41 01",
+        "bio": [
+          "Seray Kaya, Üsküdar Amerikan Lisesi ve Koç Üniversitesi Hukuk Fakültesi mezunudur. 2017 yılında Erçin Bilgin Bektaşoğlu Hukuk Bürosu'na katılmış, 2018 yılında İstanbul Barosu'na kaydolmuştur.",
+          "Queen Mary University of London bünyesindeki Sigorta Hukuku LL.M. programını 2022 yılında üstün başarıyla tamamlamıştır. İngiliz ve Türk hukukları çerçevesinde risk kontrol klozları üzerindeki farklı rejimlerin reasürans hukuku açısından sonuçlarına odaklanan yüksek lisans tezi, 2023 yılında British Insurance Law Association Journal'da yayımlanmıştır.",
+          "Seray, Dilek Bektaşoğlu Sanlı'nın ekibinde yer almakta olup sigorta ve taşıma hukuku alanlarında uzmanlaşmıştır. Sigorta tarafında, çeşitli branşlarda teminat, hasar yönetimi ve rücu süreçlerinin yanı sıra düzenleyici işlerde de müvekkillerine destek vermekte; özellikle sorumluluk sigortası konularına ağırlık vermektedir. Ticari uyuşmazlık çözümündeki deneyimine ek olarak Seray'ın denizcilik ve taşıma uygulaması; gemi inşa ve gemi tamir sözleşmeleri dahil ticari sözleşmelerin hazırlanması, incelenmesi ve müzakeresini de kapsamaktadır.",
+          "Çeşitli sektörlerden reasürörler, sigortacılar, sigorta brokerları ve sigortalıların yanı sıra donatanlar, kiracılar, yük sahipleri ve tersaneler dahil olmak üzere yerli ve yabancı pek çok müvekkile hizmet vermektedir."
+        ],
+        "practiceAreas": ["insurance-and-reinsurance", "shipping", "dispute-resolution"],
+        "education": [
+          { "year": "2017", "institution": "Koç Üniversitesi Hukuk Fakültesi", "degree": "LL.B." },
+          { "year": "2022", "institution": "Queen Mary University of London", "degree": "Sigorta Hukuku LL.M. (üstün başarı)" }
+        ],
+        "memberships": [
+          "İstanbul Barosu"
+        ],
+        "languages": ["Türkçe", "İngilizce"]
       },
       {
         "slug": "sed-eiusmod",
