@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import type { NavLink } from "@/types/content";
@@ -18,18 +20,46 @@ export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    document.body.style.overflow = "hidden";
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
+      previouslyFocused?.focus?.();
+    };
+  }, [isOpen]);
+
+  // Close the menu if the user navigates while it's open.
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   const headerClass = isHome
     ? "absolute inset-x-0 top-0 z-30 h-[122px] w-full text-white"
     : "relative z-30 h-[122px] w-full border-b border-[#1C1B1F]/10 bg-white text-[#212C60]";
 
   const linkColorClass = isHome ? "text-white" : "text-[#212C60]";
+  const toggleColorClass = isHome ? "text-white" : "text-[#212C60]";
 
   return (
     <header className={headerClass}>
       <div className="relative mx-auto h-full w-full max-w-[1440px]">
         <Link
           href="/"
-          className="absolute left-[79px] top-[46px] block"
+          className="absolute left-[24px] top-[31px] block md:left-[79px] md:top-[46px]"
           aria-label="Erçin Bilgin Bektaşoğlu Law Firm"
         >
           <Image
@@ -58,6 +88,61 @@ export function Navbar() {
                 </Link>
               </li>
             ))}
+          </ul>
+        </nav>
+
+        <button
+          ref={toggleRef}
+          type="button"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          className={`absolute right-[16px] top-[43px] inline-flex h-[40px] w-[40px] items-center justify-center p-[8px] md:hidden ${toggleColorClass}`}
+        >
+          <Menu className="h-[24px] w-[24px]" aria-hidden="true" />
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site menu"
+        hidden={!isOpen}
+        className={`fixed inset-0 z-50 bg-white text-[#212C60] transition-opacity duration-300 ease-out md:hidden ${
+          isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <button
+          ref={closeRef}
+          type="button"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+          className="absolute right-[16px] top-[43px] inline-flex h-[40px] w-[40px] items-center justify-center p-[8px] text-[#212C60]"
+        >
+          <X className="h-[24px] w-[24px]" aria-hidden="true" />
+        </button>
+
+        <nav aria-label="Mobile" className="px-[24px] pt-[80px]">
+          <ul className="flex flex-col gap-[24px]">
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.key}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`font-sans text-[24px] font-medium leading-[32px] tracking-wide text-[#212C60] ${
+                      isActive ? "underline underline-offset-[6px]" : ""
+                    }`}
+                  >
+                    {t(link.key)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
