@@ -132,6 +132,11 @@
     "pageTitle": "Practice Areas",
     "sectionEyebrow": "PRACTICE AREAS",
     "listIntro": "Our team advises clients across ten core practice areas.",
+    "hero": {
+      "eyebrow": "PRACTICE AREAS",
+      "title": "Our Practice Areas",
+      "subtitle": "Our team advises clients across ten core practice areas."
+    },
     "sidebarLabel": "All Practice Areas",
     "backToPracticeAreas": "Back to Practice Areas",
     "stats": {

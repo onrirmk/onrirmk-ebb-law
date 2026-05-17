@@ -132,6 +132,11 @@
     "pageTitle": "Çalışma Alanları",
     "sectionEyebrow": "ÇALIŞMA ALANLARI",
     "listIntro": "Ekibimiz on temel çalışma alanında müvekkillerine danışmanlık vermektedir.",
+    "hero": {
+      "eyebrow": "ÇALIŞMA ALANLARI",
+      "title": "Çalışma Alanlarımız",
+      "subtitle": "Ekibimiz on temel çalışma alanında müvekkillerine danışmanlık vermektedir."
+    },
     "sidebarLabel": "Tüm Çalışma Alanları",
     "backToPracticeAreas": "Çalışma Alanlarına Dön",
     "stats": {
