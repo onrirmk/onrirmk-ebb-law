@@ -19,9 +19,9 @@
   },
   "home": {
     "practicePreview": {
-      "title": "ÇALIŞMA ALANLARIMIZ",
+      "title": "ÇALIŞMA ALANLARI",
       "subtitle": "Büromuza en sık başvurulan altı temel alan. Tüm pratiğimiz on alanı kapsıyor.",
-      "viewAll": "Tüm çalışma alanlarını gör",
+      "viewAll": "10 çalışma alanının tamamını gör",
       "featuredSlugs": [
         "dispute-resolution",
         "insurance-and-reinsurance",
