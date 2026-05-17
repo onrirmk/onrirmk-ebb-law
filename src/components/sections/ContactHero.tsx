@@ -35,12 +35,6 @@ export function ContactHero({
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/45"
       />
       <div className="relative mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center px-[24px] text-center md:px-[100px]">
-        {breadcrumb ? (
-          <HeroBreadcrumb
-            homeLabel={breadcrumb.home}
-            current={breadcrumb.current}
-          />
-        ) : null}
         <p className="font-sans text-[13px] font-semibold uppercase leading-[18px] tracking-[0.3em] text-white/80 md:text-[14px] md:leading-[20px]">
           {eyebrow}
         </p>
@@ -57,6 +51,16 @@ export function ContactHero({
           className="mt-[24px] h-px w-[64px] bg-white/50 md:mt-[28px] md:w-[80px]"
         />
       </div>
+      {breadcrumb ? (
+        <div className="absolute inset-x-0 bottom-[20px] z-10 md:bottom-[28px]">
+          <div className="mx-auto max-w-[1440px] px-[24px] md:px-[100px]">
+            <HeroBreadcrumb
+              homeLabel={breadcrumb.home}
+              current={breadcrumb.current}
+            />
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
