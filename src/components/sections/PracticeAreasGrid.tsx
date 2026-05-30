@@ -50,7 +50,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
                 pathname: "/calisma-alanlari/[slug]",
                 params: { slug: area.slug },
               }}
-              className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-card shadow-[0_1px_2px_rgba(28,27,31,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(33,44,96,0.14)]"
+              className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-card shadow-[0_1px_2px_rgba(28,27,31,0.06)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_18px_36px_rgba(33,44,96,0.18)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 {area.imageSrc ? (
@@ -74,7 +74,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
                   className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100"
                 />
               </div>
-              <div className="flex flex-1 flex-col py-6 pr-6 md:py-7 md:pr-7">
+              <div className="flex flex-1 flex-col py-8 pr-6 md:py-10 md:pr-7">
                 <h2 className="font-sans text-[24px] font-semibold leading-[30px] text-primary md:text-[26px] md:leading-[32px]">
                   {area.title}
                 </h2>
