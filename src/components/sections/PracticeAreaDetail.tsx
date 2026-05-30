@@ -27,8 +27,6 @@ export function PracticeAreaDetail({
   backLabel,
   cta,
 }: Props) {
-  const [firstParagraph, ...restParagraphs] = area.paragraphs;
-
   return (
     <div className="container-page grid grid-cols-1 gap-12 pb-20 pt-12 md:grid-cols-12 md:gap-16 md:pb-28 md:pt-16">
       <aside
@@ -74,17 +72,9 @@ export function PracticeAreaDetail({
           {backLabel}
         </Link>
         <article className="max-w-[760px]">
-          {firstParagraph ? (
-            <p className="text-[19px] leading-[1.65] text-foreground/90 md:text-[20px] md:leading-[1.6]">
-              <span className="float-left mr-3 mt-[6px] font-sans text-[56px] font-bold leading-[0.85] text-primary md:text-[64px]">
-                {firstParagraph.charAt(0)}
-              </span>
-              {firstParagraph.slice(1)}
-            </p>
-          ) : null}
-          {restParagraphs.length > 0 ? (
-            <div className="mt-6 space-y-6 text-[18px] leading-[1.65] text-foreground/85 md:text-[19px] md:leading-[1.6]">
-              {restParagraphs.map((p, i) => (
+          {area.paragraphs.length > 0 ? (
+            <div className="space-y-6 text-[18px] leading-[1.65] text-foreground/90 md:text-[19px] md:leading-[1.6]">
+              {area.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
