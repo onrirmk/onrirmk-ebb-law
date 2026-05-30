@@ -19,7 +19,7 @@ export function AboutHero({
   breadcrumb,
 }: Props) {
   return (
-    <section className="relative h-[91vh] min-h-[624px] w-full overflow-hidden bg-[#212C60] md:min-h-[700px]">
+    <section className="relative h-[82vh] min-h-[560px] w-full overflow-hidden bg-[#212C60] md:min-h-[630px]">
       {imageSrc ? (
         <Image
           src={imageSrc}
