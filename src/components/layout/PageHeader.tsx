@@ -6,7 +6,7 @@ type Props = {
 
 export function PageHeader({ title, eyebrow, description }: Props) {
   return (
-    <header className="mx-auto max-w-[1440px] px-[24px] pb-[16px] pt-[40px] md:pb-[20px] md:pl-[100px] md:pr-[260px] md:pt-[48px]">
+    <header className="mx-auto max-w-[1680px] px-[24px] pb-[16px] pt-[40px] md:pb-[20px] md:pl-[100px] md:pr-[260px] md:pt-[48px]">
       {eyebrow ? (
         <p className="font-sans text-[12px] font-semibold uppercase leading-[16px] tracking-[0.3em] text-accent md:text-[13px] md:leading-[18px]">
           {eyebrow}

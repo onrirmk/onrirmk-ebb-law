@@ -20,7 +20,7 @@ export function AwardsTestimonialRow({
 
   return (
     <section id="awards-testimonial" className="w-full py-[48px] md:py-[64px]">
-      <div className="mx-auto max-w-[1440px] px-[24px] md:pl-[100px] md:pr-[260px]">
+      <div className="mx-auto max-w-[1680px] px-[24px] md:pl-[100px] md:pr-[260px]">
         <div className="flex flex-col gap-y-[40px] md:flex-row md:items-start md:gap-y-0">
           <div className="md:w-[198px]">
             <div className="inline-flex flex-col items-center">

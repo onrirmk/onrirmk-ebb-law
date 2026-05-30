@@ -143,7 +143,7 @@ export function PracticeAreaHero({
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-[#0c1230]/85 via-[#0c1230]/35 to-[#0c1230]/10"
       />
-      <div className="relative mx-auto flex h-full max-w-[1440px] flex-col justify-end px-6 pb-10 md:px-[100px] md:pb-14">
+      <div className="relative mx-auto flex h-full max-w-[1680px] flex-col justify-end px-6 pb-10 md:px-[100px] md:pb-14">
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 md:text-[12px]">
           {eyebrow}
         </p>

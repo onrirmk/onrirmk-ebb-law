@@ -5,7 +5,7 @@ type Props = {
 
 export function AboutSection({ title, paragraphs }: Props) {
   return (
-    <section className="mx-auto max-w-[1440px] px-[24px] pb-[64px] md:pl-[100px] md:pr-[260px]">
+    <section className="mx-auto max-w-[1680px] px-[24px] pb-[64px] md:pl-[100px] md:pr-[260px]">
       {title ? (
         <h2 className="font-sans text-[24px] font-bold uppercase leading-[32px] tracking-wide text-primary md:text-[28px] md:leading-[36px]">
           {title}

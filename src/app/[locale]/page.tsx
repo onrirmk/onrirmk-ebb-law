@@ -82,7 +82,7 @@ export default async function HomePage({
         title={t("about.title")}
         paragraphs={aboutParagraphs.slice(0, 2)}
       />
-      <div className="mx-auto max-w-[1440px] px-[24px] pb-[16px] md:pl-[100px] md:pr-[260px]">
+      <div className="mx-auto max-w-[1680px] px-[24px] pb-[16px] md:pl-[100px] md:pr-[260px]">
         <Link
           href="/hakkimizda"
           className="inline-flex items-center gap-[8px] text-[13px] font-semibold uppercase tracking-[0.18em] text-[#212C60] transition-colors hover:text-[#1a234d]"

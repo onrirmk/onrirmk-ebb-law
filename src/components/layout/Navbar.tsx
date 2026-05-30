@@ -61,7 +61,7 @@ export function Navbar() {
 
   return (
     <header className={headerClass}>
-      <div className="relative mx-auto h-full w-full max-w-[1440px]">
+      <div className="relative mx-auto h-full w-full max-w-[1680px]">
         <Link
           href="/"
           className="absolute left-[24px] top-[31px] block md:left-[79px] md:top-[46px]"
@@ -80,7 +80,7 @@ export function Navbar() {
 
         <nav
           aria-label="Primary"
-          className="absolute left-[861px] top-[59px] hidden h-[24px] items-center md:flex"
+          className="absolute right-[100px] top-[59px] hidden h-[24px] items-center md:flex"
         >
           <ul className="flex items-center gap-[36px]">
             {NAV_LINKS.map((link) => {

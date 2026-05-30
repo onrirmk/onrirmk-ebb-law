@@ -40,7 +40,7 @@ export default async function TeamPage({
           current: t("team.pageTitle"),
         }}
       />
-      <section className="mx-auto max-w-[1440px] px-[24px] pb-[12px] pt-[40px] md:px-[100px] md:pb-[16px] md:pt-[64px]">
+      <section className="mx-auto max-w-[1680px] px-[24px] pb-[12px] pt-[40px] md:px-[100px] md:pb-[16px] md:pt-[64px]">
         <p className="max-w-[1080px] font-sans text-[16px] font-normal leading-[26px] text-foreground/80 md:text-[18px] md:leading-[30px]">
           {t("team.intro")}
         </p>

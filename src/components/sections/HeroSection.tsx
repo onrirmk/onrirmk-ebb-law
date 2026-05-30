@@ -15,7 +15,7 @@ export function HeroSection({
 }: Props) {
   return (
     <section className="relative isolate w-full overflow-hidden">
-      <div className="relative mx-auto h-[600px] w-full max-w-[1440px] md:h-screen md:min-h-[600px]">
+      <div className="relative mx-auto h-[600px] w-full max-w-[1680px] md:h-screen md:min-h-[600px]">
         <Image
           src={imageSrc}
           alt={imageAlt}
