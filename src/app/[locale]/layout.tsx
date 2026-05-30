@@ -57,7 +57,7 @@ export default async function LocaleLayout({
             Skip to main content
           </a>
           <Navbar />
-          <main id="main" className="flex-1">
+          <main id="main" className="flex-1 [&>:first-child]:-mt-[122px]">
             {children}
           </main>
           <Footer />
