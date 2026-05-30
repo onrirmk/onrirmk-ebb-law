@@ -18,7 +18,7 @@ export function HomeCta({
 }: Props) {
   return (
     <section className="mt-[64px] w-full bg-[#212C60] text-white md:mt-[96px]">
-      <div className="mx-auto max-w-[1440px] px-[24px] py-[64px] text-center md:px-[100px] md:py-[112px]">
+      <div className="mx-auto max-w-[1680px] px-[24px] py-[64px] text-center md:px-[100px] md:py-[112px]">
         <p className="mx-auto max-w-[800px] text-[12px] font-semibold uppercase tracking-[0.28em] text-white/70 md:text-[14px]">
           {eyebrow}
         </p>

@@ -33,7 +33,7 @@ export async function Footer() {
 
   return (
     <footer className="bg-white text-[#1C1B1F]">
-      <div className="mx-auto max-w-[1440px] px-[24px] md:px-[87px]">
+      <div className="mx-auto max-w-[1680px] px-[24px] md:px-[87px]">
         <div className="h-px bg-[#1C1B1F]/15" />
 
         <div className="grid grid-cols-1 gap-y-[32px] pt-[64px] md:grid-cols-[auto_1fr_2fr_auto_1.5fr] md:gap-x-[40px] md:gap-y-0">
