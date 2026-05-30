@@ -54,10 +54,10 @@ export function Navbar() {
 
   const headerClass = isHome
     ? "absolute inset-x-0 top-0 z-30 h-[122px] w-full text-white"
-    : "relative z-30 h-[122px] w-full border-b border-[#1C1B1F]/10 bg-[#E2E8F0] text-[#1E293B]";
+    : "relative z-30 h-[122px] w-full border-b border-[#1C1B1F]/10 bg-[#F1F5F9] text-[#0F172A]";
 
-  const linkColorClass = isHome ? "text-white" : "text-[#1E293B]";
-  const toggleColorClass = isHome ? "text-white" : "text-[#1E293B]";
+  const linkColorClass = isHome ? "text-white" : "text-[#0F172A]";
+  const toggleColorClass = isHome ? "text-white" : "text-[#0F172A]";
 
   return (
     <header className={headerClass}>
