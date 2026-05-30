@@ -54,13 +54,6 @@ export default async function HomePage({
         paragraphs={welcomeParagraphs}
       />
       <SectionDivider />
-      <PracticeAreasPreview
-        title={t("home.practicePreview.title")}
-        subtitle={t("home.practicePreview.subtitle")}
-        viewAllLabel={t("home.practicePreview.viewAll")}
-        areas={featuredAreas}
-      />
-      <SectionDivider />
       <AwardsTestimonialRow
         awardsTitle={t("awards.title")}
         awards={awards}
@@ -81,6 +74,13 @@ export default async function HomePage({
           <ArrowRight className="h-[14px] w-[14px]" aria-hidden />
         </Link>
       </div>
+      <SectionDivider />
+      <PracticeAreasPreview
+        title={t("home.practicePreview.title")}
+        subtitle={t("home.practicePreview.subtitle")}
+        viewAllLabel={t("home.practicePreview.viewAll")}
+        areas={featuredAreas}
+      />
       <HomeCta
         eyebrow={t("home.cta.eyebrow")}
         title={t("home.cta.title")}
