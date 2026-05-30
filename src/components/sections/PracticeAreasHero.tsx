@@ -34,7 +34,7 @@ export function PracticeAreasHero({
         aria-hidden
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/45"
       />
-      <div className="relative mx-auto flex h-full max-w-[1680px] flex-col items-start justify-end px-[24px] pb-[100px] text-left md:px-[100px] md:pb-[140px]">
+      <div className="relative mx-auto flex h-full max-w-[1680px] flex-col items-center justify-center px-[24px] pt-[122px] text-center md:px-[100px]">
         <p className="font-sans text-[13px] font-semibold uppercase leading-[18px] tracking-[0.3em] text-white/80 md:text-[14px] md:leading-[20px]">
           {eyebrow}
         </p>
