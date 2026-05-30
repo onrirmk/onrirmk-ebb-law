@@ -12,7 +12,10 @@ import type { PracticeAreaSlug } from "@/i18n/routing";
 import type { TestimonialItem } from "@/components/sections/TestimonialSlider";
 import type { Award } from "@/types/content";
 
-const HERO_IMAGE = "/images/hero/istanbul-0819.png";
+const HERO_SLIDES = [
+  { src: "/images/hero/istanbul-0819.png", altKey: "hero.imageAlt" },
+  { src: "/images/hero/istanbul-tower.jpg", altKey: "hero.towerImageAlt" },
+] as const;
 
 export default async function HomePage({
   params,
@@ -46,8 +49,12 @@ export default async function HomePage({
       <HeroSection
         titleLine1={t("hero.titleLine1")}
         titleLine2={t("hero.titleLine2")}
-        imageSrc={HERO_IMAGE}
-        imageAlt={t("hero.imageAlt")}
+        slides={HERO_SLIDES.map((s) => ({
+          src: s.src,
+          alt: t(s.altKey),
+        }))}
+        previousLabel={t("hero.previousSlide")}
+        nextLabel={t("hero.nextSlide")}
       />
       <WelcomeSection
         title={t("welcome.title")}
