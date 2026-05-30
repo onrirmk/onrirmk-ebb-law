@@ -52,7 +52,7 @@ export function Navbar() {
   }, [pathname]);
 
   const headerClass =
-    "absolute inset-x-0 top-0 z-30 h-[122px] w-full bg-[#0F172A]/5 text-white";
+    "absolute inset-x-0 top-0 z-30 h-[122px] w-full text-white";
 
   const linkColorClass = "text-white";
   const toggleColorClass = "text-white";
