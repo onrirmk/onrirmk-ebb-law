@@ -24,31 +24,24 @@ export function AwardsTestimonialRow({
         <div className="flex flex-col gap-y-[40px] md:flex-row md:items-start md:gap-y-0">
           <div className="md:w-[198px]">
             <div className="inline-flex flex-col items-center">
-              <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
-                {awardsTitle}
-              </h2>
-              <div className="mt-[16px]">
-                {visibleAward?.iconSrc ? (
-                  <Image
-                    src={visibleAward.iconSrc}
-                    alt={visibleAward.label}
-                    width={97}
-                    height={107}
-                    className="block h-[107px] w-[97px] object-contain"
-                  />
-                ) : (
-                  <div
-                    aria-label={visibleAward?.label ?? awardsTitle}
-                    className="flex h-[107px] w-[97px] items-center justify-center rounded-sm bg-[#212C60]/5 text-[#212C60]"
-                  >
-                    <LucideAward className="h-10 w-10" aria-hidden />
-                  </div>
-                )}
-              </div>
+              {visibleAward?.iconSrc ? (
+                <Image
+                  src={visibleAward.iconSrc}
+                  alt={visibleAward.label}
+                  width={97}
+                  height={107}
+                  className="block h-[107px] w-[97px] object-contain"
+                />
+              ) : (
+                <div
+                  aria-label={visibleAward?.label ?? awardsTitle}
+                  className="flex h-[107px] w-[97px] items-center justify-center rounded-sm bg-[#212C60]/5 text-[#212C60]"
+                >
+                  <LucideAward className="h-10 w-10" aria-hidden />
+                </div>
+              )}
             </div>
           </div>
-
-          <div className="hidden md:block md:h-[120px] md:w-px md:bg-[#1C1B1F]/15" />
 
           <div className="md:ml-[30px] md:flex-1">
             <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
