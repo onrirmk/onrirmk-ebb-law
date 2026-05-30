@@ -74,7 +74,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
                   className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100"
                 />
               </div>
-              <div className="flex flex-1 flex-col p-6 md:p-7">
+              <div className="flex flex-1 flex-col py-6 pr-6 md:py-7 md:pr-7">
                 <h2 className="font-sans text-[24px] font-semibold leading-[30px] text-primary md:text-[26px] md:leading-[32px]">
                   {area.title}
                 </h2>
