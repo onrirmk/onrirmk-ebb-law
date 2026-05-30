@@ -5,14 +5,12 @@ import { WelcomeSection } from "@/components/sections/WelcomeSection";
 import { AwardsTestimonialRow } from "@/components/sections/AwardsTestimonialRow";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { PracticeAreasPreview } from "@/components/sections/PracticeAreasPreview";
-import { TeamPreview } from "@/components/sections/TeamPreview";
 import { HomeCta } from "@/components/sections/HomeCta";
 import { SectionDivider } from "@/components/layout/SectionDivider";
 import { Link } from "@/i18n/navigation";
-import { getMemberPhotoSrc } from "@/lib/team-photos";
 import type { PracticeAreaSlug } from "@/i18n/routing";
 import type { TestimonialItem } from "@/components/sections/TestimonialSlider";
-import type { Award, TeamMember } from "@/types/content";
+import type { Award } from "@/types/content";
 
 const HERO_IMAGE = "/images/hero/istanbul-0819.png";
 
@@ -41,14 +39,6 @@ export default async function HomePage({
     slug,
     title: t(`practiceAreas.areas.${slug}.title`),
     summary: t(`practiceAreas.areas.${slug}.summary`),
-  }));
-
-  const allMembers = t.raw("team.members") as TeamMember[];
-  const teamPreview = allMembers.slice(0, 4).map((m) => ({
-    slug: m.slug,
-    name: m.name,
-    position: m.position,
-    photoSrc: m.photoSrc ?? getMemberPhotoSrc(m.slug),
   }));
 
   return (
@@ -91,13 +81,6 @@ export default async function HomePage({
           <ArrowRight className="h-[14px] w-[14px]" aria-hidden />
         </Link>
       </div>
-      <SectionDivider />
-      <TeamPreview
-        title={t("home.teamPreview.title")}
-        subtitle={t("home.teamPreview.subtitle")}
-        viewAllLabel={t("home.teamPreview.viewAll")}
-        members={teamPreview}
-      />
       <HomeCta
         eyebrow={t("home.cta.eyebrow")}
         title={t("home.cta.title")}
