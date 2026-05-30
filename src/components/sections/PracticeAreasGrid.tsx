@@ -50,7 +50,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
                 pathname: "/calisma-alanlari/[slug]",
                 params: { slug: area.slug },
               }}
-              className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-card shadow-[0_1px_2px_rgba(28,27,31,0.06)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_18px_36px_rgba(33,44,96,0.18)]"
+              className="group relative flex h-full flex-col overflow-hidden rounded-[10px] bg-card shadow-[0_1px_2px_rgba(28,27,31,0.06)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_18px_36px_rgba(33,44,96,0.18)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 {area.imageSrc ? (
@@ -74,14 +74,14 @@ export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
                   className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100"
                 />
               </div>
-              <div className="flex flex-1 flex-col py-10 pr-6 md:py-12 md:pr-7">
+              <div className="flex flex-1 flex-col py-12 pr-6 md:py-16 md:pr-7">
                 <h2 className="font-sans text-[24px] font-semibold leading-[30px] text-primary md:text-[26px] md:leading-[32px]">
                   {area.title}
                 </h2>
-                <p className="mt-4 flex-1 text-[15px] leading-[24px] text-foreground/75 md:text-[16px]">
+                <p className="mt-5 flex-1 text-[15px] leading-[24px] text-foreground/75 md:text-[16px]">
                   {area.summary}
                 </p>
-                <span className="mt-8 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-accent">
+                <span className="mt-10 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-accent">
                   {readMoreLabel}
                   <ArrowUpRight
                     className="h-4 w-4 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
