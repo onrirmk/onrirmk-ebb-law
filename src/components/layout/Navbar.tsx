@@ -18,7 +18,6 @@ const NAV_LINKS: NavLink[] = [
 export function Navbar() {
   const t = useTranslations("nav");
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   const isActiveLink = (href: string) =>
     href === "/"
@@ -52,12 +51,11 @@ export function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
-  const headerClass = isHome
-    ? "absolute inset-x-0 top-0 z-30 h-[122px] w-full text-white"
-    : "relative z-30 h-[122px] w-full bg-[#111827]/25 text-[#0F172A]";
+  const headerClass =
+    "absolute inset-x-0 top-0 z-30 h-[122px] w-full text-white";
 
-  const linkColorClass = isHome ? "text-white" : "text-[#0F172A]";
-  const toggleColorClass = isHome ? "text-white" : "text-[#0F172A]";
+  const linkColorClass = "text-white";
+  const toggleColorClass = "text-white";
 
   return (
     <header className={headerClass}>
