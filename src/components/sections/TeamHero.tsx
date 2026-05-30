@@ -19,7 +19,7 @@ export function TeamHero({
   breadcrumb,
 }: Props) {
   return (
-    <section className="relative h-[82vh] min-h-[560px] w-full overflow-hidden bg-[#212C60] md:min-h-[630px]">
+    <section className="relative -mt-[122px] h-[82vh] min-h-[560px] w-full overflow-hidden bg-[#212C60] md:min-h-[630px]">
       {imageSrc ? (
         <Image
           src={imageSrc}

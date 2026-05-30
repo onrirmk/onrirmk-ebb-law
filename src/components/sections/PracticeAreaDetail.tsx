@@ -113,7 +113,7 @@ export function PracticeAreaHero({
   title: string;
 }) {
   return (
-    <section className="relative h-[360px] w-full overflow-hidden bg-primary md:h-[480px]">
+    <section className="relative -mt-[122px] h-[360px] w-full overflow-hidden bg-primary md:h-[480px]">
       {imageSrc ? (
         <Image
           src={imageSrc}

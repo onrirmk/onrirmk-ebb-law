@@ -39,7 +39,7 @@ export function HeroSection({
   const goNext = () => goTo(activeIndex + 1);
 
   return (
-    <section className="relative isolate w-full overflow-hidden">
+    <section className="relative isolate -mt-[122px] w-full overflow-hidden">
       <div className="relative mx-auto h-[600px] w-full max-w-[1680px] md:h-screen md:min-h-[600px]">
         {slides.map((slide, i) => (
           <Image
