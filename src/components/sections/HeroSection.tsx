@@ -52,10 +52,7 @@ export function HeroSection({
             className={`object-cover transition-opacity duration-700 ease-out ${
               i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
-            style={{
-              objectPosition: "70% 22%",
-              filter: "saturate(0.82) brightness(0.92)",
-            }}
+            style={{ objectPosition: "70% 22%" }}
           />
         ))}
 
