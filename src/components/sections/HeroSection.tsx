@@ -52,13 +52,20 @@ export function HeroSection({
             className={`object-cover transition-opacity duration-700 ease-out ${
               i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
-            style={{ objectPosition: "center 30%" }}
+            style={{
+              objectPosition: "70% 22%",
+              filter: "saturate(0.82) brightness(0.92)",
+            }}
           />
         ))}
 
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/15"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/20"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"
         />
 
         <div className="absolute inset-0 flex flex-col items-start justify-center px-6 md:pl-[160px] md:pr-[96px]">
