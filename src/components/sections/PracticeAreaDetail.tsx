@@ -71,7 +71,7 @@ export function PracticeAreaDetail({
           <ArrowLeft className="h-[14px] w-[14px]" aria-hidden />
           {backLabel}
         </Link>
-        <article className="max-w-[760px]">
+        <article className="max-w-[920px]">
           {area.paragraphs.length > 0 ? (
             <div className="space-y-6 text-[18px] leading-[1.65] text-foreground/90 md:text-[19px] md:leading-[1.6]">
               {area.paragraphs.map((p, i) => (
@@ -81,7 +81,7 @@ export function PracticeAreaDetail({
           ) : null}
         </article>
 
-        <div className="mt-14 max-w-[760px] rounded-sm bg-primary px-8 py-10 text-white md:mt-16 md:px-10 md:py-12">
+        <div className="mt-14 max-w-[920px] rounded-sm bg-primary px-8 py-10 text-white md:mt-16 md:px-10 md:py-12">
           <p className="font-sans text-[22px] font-semibold leading-[30px] md:text-[24px] md:leading-[32px]">
             {cta.title}
           </p>
