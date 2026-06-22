@@ -8,7 +8,6 @@ export const siteSettings = defineType({
   icon: CogIcon,
   groups: [
     { name: "branding", title: "Branding" },
-    { name: "navigation", title: "Navigation" },
     { name: "contact", title: "Contact" },
     { name: "footer", title: "Footer" },
   ],
@@ -36,29 +35,6 @@ export const siteSettings = defineType({
       options: { hotspot: true },
       description:
         "Önerilen: 960×320 px ölçülerinde, şeffaf arka planlı PNG dosyası. Sitenin alt bilgi (footer) bölümünde 80 px yüksekliğinde gösterilir; kırpılma olmaz, logonun tamamı her zaman görünür.",
-    }),
-    defineField({
-      name: "navLinks",
-      title: "Navigation links",
-      type: "array",
-      group: "navigation",
-      of: [
-        {
-          type: "object",
-          name: "navLink",
-          fields: [
-            defineField({ name: "label", title: "Label", type: "string" }),
-            defineField({
-              name: "key",
-              title: "Internal key",
-              type: "string",
-              description:
-                "Stable identifier (home, about, practiceAreas, team, contact)",
-            }),
-          ],
-          preview: { select: { title: "label", subtitle: "key" } },
-        },
-      ],
     }),
     defineField({
       name: "address",

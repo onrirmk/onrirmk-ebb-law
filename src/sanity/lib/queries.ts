@@ -7,7 +7,6 @@ const SITE_SETTINGS_QUERY = `*[_type == "siteSettings"][0]{
   firmName,
   logoNavbar { ${IMAGE_PROJECTION} },
   logoFooter { ${IMAGE_PROJECTION} },
-  navLinks[]{ _key, key, label },
   address,
   phone, fax, email, web, workingHours, footerCopy
 }`;
@@ -115,7 +114,6 @@ export type SiteSettings = {
   firmName?: string;
   logoNavbar?: SanityImage;
   logoFooter?: SanityImage;
-  navLinks?: { _key: string; key: string; label: string }[];
   address?: { line1?: string; line2?: string; line3?: string; mapsQuery?: string };
   phone?: string;
   fax?: string;
