@@ -1,12 +1,12 @@
 import { defineRouting } from "next-intl/routing";
 
 export const PRACTICE_AREA_SLUGS = [
-  "dispute-resolution",
   "insurance-and-reinsurance",
-  "aviation",
   "shipping",
+  "aviation",
   "logistics-and-transport",
   "trade-and-commodities",
+  "dispute-resolution",
   "corporate-and-commercial",
 ] as const;
 
