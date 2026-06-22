@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { fetchSiteSettings } from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -22,6 +24,10 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
+  const settings = await fetchSiteSettings();
+  const navbarLogoSrc = imageSrc(settings?.logoNavbar) ?? "/images/logo/ebb-logo-navbar.png";
+  const firmName = settings?.firmName ?? "Law Firm";
+
   return (
     <NextIntlClientProvider>
       <div className="flex min-h-full flex-col">
@@ -31,7 +37,7 @@ export default async function LocaleLayout({
         >
           Skip to main content
         </a>
-        <Navbar />
+        <Navbar logoSrc={navbarLogoSrc} firmName={firmName} />
         <main id="main" className="flex-1">
           {children}
         </main>

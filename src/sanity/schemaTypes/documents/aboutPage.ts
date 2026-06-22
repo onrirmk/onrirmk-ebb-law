@@ -39,7 +39,7 @@ export const aboutPage = defineType({
       group: "hero",
       options: { hotspot: true },
       description:
-        "Önerilen: 2400×1400 px JPG (dosya boyutu 600 KB altı). Sayfanın üstünde ekran yüksekliğinin yaklaşık %82'si kadar (en az 560–630 px) tam genişlikte bir bant olarak gösterilir. Başlık ve üst etiket görselin üzerinde ortalıdır. Güvenli alan: ana konunun, yazıyla çakışmaması için görselin orta dikey bandını doldurmamasına dikkat edin; sağ/sol kenardan yaklaşık 200 px ile alt-üst kısımlar dar ekranlarda kırpılabilir. Mutlaka görünmesi gereken yeri Sanity'nin odak noktası (hotspot) aracıyla işaretleyin.",
+        "Önerilen: 2400×1400 px ölçülerinde JPG dosyası (dosya boyutu 600 KB'ın altında olmalı). Sayfanın en üstünde, ekran yüksekliğinin yaklaşık %82'sini (en az 560–630 px) kaplayan tam genişlikte bir bant olarak gösterilir. Başlık ve onun üstündeki küçük ön başlık görselin tam ortasına gelir. Güvenli alan: ana konunun yazıyla çakışmaması için görselin orta dikey bandını boş bırakın; sağ ve sol kenardan yaklaşık 200 px'lik şerit ile üst-alt kısımlar dar ekranlarda kırpılabilir. Mutlaka görünmesi gerekenleri Sanity'nin Hotspot (odak noktası) aracıyla işaretleyin.",
     }),
     defineField({
       name: "narrativeParagraphs",

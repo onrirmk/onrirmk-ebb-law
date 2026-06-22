@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PracticeAreasHero } from "@/components/sections/PracticeAreasHero";
 import { PracticeAreasGrid } from "@/components/sections/PracticeAreasGrid";
-import { PRACTICE_AREA_SLUGS } from "@/i18n/routing";
 import type { PracticeAreaSummary } from "@/types/content";
+import {
+  fetchPracticeAreas,
+  fetchPracticeAreasPage,
+} from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
+import type { PracticeAreaSlug } from "@/i18n/routing";
 
 export async function generateMetadata({
   params,
@@ -11,11 +16,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({
-    locale,
-    namespace: "practiceAreas",
-  });
-  return { title: t("pageTitle") };
+  await getTranslations({ locale });
+  const page = await fetchPracticeAreasPage();
+  return { title: page?.pageTitle ?? "Practice Areas" };
 }
 
 export default async function PracticeAreasPage({
@@ -25,24 +28,30 @@ export default async function PracticeAreasPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
+  const [t, page, areaDocs] = await Promise.all([
+    getTranslations(),
+    fetchPracticeAreasPage(),
+    fetchPracticeAreas(),
+  ]);
 
-  const areas: PracticeAreaSummary[] = PRACTICE_AREA_SLUGS.map((slug) => ({
-    slug,
-    title: t(`practiceAreas.areas.${slug}.title`),
-    summary: t(`practiceAreas.areas.${slug}.summary`),
-    imageSrc: `/images/practice-areas/${slug}.png`,
+  const areas: PracticeAreaSummary[] = areaDocs.map((doc) => ({
+    slug: doc.slug as PracticeAreaSlug,
+    title: doc.title,
+    summary: doc.summary ?? "",
+    imageSrc: imageSrc(doc.heroImage) ?? undefined,
   }));
 
   return (
     <>
       <PracticeAreasHero
-        eyebrow={t("practiceAreas.hero.eyebrow")}
-        title={t("practiceAreas.hero.title")}
-        subtitle={t("practiceAreas.hero.subtitle")}
+        eyebrow={page?.heroEyebrow ?? ""}
+        title={page?.heroTitle ?? ""}
+        subtitle={page?.heroSubtitle ?? ""}
+        imageSrc={imageSrc(page?.heroImage) ?? undefined}
+        imageAlt={page?.heroTitle ?? ""}
         breadcrumb={{
           home: t("nav.home"),
-          current: t("practiceAreas.pageTitle"),
+          current: page?.pageTitle ?? "",
         }}
       />
       <PracticeAreasGrid

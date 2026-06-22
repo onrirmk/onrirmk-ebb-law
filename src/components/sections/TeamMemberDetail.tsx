@@ -9,6 +9,7 @@ type Props = {
   member: TeamMember;
   backToTeamLabel: string;
   linkedinLabel: string;
+  bandImageSrc?: string;
   eyebrows: {
     biography: string;
     education: string;
@@ -21,13 +22,14 @@ export function TeamMemberDetail({
   member,
   backToTeamLabel,
   linkedinLabel,
+  bandImageSrc = "/images/hero/team-detail-hero.jpg",
   eyebrows,
 }: Props) {
   return (
     <>
       <section className="relative -mt-[122px] min-h-[280px] w-full overflow-hidden bg-[#212C60] md:min-h-[340px]">
         <Image
-          src="/images/hero/team-detail-hero.jpg"
+          src={bandImageSrc}
           alt=""
           fill
           priority

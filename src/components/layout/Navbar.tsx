@@ -15,7 +15,12 @@ const NAV_LINKS: NavLink[] = [
   { key: "contact", href: "/iletisim" },
 ];
 
-export function Navbar() {
+type NavbarProps = {
+  logoSrc: string;
+  firmName: string;
+};
+
+export function Navbar({ logoSrc, firmName }: NavbarProps) {
   const t = useTranslations("nav");
   const pathname = usePathname();
 
@@ -63,11 +68,11 @@ export function Navbar() {
         <Link
           href="/"
           className="absolute left-[24px] top-[31px] block md:left-[79px] md:top-[46px]"
-          aria-label="Erçin Bilgin Bektaşoğlu Law Firm"
+          aria-label={firmName}
         >
           <Image
-            src="/images/logo/ebb-logo-navbar.png"
-            alt="Erçin Bilgin Bektaşoğlu Law Firm"
+            src={logoSrc}
+            alt={firmName}
             width={482}
             height={120}
             priority

@@ -2,8 +2,9 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Globe, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { PRACTICE_AREA_SLUGS } from "@/i18n/routing";
 import type { NavLink } from "@/types/content";
+import { fetchPracticeAreas, fetchSiteSettings } from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
 const NAV_LINKS: NavLink[] = [
   { key: "home", href: "/" },
@@ -25,11 +26,25 @@ const CONTACT_LINK_CLASS =
   "transition-colors hover:text-[#212C60] hover:underline";
 
 export async function Footer() {
-  const t = await getTranslations();
-  const year = new Date().getFullYear();
+  const [t, settings, practiceAreas] = await Promise.all([
+    getTranslations(),
+    fetchSiteSettings(),
+    fetchPracticeAreas(),
+  ]);
 
-  const phoneHref = `tel:${t("footer.phone").replace(/\s/g, "")}`;
-  const webUrl = t("footer.webUrl");
+  const year = new Date().getFullYear();
+  const phone = settings?.phone ?? "";
+  const fax = settings?.fax ?? "";
+  const email = settings?.email ?? "";
+  const web = settings?.web ?? "";
+  const address = settings?.address ?? {};
+  const footerLogoSrc = imageSrc(settings?.logoFooter);
+
+  const phoneHref = phone ? `tel:${phone.replace(/\s/g, "")}` : undefined;
+  const copyrightText = (settings?.footerCopy ?? "").replace(
+    /\{year\}/g,
+    String(year),
+  );
 
   return (
     <footer className="bg-white text-[#1C1B1F]">
@@ -39,8 +54,8 @@ export async function Footer() {
         <div className="grid grid-cols-1 gap-y-[32px] pt-[64px] md:grid-cols-[auto_1fr_2fr_auto_1.5fr] md:gap-x-[40px] md:gap-y-0">
           <div>
             <Image
-              src="/images/logo/ebb-logo-footer.png"
-              alt="Erçin Bilgin Bektaşoğlu Law Firm"
+              src={footerLogoSrc ?? "/images/logo/ebb-logo-footer.png"}
+              alt={settings?.firmName ?? "Law Firm"}
               width={352}
               height={88}
               className="block h-[80px] w-auto"
@@ -63,16 +78,16 @@ export async function Footer() {
           <nav aria-label={t("footer.practiceAreasTitle")}>
             <h3 className={PILL_CLASS}>{t("footer.practiceAreasTitle")}</h3>
             <ul className="md:columns-2 md:[column-gap:40px]">
-              {PRACTICE_AREA_SLUGS.map((slug) => (
-                <li key={slug} className="break-inside-avoid">
+              {practiceAreas.map((area) => (
+                <li key={area.slug} className="break-inside-avoid">
                   <Link
                     href={{
                       pathname: "/calisma-alanlari/[slug]",
-                      params: { slug },
+                      params: { slug: area.slug },
                     }}
                     className={LINK_CLASS}
                   >
-                    {t(`practiceAreas.areas.${slug}.title`)}
+                    {area.title}
                   </Link>
                 </li>
               ))}
@@ -86,60 +101,74 @@ export async function Footer() {
 
           <address className="not-italic">
             <div className="text-[14px] leading-[20px] text-[#1C1B1F]">
-              <div className="flex items-start gap-[8px]">
-                <Phone className={ICON_CLASS} aria-hidden />
-                <div>
-                  <a
-                    href={phoneHref}
-                    aria-label={t("footer.callUs")}
-                    className={CONTACT_LINK_CLASS}
-                  >
-                    {t("footer.phoneLabel")}: {t("footer.phone")}
-                  </a>
-                  <div className="mt-[8px]">
-                    {t("footer.faxLabel")}: {t("footer.fax")}
+              {phone ? (
+                <div className="flex items-start gap-[8px]">
+                  <Phone className={ICON_CLASS} aria-hidden />
+                  <div>
+                    <a
+                      href={phoneHref}
+                      aria-label={t("footer.callUs")}
+                      className={CONTACT_LINK_CLASS}
+                    >
+                      {t("footer.phoneLabel")}: {phone}
+                    </a>
+                    {fax ? (
+                      <div className="mt-[8px]">
+                        {t("footer.faxLabel")}: {fax}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
-              </div>
+              ) : null}
 
-              <div className="mt-[20px] flex items-start gap-[8px]">
-                <Mail className={ICON_CLASS} aria-hidden />
-                <a
-                  href={`mailto:${t("footer.email")}`}
-                  aria-label={t("footer.emailUs")}
-                  className={CONTACT_LINK_CLASS}
-                >
-                  {t("footer.emailLabel")}: {t("footer.email")}
-                </a>
-              </div>
-              <div className="mt-[8px] flex items-start gap-[8px]">
-                <Globe className={ICON_CLASS} aria-hidden />
-                <a
-                  href={`https://${webUrl}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={t("footer.visitWebsite")}
-                  className={CONTACT_LINK_CLASS}
-                >
-                  {t("footer.webLabel")}: {webUrl}
-                </a>
-              </div>
-
-              <div className="mt-[20px] flex items-start gap-[8px]">
-                <MapPin className={ICON_CLASS} aria-hidden />
-                <div>
-                  <div>{t("footer.address.line1")}</div>
-                  <div className="mt-[8px]">{t("footer.address.line2")}</div>
-                  <div className="mt-[8px]">{t("footer.address.line3")}</div>
+              {email ? (
+                <div className="mt-[20px] flex items-start gap-[8px]">
+                  <Mail className={ICON_CLASS} aria-hidden />
+                  <a
+                    href={`mailto:${email}`}
+                    aria-label={t("footer.emailUs")}
+                    className={CONTACT_LINK_CLASS}
+                  >
+                    {t("footer.emailLabel")}: {email}
+                  </a>
                 </div>
-              </div>
+              ) : null}
+              {web ? (
+                <div className="mt-[8px] flex items-start gap-[8px]">
+                  <Globe className={ICON_CLASS} aria-hidden />
+                  <a
+                    href={`https://${web}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("footer.visitWebsite")}
+                    className={CONTACT_LINK_CLASS}
+                  >
+                    {t("footer.webLabel")}: {web}
+                  </a>
+                </div>
+              ) : null}
+
+              {address.line1 || address.line2 || address.line3 ? (
+                <div className="mt-[20px] flex items-start gap-[8px]">
+                  <MapPin className={ICON_CLASS} aria-hidden />
+                  <div>
+                    {address.line1 ? <div>{address.line1}</div> : null}
+                    {address.line2 ? (
+                      <div className="mt-[8px]">{address.line2}</div>
+                    ) : null}
+                    {address.line3 ? (
+                      <div className="mt-[8px]">{address.line3}</div>
+                    ) : null}
+                  </div>
+                </div>
+              ) : null}
             </div>
           </address>
         </div>
 
         <div className="mt-[40px] border-t border-[#1C1B1F]/15 pb-[40px] pt-[24px]">
           <p className="text-[12px] text-[#1C1B1F]/60">
-            {t("footer.copyright", { year })}
+            {copyrightText || t("footer.copyright", { year })}
           </p>
         </div>
       </div>

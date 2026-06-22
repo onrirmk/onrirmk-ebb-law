@@ -2,24 +2,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { TeamMemberDetail } from "@/components/sections/TeamMemberDetail";
-import { getMemberPhotoSrc } from "@/lib/team-photos";
-import { routing } from "@/i18n/routing";
 import type { TeamMember } from "@/types/content";
+import {
+  fetchTeamMemberBySlug,
+  fetchTeamMembers,
+  fetchTeamPage,
+} from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
 type Params = { locale: string; slug: string };
 
-async function loadMember(locale: string, slug: string): Promise<TeamMember | null> {
-  const t = await getTranslations({ locale });
-  const members = t.raw("team.members") as TeamMember[];
-  const member = members.find((m) => m.slug === slug);
-  if (!member) return null;
-  return { ...member, photoSrc: member.photoSrc ?? getMemberPhotoSrc(member.slug) };
-}
-
 export async function generateStaticParams() {
-  const locale = routing.defaultLocale;
-  const t = await getTranslations({ locale });
-  const members = t.raw("team.members") as TeamMember[];
+  const members = await fetchTeamMembers();
   return members.map((m) => ({ slug: m.slug }));
 }
 
@@ -28,12 +22,10 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const member = await loadMember(locale, slug);
-  if (!member) return {};
-  return {
-    title: `${member.name} — ${member.position}`,
-  };
+  const { slug } = await params;
+  const m = await fetchTeamMemberBySlug(slug);
+  if (!m) return {};
+  return { title: `${m.name} — ${m.position ?? ""}`.trim() };
 }
 
 export default async function TeamMemberPage({
@@ -44,14 +36,37 @@ export default async function TeamMemberPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const member = await loadMember(locale, slug);
-  if (!member) notFound();
+  const [t, m, page] = await Promise.all([
+    getTranslations(),
+    fetchTeamMemberBySlug(slug),
+    fetchTeamPage(),
+  ]);
 
-  const t = await getTranslations();
+  if (!m) notFound();
+
+  const member: TeamMember = {
+    slug: m.slug,
+    name: m.name,
+    position: m.position ?? "",
+    email: m.email ?? "",
+    phone: m.phone,
+    linkedinUrl: m.linkedinUrl,
+    bio: m.biographyParagraphs ?? [],
+    practiceAreas: (m.practiceAreas ?? []).map((p) => p.slug),
+    education: (m.education ?? []).map((e) => ({
+      year: e.year ?? "",
+      institution: e.institution ?? "",
+      degree: e.degree ?? "",
+    })),
+    memberships: m.memberships ?? [],
+    languages: m.languages ?? [],
+    photoSrc: imageSrc(m.photo) ?? undefined,
+  };
 
   return (
     <TeamMemberDetail
       member={member}
+      bandImageSrc={imageSrc(page?.detailHeroImage) ?? undefined}
       backToTeamLabel={t("team.backToTeam")}
       linkedinLabel={t("team.linkedinLabel")}
       eyebrows={{

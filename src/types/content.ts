@@ -1,5 +1,3 @@
-import type { PracticeAreaSlug } from "@/i18n/routing";
-
 export type Award = {
   key: string;
   label: string;
@@ -7,7 +5,7 @@ export type Award = {
 };
 
 export type PracticeAreaSummary = {
-  slug: PracticeAreaSlug;
+  slug: string;
   title: string;
   summary: string;
   imageSrc?: string;
@@ -51,7 +49,7 @@ export type TeamMember = {
   phone?: string;
   linkedinUrl?: string;
   bio: string[];
-  practiceAreas: PracticeAreaSlug[];
+  practiceAreas: string[];
   education: TeamMemberEducation[];
   memberships: string[];
   languages: string[];
