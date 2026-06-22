@@ -93,11 +93,10 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
                   <Link
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
-                    className={`font-sans text-[18px] font-medium leading-[28px] tracking-wide ${linkColorClass} transition-opacity hover:opacity-80 ${
-                      isActive
-                        ? "underline decoration-2 underline-offset-[10px]"
-                        : ""
-                    }`}
+                    className={`relative inline-block font-sans text-[18px] font-medium leading-[28px] tracking-wide ${linkColorClass}
+                      after:pointer-events-none after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-white after:origin-left
+                      after:transition-transform after:duration-[450ms] after:ease-[cubic-bezier(0.16,1,0.3,1)]
+                      ${isActive ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100"}`}
                   >
                     {t(link.key)}
                   </Link>
