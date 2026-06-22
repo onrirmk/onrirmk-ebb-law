@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { PracticeAreaSummary } from "@/types/content";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 type Props = {
   areas: PracticeAreaSummary[];
@@ -22,6 +23,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel }: Props) {
       <ul className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {areas.map((area, i) => (
           <li key={area.slug}>
+            <FadeIn variant="slideUp" delay={(i % 3) * 100}>
             <Link
               href={{
                 pathname: "/calisma-alanlari/[slug]",
@@ -67,6 +69,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel }: Props) {
                 </span>
               </div>
             </Link>
+            </FadeIn>
           </li>
         ))}
       </ul>

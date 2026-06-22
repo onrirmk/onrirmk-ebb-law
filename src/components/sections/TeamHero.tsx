@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HeroBreadcrumb } from "./HeroBreadcrumb";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 type Props = {
   eyebrow: string;
@@ -35,21 +36,29 @@ export function TeamHero({
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/45"
       />
       <div className="relative mx-auto flex h-full max-w-[1680px] flex-col items-center justify-center px-[24px] pt-[122px] text-center md:px-[100px]">
-        <p className="font-sans text-[13px] font-semibold uppercase leading-[18px] tracking-[0.3em] text-white/80 md:text-[14px] md:leading-[20px]">
-          {eyebrow}
-        </p>
-        <h1 className="mt-[16px] max-w-[820px] font-sans text-[32px] font-bold leading-[40px] tracking-[-0.2px] text-white md:mt-[20px] md:text-[48px] md:leading-[58px]">
-          {title}
-        </h1>
-        {subtitle ? (
-          <p className="mt-[16px] max-w-[760px] font-sans text-[16px] font-normal leading-[26px] text-white/85 md:mt-[20px] md:text-[18px] md:leading-[30px]">
-            {subtitle}
+        <FadeIn variant="slideUp" immediate duration={800}>
+          <p className="font-sans text-[13px] font-semibold uppercase leading-[18px] tracking-[0.3em] text-white/80 md:text-[14px] md:leading-[20px]">
+            {eyebrow}
           </p>
+        </FadeIn>
+        <FadeIn variant="slideUp" immediate duration={900} delay={150}>
+          <h1 className="mt-[16px] max-w-[820px] font-sans text-[32px] font-bold leading-[40px] tracking-[-0.2px] text-white md:mt-[20px] md:text-[48px] md:leading-[58px]">
+            {title}
+          </h1>
+        </FadeIn>
+        {subtitle ? (
+          <FadeIn variant="slideUp" immediate duration={900} delay={280}>
+            <p className="mt-[16px] max-w-[760px] font-sans text-[16px] font-normal leading-[26px] text-white/85 md:mt-[20px] md:text-[18px] md:leading-[30px]">
+              {subtitle}
+            </p>
+          </FadeIn>
         ) : null}
-        <div
-          aria-hidden
-          className="mt-[24px] h-px w-[64px] bg-white/50 md:mt-[28px] md:w-[80px]"
-        />
+        <FadeIn immediate duration={900} delay={400}>
+          <div
+            aria-hidden
+            className="mt-[24px] h-px w-[64px] bg-white/50 md:mt-[28px] md:w-[80px]"
+          />
+        </FadeIn>
       </div>
       {breadcrumb ? (
         <div className="absolute inset-x-0 bottom-[20px] z-10 md:bottom-[28px]">
