@@ -50,7 +50,7 @@ export default async function AboutPage({
           current: t("about.pageTitle"),
         }}
       />
-      <AboutNarrative paragraphs={paragraphs} />
+      <AboutNarrative title={t("about.pageTitle")} paragraphs={paragraphs} />
       <AboutFoundersGrid
         title={t("about.founders.title")}
         subtitle={t("about.founders.subtitle")}
