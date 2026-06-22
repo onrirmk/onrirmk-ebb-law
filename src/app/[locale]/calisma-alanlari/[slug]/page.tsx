@@ -5,21 +5,20 @@ import {
   PracticeAreaDetail,
   PracticeAreaHero,
 } from "@/components/sections/PracticeAreaDetail";
-import {
-  PRACTICE_AREA_SLUGS,
-  type PracticeAreaSlug,
-} from "@/i18n/routing";
 import type {
   PracticeAreaDetailContent,
   PracticeAreaSummary,
 } from "@/types/content";
+import {
+  fetchPracticeAreas,
+  fetchPracticeAreaBySlug,
+  fetchPracticeAreasPage,
+} from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
-function isKnownSlug(value: string): value is PracticeAreaSlug {
-  return (PRACTICE_AREA_SLUGS as readonly string[]).includes(value);
-}
-
-export function generateStaticParams() {
-  return PRACTICE_AREA_SLUGS.map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const areas = await fetchPracticeAreas();
+  return areas.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({
@@ -27,10 +26,10 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { locale, slug } = await params;
-  if (!isKnownSlug(slug)) return {};
-  const t = await getTranslations({ locale });
-  return { title: t(`practiceAreas.areas.${slug}.title`) };
+  const { slug } = await params;
+  const area = await fetchPracticeAreaBySlug(slug);
+  if (!area) return {};
+  return { title: area.title };
 }
 
 export default async function PracticeAreaDetailPage({
@@ -39,23 +38,30 @@ export default async function PracticeAreaDetailPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  if (!isKnownSlug(slug)) notFound();
   setRequestLocale(locale);
-  const t = await getTranslations();
+
+  const [t, areaDoc, allDocs, page] = await Promise.all([
+    getTranslations(),
+    fetchPracticeAreaBySlug(slug),
+    fetchPracticeAreas(),
+    fetchPracticeAreasPage(),
+  ]);
+
+  if (!areaDoc) notFound();
 
   const area: PracticeAreaDetailContent = {
-    slug,
-    title: t(`practiceAreas.areas.${slug}.title`),
-    summary: t(`practiceAreas.areas.${slug}.summary`),
-    paragraphs: t.raw(`practiceAreas.areas.${slug}.paragraphs`) as string[],
-    imageSrc: `/images/practice-areas/${slug}.png`,
+    slug: areaDoc.slug,
+    title: areaDoc.title,
+    summary: areaDoc.summary ?? "",
+    paragraphs: areaDoc.paragraphs ?? [],
+    imageSrc: imageSrc(areaDoc.heroImage) ?? undefined,
   };
 
-  const allAreas: PracticeAreaSummary[] = PRACTICE_AREA_SLUGS.map((s) => ({
-    slug: s,
-    title: t(`practiceAreas.areas.${s}.title`),
-    summary: t(`practiceAreas.areas.${s}.summary`),
-    imageSrc: `/images/practice-areas/${s}.png`,
+  const allAreas: PracticeAreaSummary[] = allDocs.map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    summary: a.summary ?? "",
+    imageSrc: imageSrc(a.heroImage) ?? undefined,
   }));
 
   return (
@@ -72,9 +78,9 @@ export default async function PracticeAreaDetailPage({
         sidebarLabel={t("practiceAreas.sidebarLabel")}
         backLabel={t("practiceAreas.backToPracticeAreas")}
         cta={{
-          title: t("practiceAreas.cta.title", { area: area.title }),
-          subtitle: t("practiceAreas.cta.subtitle"),
-          button: t("practiceAreas.cta.button"),
+          title: (page?.ctaTitle ?? "").replace(/\{area\}/g, area.title),
+          subtitle: page?.ctaSubtitle ?? "",
+          button: page?.ctaButton ?? "",
         }}
       />
     </>

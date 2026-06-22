@@ -238,7 +238,13 @@ async function run() {
       linkedinUrl: m.linkedinUrl,
       isFounder: i < 3,
       biographyParagraphs: m.bio,
-      education: m.education,
+      education: (m.education || []).map((e, idx) => ({
+        _key: `edu-${idx}`,
+        _type: "educationEntry",
+        year: e.year,
+        institution: e.institution,
+        degree: e.degree,
+      })),
       memberships: m.memberships,
       languages: m.languages,
       practiceAreas: (m.practiceAreas || [])

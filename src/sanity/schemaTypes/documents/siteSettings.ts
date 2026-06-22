@@ -26,7 +26,7 @@ export const siteSettings = defineType({
       group: "branding",
       options: { hotspot: true },
       description:
-        "Önerilen: 640×320 px, saydam arka planlı PNG (yatay kompozisyon). Sitede 60–80 px yükseklikte gösterilir, kırpılmaz — logonun tamamı her zaman görünür.",
+        "Önerilen: 640×320 px ölçülerinde, şeffaf arka planlı PNG dosyası (yatay tasarım). Sitenin üst menüsünde 60–80 px yüksekliğinde gösterilir; kırpılma olmaz, logonun tamamı her zaman görünür.",
     }),
     defineField({
       name: "logoFooter",
@@ -35,7 +35,7 @@ export const siteSettings = defineType({
       group: "branding",
       options: { hotspot: true },
       description:
-        "Önerilen: 960×320 px, saydam arka planlı PNG. Footer'da 80 px yükseklikte gösterilir, kırpılmaz — logonun tamamı her zaman görünür.",
+        "Önerilen: 960×320 px ölçülerinde, şeffaf arka planlı PNG dosyası. Sitenin alt bilgi (footer) bölümünde 80 px yüksekliğinde gösterilir; kırpılma olmaz, logonun tamamı her zaman görünür.",
     }),
     defineField({
       name: "navLinks",

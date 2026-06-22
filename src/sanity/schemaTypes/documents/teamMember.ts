@@ -27,7 +27,7 @@ export const teamMember = defineType({
       type: "image",
       options: { hotspot: true },
       description:
-        "Dikey (portre) çekim. Ekibimiz sayfasındaki kartta ve detay sayfasının yan panelinde 3:4 oranında (eninden uzun) gösterilir. Önerilen: 900×1200 px JPG (dosya boyutu 400 KB altı). Güvenli alan: yüz ve omuzlar çerçevenin üst üçte ikilik bölümünde, yatayda ortalanmış olmalı. Yüzü Sanity'nin odak noktası (hotspot) aracıyla işaretleyin — küçük ekranlarda görsel kırpıldığında yüzün her zaman görünür kalmasını sağlar.",
+        "Dikey portre çekim. Hem ekibimiz sayfasındaki kartta hem de detay sayfasının yan panelinde 3:4 (eninden uzun) oranında gösterilir. Önerilen: 900×1200 px ölçülerinde JPG dosyası (dosya boyutu 400 KB'ın altında olmalı). Güvenli alan: yüz ve omuzlar çerçevenin üst üçte iki kısmında, yatayda ortalanmış olmalı. Yüzü Sanity'nin Hotspot (odak noktası) aracıyla işaretleyin — küçük ekranlarda görsel kırpıldığında yüzün her zaman görünür kalmasını sağlar.",
     }),
     defineField({ name: "email", title: "Email", type: "string" }),
     defineField({ name: "phone", title: "Phone", type: "string" }),
@@ -52,7 +52,35 @@ export const teamMember = defineType({
       name: "education",
       title: "Education",
       type: "array",
-      of: [{ type: "string" }],
+      of: [
+        {
+          type: "object",
+          name: "educationEntry",
+          fields: [
+            defineField({
+              name: "year",
+              title: "Year",
+              type: "string",
+              description: "Mezuniyet yılı (ör. 1999).",
+            }),
+            defineField({
+              name: "institution",
+              title: "Institution",
+              type: "string",
+              description: "Okulun tam adı (ör. Galatasaray Üniversitesi Hukuk Fakültesi).",
+            }),
+            defineField({
+              name: "degree",
+              title: "Degree",
+              type: "string",
+              description: "Derece (ör. LL.B., LL.M. in Insurance Law).",
+            }),
+          ],
+          preview: {
+            select: { title: "institution", subtitle: "year", description: "degree" },
+          },
+        },
+      ],
     }),
     defineField({
       name: "memberships",

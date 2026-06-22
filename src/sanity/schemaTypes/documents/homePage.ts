@@ -32,7 +32,7 @@ export const homePage = defineType({
       type: "array",
       group: "hero",
       description:
-        "Anasayfanın tam ekran hero karuseli. Her slayt, en geniş haliyle yaklaşık 1680 px'e kadar ekranı boydan boya doldurur.",
+        "Anasayfanın en üstündeki tam ekran slayt gösterisi. Her bir slayt ekranı baştan başa kaplar; en geniş haliyle yaklaşık 1680 px'e ulaşır.",
       of: [
         {
           type: "object",
@@ -44,7 +44,7 @@ export const homePage = defineType({
               type: "image",
               options: { hotspot: true },
               description:
-                "Önerilen: 2880×1620 px JPG (16:9 oran, dosya boyutu 800 KB altı). Görüntü ekranı boydan boya kaplar ve ekran boyutuna göre kırpılır — başlık sol üstte (kabaca soldan %35, yukarıdan %50'lik alanda), slayt noktaları altta ortada, oklar sağ ve sol kenarda durur. Güvenli alan: ana konuyu görselin sağ yarısında ve dikeyde ortalı konumlandırın. Dar ekranlarda kırpıldığında nelerin mutlaka görünmesi gerektiğini Sanity'nin odak noktası (hotspot) aracıyla işaretleyin.",
+                "Önerilen: 2880×1620 px ölçülerinde, 16:9 oranında JPG dosyası (dosya boyutu 800 KB'ın altında olmalı). Görsel ekranı baştan başa kaplar ve ekran boyutuna göre kırpılır. Başlık görselin sol üst bölgesinde durur (yaklaşık olarak soldan %35'lik alanda); slayt geçiş noktaları altta ortada, ileri-geri okları ise sağ ve sol kenarda yer alır. Güvenli alan: ana konuyu görselin sağ yarısında, dikeyde ortalı konumda tutun. Dar ekranlarda görsel kırpıldığında nelerin mutlaka görünmesini istediğinizi Sanity'nin Hotspot (odak noktası) aracıyla işaretleyin.",
             }),
             defineField({ name: "alt", title: "Alt text", type: "string" }),
           ],
@@ -114,7 +114,7 @@ export const homePage = defineType({
               type: "image",
               options: { hotspot: true },
               description:
-                "Önerilen: 200×220 px, saydam arka planlı PNG. 97×107 px boyutunda, oranı korunarak gösterilir — kırpılmaz, rozetin tamamı her zaman görünür.",
+                "Önerilen: 200×220 px ölçülerinde, şeffaf arka planlı PNG dosyası. Sitede 97×107 px boyutunda, oranı bozulmadan gösterilir; kırpılma olmaz, rozetin tamamı her zaman görünür.",
             }),
           ],
           preview: { select: { title: "label", media: "icon" } },

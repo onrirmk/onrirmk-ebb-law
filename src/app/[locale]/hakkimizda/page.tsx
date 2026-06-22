@@ -4,8 +4,8 @@ import { AboutHero } from "@/components/sections/AboutHero";
 import { AboutNarrative } from "@/components/sections/AboutNarrative";
 import { AboutFoundersGrid } from "@/components/sections/AboutFoundersGrid";
 import { AboutCta } from "@/components/sections/AboutCta";
-import { getMemberPhotoSrc } from "@/lib/team-photos";
-import type { TeamMember } from "@/types/content";
+import { fetchAboutPage, fetchTeamMembers } from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
 export async function generateMetadata({
   params,
@@ -13,8 +13,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about" });
-  return { title: t("pageTitle") };
+  await getTranslations({ locale });
+  const about = await fetchAboutPage();
+  return { title: about?.pageTitle ?? "About" };
 }
 
 export default async function AboutPage({
@@ -24,37 +25,46 @@ export default async function AboutPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
+  const [t, about, members] = await Promise.all([
+    getTranslations(),
+    fetchAboutPage(),
+    fetchTeamMembers(),
+  ]);
 
-  const paragraphs = t.raw("about.paragraphs") as string[];
-  const members = t.raw("team.members") as TeamMember[];
-  const founders = members.slice(0, 3).map((m) => ({
-    slug: m.slug,
-    name: m.name,
-    position: m.position,
-    photoSrc: m.photoSrc ?? getMemberPhotoSrc(m.slug),
-  }));
+  const founders = members
+    .filter((m) => m.isFounder)
+    .map((m) => ({
+      slug: m.slug,
+      name: m.name,
+      position: m.position ?? "",
+      photoSrc: imageSrc(m.photo) ?? undefined,
+    }));
 
   return (
     <>
       <AboutHero
-        eyebrow={t("about.hero.eyebrow")}
-        title={t("about.hero.title")}
+        eyebrow={about?.heroEyebrow ?? ""}
+        title={about?.heroTitle ?? ""}
+        imageSrc={imageSrc(about?.heroImage) ?? undefined}
+        imageAlt={about?.heroTitle ?? ""}
         breadcrumb={{
           home: t("nav.home"),
-          current: t("about.pageTitle"),
+          current: about?.pageTitle ?? "",
         }}
       />
-      <AboutNarrative title={t("about.pageTitle")} paragraphs={paragraphs} />
+      <AboutNarrative
+        title={about?.pageTitle ?? ""}
+        paragraphs={about?.narrativeParagraphs ?? []}
+      />
       <AboutFoundersGrid
-        title={t("about.founders.title")}
-        subtitle={t("about.founders.subtitle")}
+        title={about?.foundersTitle ?? ""}
+        subtitle={about?.foundersSubtitle ?? ""}
         founders={founders}
       />
       <AboutCta
-        title={t("about.cta.title")}
-        subtitle={t("about.cta.subtitle")}
-        button={t("about.cta.button")}
+        title={about?.ctaTitle ?? ""}
+        subtitle={about?.ctaSubtitle ?? ""}
+        button={about?.ctaButton ?? ""}
       />
     </>
   );

@@ -6,11 +6,8 @@ import { HomeCta } from "@/components/sections/HomeCta";
 import { SectionDivider } from "@/components/layout/SectionDivider";
 import type { TestimonialItem } from "@/components/sections/TestimonialSlider";
 import type { Award } from "@/types/content";
-
-const HERO_SLIDES = [
-  { src: "/images/hero/istanbul-0819.png", altKey: "hero.imageAlt" },
-  { src: "/images/hero/istanbul-tower.jpg", altKey: "hero.towerImageAlt" },
-] as const;
+import { fetchHomePage } from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
 export default async function HomePage({
   params,
@@ -19,44 +16,52 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
+  const [t, home] = await Promise.all([getTranslations(), fetchHomePage()]);
 
-  const awardsRaw = (t.raw("awards.items") as Award[]) ?? [];
-  const awards: Award[] = awardsRaw.map((a) => ({
-    ...a,
-    iconSrc: `/images/awards/${a.key}.png`,
+  const slides = (home?.heroSlides ?? [])
+    .map((s) => {
+      const src = imageSrc(s.image);
+      return src ? { src, alt: s.alt ?? "" } : null;
+    })
+    .filter((s): s is { src: string; alt: string } => s !== null);
+
+  const awards: Award[] = (home?.awards ?? []).map((a) => ({
+    key: a._key,
+    label: a.label ?? "",
+    iconSrc: imageSrc(a.icon) ?? undefined,
   }));
-  const welcomeParagraphs = t.raw("welcome.paragraphs") as string[];
-  const testimonials = t.raw("testimonial.items") as TestimonialItem[];
+
+  const testimonials: TestimonialItem[] = (home?.testimonials ?? []).map((tm) => ({
+    quote: tm.quote ?? "",
+    author: tm.author ?? "",
+    role: tm.role ?? "",
+  }));
 
   return (
     <>
       <HeroSection
-        titleLine1={t("hero.titleLine1")}
-        titleLine2={t("hero.titleLine2")}
-        slides={HERO_SLIDES.map((s) => ({
-          src: s.src,
-          alt: t(s.altKey),
-        }))}
+        titleLine1={home?.heroTitleLine1 ?? ""}
+        titleLine2={home?.heroTitleLine2 ?? ""}
+        slides={slides}
         previousLabel={t("hero.previousSlide")}
         nextLabel={t("hero.nextSlide")}
       />
       <WelcomeSection
-        title={t("welcome.title")}
-        paragraphs={welcomeParagraphs}
+        title={home?.welcomeTitle ?? ""}
+        paragraphs={home?.welcomeParagraphs ?? []}
       />
       <SectionDivider />
       <AwardsTestimonialRow
-        awardsTitle={t("awards.title")}
+        awardsTitle={home?.awardsTitle ?? ""}
         awards={awards}
-        testimonialTitle={t("testimonial.title")}
+        testimonialTitle={home?.testimonialTitle ?? ""}
         testimonials={testimonials}
       />
       <HomeCta
-        eyebrow={t("home.cta.eyebrow")}
-        title={t("home.cta.title")}
-        description={t("home.cta.description")}
-        primaryButton={t("home.cta.primaryButton")}
+        eyebrow={home?.ctaEyebrow ?? ""}
+        title={home?.ctaTitle ?? ""}
+        description={home?.ctaDescription ?? ""}
+        primaryButton={home?.ctaPrimaryButton ?? ""}
       />
     </>
   );

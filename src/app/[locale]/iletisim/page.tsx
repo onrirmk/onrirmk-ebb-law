@@ -4,11 +4,12 @@ import { ContactHero } from "@/components/sections/ContactHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { OfficeCard } from "@/components/sections/OfficeCard";
 import { ContactMap } from "@/components/sections/ContactMap";
-import { PRACTICE_AREA_SLUGS } from "@/i18n/routing";
-
-const MAP_QUERY = "Now Bomonti Plaza Yeni Yol 1 Sokak Cumhuriyet Mah. 34380 Şişli Istanbul";
-const MAP_LINK_URL = `https://maps.google.com/?q=${encodeURIComponent(MAP_QUERY)}`;
-const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+import {
+  fetchContactPage,
+  fetchPracticeAreas,
+  fetchSiteSettings,
+} from "@/sanity/lib/queries";
+import { imageSrc } from "@/sanity/lib/image";
 
 export async function generateMetadata({
   params,
@@ -16,8 +17,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("pageTitle") };
+  await getTranslations({ locale });
+  const page = await fetchContactPage();
+  return { title: page?.pageTitle ?? "Contact" };
 }
 
 export default async function ContactPage({
@@ -27,47 +29,63 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
 
-  const practiceAreaOptions = PRACTICE_AREA_SLUGS.map((slug) => ({
-    value: slug,
-    label: t(`practiceAreas.areas.${slug}.title`),
+  const [t, page, areas, settings] = await Promise.all([
+    getTranslations(),
+    fetchContactPage(),
+    fetchPracticeAreas(),
+    fetchSiteSettings(),
+  ]);
+
+  const practiceAreaOptions = areas.map((a) => ({
+    value: a.slug,
+    label: a.title,
   }));
+
+  const mapsQuery =
+    settings?.address?.mapsQuery ??
+    [settings?.address?.line1, settings?.address?.line2, settings?.address?.line3]
+      .filter(Boolean)
+      .join(", ");
+  const mapLinkUrl = `https://maps.google.com/?q=${encodeURIComponent(mapsQuery)}`;
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(mapsQuery)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   return (
     <>
       <ContactHero
-        eyebrow={t("contact.hero.eyebrow")}
-        title={t("contact.hero.title")}
-        subtitle={t("contact.hero.subtitle")}
+        eyebrow={page?.heroEyebrow ?? ""}
+        title={page?.heroTitle ?? ""}
+        subtitle={page?.heroSubtitle ?? ""}
+        imageSrc={imageSrc(page?.heroImage) ?? undefined}
+        imageAlt={page?.heroTitle ?? ""}
         breadcrumb={{
           home: t("nav.home"),
-          current: t("contact.pageTitle"),
+          current: page?.pageTitle ?? "",
         }}
       />
 
       <section className="mx-auto max-w-[1280px] px-[24px] pb-[64px] md:px-[100px] md:pb-[80px]">
         <div className="mt-[32px] grid grid-cols-1 gap-[48px] md:mt-[48px] md:grid-cols-[1fr_1.2fr] md:gap-[64px]">
           <OfficeCard
-            officeEyebrow={t("contact.officeEyebrow")}
-            officeName={t("contact.officeName")}
+            officeEyebrow={page?.officeEyebrow ?? ""}
+            officeName={page?.officeName ?? ""}
             addressLines={[
-              t("contact.addressLine1"),
-              t("contact.addressLine2"),
-              t("contact.addressLine3"),
+              settings?.address?.line1 ?? "",
+              settings?.address?.line2 ?? "",
+              settings?.address?.line3 ?? "",
             ]}
-            workingHours={t("contact.workingHours")}
+            workingHours={settings?.workingHours ?? ""}
             showOnMapLabel={t("contact.showOnMap")}
-            mapUrl={MAP_LINK_URL}
+            mapUrl={mapLinkUrl}
             directContactTitle={t("contact.directContactTitle")}
-            email={t("contact.info.email")}
-            phone={t("contact.info.phone")}
+            email={settings?.email ?? ""}
+            phone={settings?.phone ?? ""}
           />
 
           <ContactForm
             labels={{
-              eyebrow: t("contact.formEyebrow"),
-              description: t("contact.formDescription"),
+              eyebrow: page?.formTitle ?? "",
+              description: page?.formSubtitle ?? "",
               name: t("contact.fields.name"),
               surname: t("contact.fields.surname"),
               email: t("contact.fields.email"),
@@ -85,7 +103,7 @@ export default async function ContactPage({
         </div>
       </section>
 
-      <ContactMap src={MAP_EMBED_URL} title={t("contact.officeName")} />
+      <ContactMap src={mapEmbedUrl} title={page?.officeName ?? ""} />
 
       <div className="pb-[64px] md:pb-[96px]" />
     </>
