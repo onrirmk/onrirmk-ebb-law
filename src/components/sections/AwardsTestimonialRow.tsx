@@ -21,7 +21,10 @@ export function AwardsTestimonialRow({
   return (
     <section id="awards-testimonial" className="w-full py-[48px] md:py-[64px]">
       <div className="mx-auto max-w-[1680px] px-[24px] md:pl-[100px] md:pr-[260px]">
-        <div className="flex flex-col gap-y-[40px] md:flex-row md:items-start md:gap-y-0">
+        <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
+          {testimonialTitle}
+        </h2>
+        <div className="mt-[24px] flex flex-col gap-y-[40px] md:mt-[32px] md:flex-row md:items-start md:gap-y-0">
           <div className="md:w-auto md:shrink-0">
             <div className="inline-flex flex-col items-start">
               {visibleAward?.iconSrc ? (
@@ -44,12 +47,7 @@ export function AwardsTestimonialRow({
           </div>
 
           <div className="md:ml-[30px] md:flex-1">
-            <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
-              {testimonialTitle}
-            </h2>
-            <div className="mt-[16px]">
-              <TestimonialSlider testimonials={testimonials} />
-            </div>
+            <TestimonialSlider testimonials={testimonials} />
           </div>
         </div>
       </div>
