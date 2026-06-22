@@ -18,7 +18,10 @@ const PILL_CLASS =
   "mb-[16px] inline-block rounded-[4px] bg-[#DEA356] px-[16px] py-[6px] font-sans text-[14px] font-bold uppercase tracking-wide text-white";
 
 const LINK_CLASS =
-  "block text-[14px] font-medium leading-[28px] text-[#1C1B1F] transition-colors hover:text-[#212C60]";
+  `group relative inline-block text-[14px] font-medium leading-[28px] text-[#1C1B1F] transition-colors hover:text-[#212C60]
+   after:pointer-events-none after:absolute after:bottom-[2px] after:left-0 after:right-0 after:h-[1.5px] after:bg-[#212C60] after:origin-left after:scale-x-0
+   after:transition-transform after:duration-[450ms] after:ease-[cubic-bezier(0.16,1,0.3,1)]
+   hover:after:scale-x-100`;
 
 const ICON_CLASS = "mt-[2px] h-[16px] w-[16px] shrink-0 text-[#212C60]";
 
