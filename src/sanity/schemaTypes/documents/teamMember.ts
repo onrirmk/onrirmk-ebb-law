@@ -1,12 +1,15 @@
 import { UserIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
+import { orderRankField, orderRankOrdering } from "@sanity/orderable-document-list";
 
 export const teamMember = defineType({
   name: "teamMember",
   title: "Team Member",
   type: "document",
   icon: UserIcon,
+  orderings: [orderRankOrdering],
   fields: [
+    orderRankField({ type: "teamMember" }),
     defineField({
       name: "name",
       title: "Name",
@@ -100,19 +103,6 @@ export const teamMember = defineType({
       type: "array",
       of: [{ type: "reference", to: [{ type: "practiceArea" }] }],
     }),
-    defineField({
-      name: "order",
-      title: "Sort order",
-      type: "number",
-      description: "Lower numbers appear first.",
-    }),
-  ],
-  orderings: [
-    {
-      title: "Manual order",
-      name: "manualOrder",
-      by: [{ field: "order", direction: "asc" }],
-    },
   ],
   preview: {
     select: {
