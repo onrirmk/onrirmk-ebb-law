@@ -40,7 +40,7 @@ export const contactPage = defineType({
       group: "hero",
       options: { hotspot: true },
       description:
-        "Recommended: 2400×1400 px JPG (< 600 KB). Displayed as a full-bleed band at ~82vh tall (min 560–630 px). Title + eyebrow are centered. Safe area: keep the subject from filling the center vertical band so it doesn't fight the headline; the left/right ~200 px and top/bottom can be cropped on narrow viewports. Use the focal hotspot to mark what must stay visible.",
+        "Önerilen: 2400×1400 px JPG (dosya boyutu 600 KB altı). Sayfanın üstünde ekran yüksekliğinin yaklaşık %82'si kadar (en az 560–630 px) tam genişlikte bir bant olarak gösterilir. Başlık ve üst etiket görselin üzerinde ortalıdır. Güvenli alan: ana konunun, yazıyla çakışmaması için görselin orta dikey bandını doldurmamasına dikkat edin; sağ/sol kenardan yaklaşık 200 px ile alt-üst kısımlar dar ekranlarda kırpılabilir. Mutlaka görünmesi gereken yeri Sanity'nin odak noktası (hotspot) aracıyla işaretleyin.",
     }),
     defineField({
       name: "formTitle",

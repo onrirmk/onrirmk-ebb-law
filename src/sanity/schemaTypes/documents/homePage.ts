@@ -32,7 +32,7 @@ export const homePage = defineType({
       type: "array",
       group: "hero",
       description:
-        "Full-screen hero carousel on the homepage. Each slide fills the viewport up to ~1680 px wide.",
+        "Anasayfanın tam ekran hero karuseli. Her slayt, en geniş haliyle yaklaşık 1680 px'e kadar ekranı boydan boya doldurur.",
       of: [
         {
           type: "object",
@@ -44,7 +44,7 @@ export const homePage = defineType({
               type: "image",
               options: { hotspot: true },
               description:
-                "Recommended: 2880×1620 px JPG (16:9, < 800 KB). Displayed full-bleed and cropped to viewport — the title sits top-left (roughly the left 35% × top 50%), slider dots at bottom-center, arrows on the left/right edges. Safe area: keep the subject right-of-center and vertically middle. Use the focal hotspot to mark what must stay visible when cropped on narrow screens.",
+                "Önerilen: 2880×1620 px JPG (16:9 oran, dosya boyutu 800 KB altı). Görüntü ekranı boydan boya kaplar ve ekran boyutuna göre kırpılır — başlık sol üstte (kabaca soldan %35, yukarıdan %50'lik alanda), slayt noktaları altta ortada, oklar sağ ve sol kenarda durur. Güvenli alan: ana konuyu görselin sağ yarısında ve dikeyde ortalı konumlandırın. Dar ekranlarda kırpıldığında nelerin mutlaka görünmesi gerektiğini Sanity'nin odak noktası (hotspot) aracıyla işaretleyin.",
             }),
             defineField({ name: "alt", title: "Alt text", type: "string" }),
           ],
@@ -114,7 +114,7 @@ export const homePage = defineType({
               type: "image",
               options: { hotspot: true },
               description:
-                "Recommended: 200×220 px PNG with transparent background. Displayed at 97×107 px using 'contain' — no cropping, whole badge always visible.",
+                "Önerilen: 200×220 px, saydam arka planlı PNG. 97×107 px boyutunda, oranı korunarak gösterilir — kırpılmaz, rozetin tamamı her zaman görünür.",
             }),
           ],
           preview: { select: { title: "label", media: "icon" } },

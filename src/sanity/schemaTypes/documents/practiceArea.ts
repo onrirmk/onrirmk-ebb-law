@@ -33,7 +33,7 @@ export const practiceArea = defineType({
       type: "image",
       options: { hotspot: true },
       description:
-        "Used in two places. (1) Practice areas grid card: cropped to 4:3 — keep the subject centered. (2) Detail page top band: full-bleed at 360 px tall (480 px on desktop) — title + breadcrumb sit on the BOTTOM-LEFT, so keep that corner uncluttered. Recommended: 2400×1800 px JPG (< 600 KB). Use the focal hotspot to mark what must stay visible.",
+        "Bu görsel iki yerde kullanılır. (1) Çalışma alanları sayfasındaki kart: 4:3 oranında kırpılır — ana konuyu ortada tutun. (2) Detay sayfasının üst bandı: tam genişlikte, 360 px (masaüstünde 480 px) yükseklikte gösterilir — başlık ve gezinti yolu (breadcrumb) SOL ALT köşede yer alır, bu yüzden o köşeyi yazıyla çakışacak öğelerden uzak tutun. Önerilen: 2400×1800 px JPG (dosya boyutu 600 KB altı). Mutlaka görünmesi gereken yeri Sanity'nin odak noktası (hotspot) aracıyla işaretleyin.",
     }),
     defineField({
       name: "paragraphs",
