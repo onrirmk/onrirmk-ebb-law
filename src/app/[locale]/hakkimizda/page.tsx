@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { AboutHero } from "@/components/sections/AboutHero";
 import { AboutNarrative } from "@/components/sections/AboutNarrative";
 import { AboutFoundersGrid } from "@/components/sections/AboutFoundersGrid";
-import { AboutTimeline } from "@/components/sections/AboutTimeline";
 import { AboutCta } from "@/components/sections/AboutCta";
 import { getMemberPhotoSrc } from "@/lib/team-photos";
 import type { TeamMember } from "@/types/content";
@@ -28,10 +27,6 @@ export default async function AboutPage({
   const t = await getTranslations();
 
   const paragraphs = t.raw("about.paragraphs") as string[];
-  const timelineItems = t.raw("about.timeline.items") as {
-    year: string;
-    text: string;
-  }[];
   const members = t.raw("team.members") as TeamMember[];
   const founders = members.slice(0, 3).map((m) => ({
     slug: m.slug,
@@ -55,11 +50,6 @@ export default async function AboutPage({
         title={t("about.founders.title")}
         subtitle={t("about.founders.subtitle")}
         founders={founders}
-      />
-      <AboutTimeline
-        eyebrow={t("about.timeline.eyebrow")}
-        title={t("about.timeline.title")}
-        items={timelineItems}
       />
       <AboutCta
         title={t("about.cta.title")}
