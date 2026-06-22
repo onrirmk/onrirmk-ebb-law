@@ -2,6 +2,7 @@ import Image from "next/image";
 import { UserCircle2, ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { TeamMember } from "@/types/content";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 type Props = {
   title: string;
@@ -16,18 +17,21 @@ export function AboutFoundersGrid({
 }: Props) {
   return (
     <section className="mx-auto max-w-[1280px] px-[24px] pt-[64px] md:px-[100px] md:pt-[96px]">
-      <div className="max-w-[820px]">
-        <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
-          {title}
-        </h2>
-        <p className="mt-[12px] text-[16px] leading-[26px] text-[#1C1B1F]/75 md:text-[17px] md:leading-[28px]">
-          {subtitle}
-        </p>
-      </div>
+      <FadeIn variant="slideUp">
+        <div className="max-w-[820px]">
+          <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
+            {title}
+          </h2>
+          <p className="mt-[12px] text-[16px] leading-[26px] text-[#1C1B1F]/75 md:text-[17px] md:leading-[28px]">
+            {subtitle}
+          </p>
+        </div>
+      </FadeIn>
 
       <ul className="mt-[32px] grid grid-cols-1 gap-[24px] sm:grid-cols-2 md:mt-[40px] lg:grid-cols-3">
-        {founders.map((f) => (
+        {founders.map((f, i) => (
           <li key={f.slug}>
+          <FadeIn variant="slideUp" delay={150 + i * 100}>
             <Link
               href={{ pathname: "/team/[slug]", params: { slug: f.slug } }}
               className="group flex h-full flex-col overflow-hidden rounded-sm border border-[#1C1B1F]/10 bg-card transition-shadow hover:shadow-[0_12px_28px_rgba(33,44,96,0.10)]"
@@ -62,6 +66,7 @@ export function AboutFoundersGrid({
                 </p>
               </div>
             </Link>
+          </FadeIn>
           </li>
         ))}
       </ul>
