@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { TeamMember } from "@/types/content";
@@ -24,17 +25,29 @@ export function TeamMemberDetail({
 }: Props) {
   return (
     <>
-      <div className="bg-[#212C60] text-white">
-        <div className="mx-auto max-w-[1280px] px-[24px] pb-[20px] pt-[136px] md:px-[100px] md:pb-[24px] md:pt-[140px]">
+      <section className="relative -mt-[122px] min-h-[280px] w-full overflow-hidden bg-[#212C60] md:min-h-[340px]">
+        <Image
+          src="/images/hero/team-detail-hero.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-[#212C60]/90 via-[#212C60]/55 to-transparent"
+        />
+        <div className="relative mx-auto max-w-[1280px] px-[24px] pb-[40px] pt-[140px] md:px-[100px] md:pb-[56px] md:pt-[160px]">
           <Link
             href="/team"
-            className="inline-flex items-center gap-[8px] text-[14px] font-medium text-white/80 transition-colors hover:text-white"
+            className="inline-flex items-center gap-[8px] text-[14px] font-medium text-white/85 transition-colors hover:text-white"
           >
             <ArrowLeft className="h-[16px] w-[16px]" aria-hidden />
             {backToTeamLabel}
           </Link>
         </div>
-      </div>
+      </section>
 
       <div className="mx-auto max-w-[1280px] px-[24px] py-[40px] md:px-[100px] md:py-[56px]">
         <div className="grid grid-cols-1 gap-[48px] md:grid-cols-[400px_1fr]">
