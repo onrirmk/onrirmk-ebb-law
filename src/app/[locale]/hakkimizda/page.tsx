@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { AboutHero } from "@/components/sections/AboutHero";
-import { AboutStats } from "@/components/sections/AboutStats";
 import { AboutNarrative } from "@/components/sections/AboutNarrative";
 import { AboutFoundersGrid } from "@/components/sections/AboutFoundersGrid";
 import { AboutTimeline } from "@/components/sections/AboutTimeline";
@@ -29,8 +28,6 @@ export default async function AboutPage({
   const t = await getTranslations();
 
   const paragraphs = t.raw("about.paragraphs") as string[];
-  const subheaders = t.raw("about.subheaders") as string[];
-  const stats = t.raw("about.stats") as { value: string; label: string }[];
   const timelineItems = t.raw("about.timeline.items") as {
     year: string;
     text: string;
@@ -53,10 +50,8 @@ export default async function AboutPage({
           current: t("about.pageTitle"),
         }}
       />
-      <AboutStats stats={stats} />
-      <AboutNarrative paragraphs={paragraphs} subheaders={subheaders} />
+      <AboutNarrative paragraphs={paragraphs} />
       <AboutFoundersGrid
-        eyebrow={t("about.founders.eyebrow")}
         title={t("about.founders.title")}
         subtitle={t("about.founders.subtitle")}
         founders={founders}
