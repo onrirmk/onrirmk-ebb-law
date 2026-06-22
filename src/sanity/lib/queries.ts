@@ -225,7 +225,7 @@ export type TeamMemberDoc = {
   order?: number;
 };
 
-const FETCH_OPTS = { next: { revalidate: 60 } } as const;
+const FETCH_OPTS = { next: { revalidate: 10 } } as const;
 
 export const fetchSiteSettings = () =>
   client.fetch<SiteSettings | null>(SITE_SETTINGS_QUERY, {}, FETCH_OPTS);
