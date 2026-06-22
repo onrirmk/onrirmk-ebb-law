@@ -531,9 +531,9 @@
     },
     "officeEyebrow": "ISTANBUL OFFICE",
     "officeName": "Erçin Bilgin Bektaşoğlu",
-    "addressLine1": "Cumhuriyet Cad. Cumhuriyet Apt. 17/7",
-    "addressLine2": "Taksim 34437",
-    "addressLine3": "Istanbul, Türkiye",
+    "addressLine1": "Now Bomonti Plaza, No: 2/12",
+    "addressLine2": "Yeni Yol 1 Sk., Cumhuriyet Mah.",
+    "addressLine3": "34380 Şişli, Istanbul",
     "workingHours": "Weekdays: 09:00 — 18:00",
     "showOnMap": "Show on Map",
     "directContactTitle": "DIRECT CONTACT",
@@ -565,9 +565,9 @@
     "emailLabel": "Email",
     "webLabel": "Web",
     "address": {
-      "line1": "Cumhuriyet Cad.",
-      "line2": "Cumhuriyet Apt. 17/7 Taksim",
-      "line3": "34437 - Istanbul"
+      "line1": "Now Bomonti Plaza, No: 2/12",
+      "line2": "Yeni Yol 1 Sk., Cumhuriyet Mah.",
+      "line3": "34380 Şişli - Istanbul"
     },
     "email": "mail@ebb-law.com",
     "phone": "+90 212 297 41 01",

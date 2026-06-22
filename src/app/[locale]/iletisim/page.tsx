@@ -6,7 +6,7 @@ import { OfficeCard } from "@/components/sections/OfficeCard";
 import { ContactMap } from "@/components/sections/ContactMap";
 import { PRACTICE_AREA_SLUGS } from "@/i18n/routing";
 
-const MAP_QUERY = "Cumhuriyet Caddesi 17/7 Taksim Istanbul";
+const MAP_QUERY = "Now Bomonti Plaza Yeni Yol 1 Sokak Cumhuriyet Mah. 34380 Şişli Istanbul";
 const MAP_LINK_URL = `https://maps.google.com/?q=${encodeURIComponent(MAP_QUERY)}`;
 const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
