@@ -7,53 +7,75 @@ Marketing website for **Erçin Bilgin Bektaşoğlu Law Firm** (Istanbul). Built 
 - **Next.js 15** (App Router, src/ layout)
 - **TypeScript** (strict)
 - **Tailwind CSS v4** (`@theme inline` directive, no `tailwind.config` file)
-- **next-intl v4** (TR default, EN secondary, `localePrefix: "always"`, pathnames mapping)
+- **next-intl v4** (currently EN-only; pathnames mapping retained for future TR; `localePrefix: "always"`)
+- **Sanity v4** as the content CMS — Studio mounted at `/studio`; content fetched server-side with `revalidate: 10s`
 - **shadcn/ui** (`new-york` style, `base-ui` backend, `neutral` palette overridden with EBB brand colors)
 - **lucide-react** icons
 - **EB Garamond** font via `next/font/google` (latin + latin-ext for Turkish)
 - React 19.2
+
+## Content vs UI split
+
+This codebase deliberately separates **editorial content** (Sanity) from **UI labels** (next-intl / `messages/en.json`):
+
+- **Sanity owns** all client-editable content: page titles, body paragraphs, hero text, hero images, team members (name/bio/photo/education/etc.), practice areas, testimonials, awards, office address, phone, email, footer copyright.
+- **`messages/en.json` owns** UI structure strings: nav labels, button text ("Read More", "Submit"), form field labels, accessibility text (slider prev/next), section eyebrows ("BIOGRAPHY", "EDUCATION").
+
+Pages call **both** in parallel:
+
+```ts
+const [t, data] = await Promise.all([getTranslations(), fetchHomePage()]);
+```
+
+Then pass content from `data` and labels from `t()` into typed section props.
 
 ## Folder structure
 
 ```
 src/
   app/
-    [locale]/                                # Canonical paths use TR slugs
-      layout.tsx                             # html/body + NextIntlClientProvider + Navbar + Footer
-      page.tsx                               # Anasayfa
-      hakkimizda/page.tsx                    # /hakkimizda  ↔  /about
+    [locale]/                                # Canonical paths use TR slugs (EN URLs rewritten)
+      layout.tsx                             # NextIntlClientProvider + Navbar (with Sanity logo) + Footer
+      page.tsx                               # Anasayfa — fetches homePage from Sanity
+      hakkimizda/page.tsx                    # /hakkimizda → /en/about — fetches aboutPage + founders
       calisma-alanlari/
-        page.tsx                             # /calisma-alanlari  ↔  /practice-areas
-        [slug]/page.tsx                      # 10 practice areas, generateStaticParams
-      iletisim/page.tsx                      # /iletisim  ↔  /contact
+        page.tsx                             # /calisma-alanlari → /en/practice-areas — fetches practiceAreasPage + practiceArea[]
+        [slug]/page.tsx                      # generateStaticParams from Sanity slugs
+      team/
+        page.tsx                             # fetches teamPage + teamMember[]
+        [slug]/page.tsx                      # generateStaticParams from Sanity slugs
+      iletisim/page.tsx                      # /iletisim → /en/contact — fetches contactPage + siteSettings + practiceArea[]
+    studio/[[...tool]]/page.tsx              # Sanity Studio mount
     globals.css                              # CSS vars + @theme inline + container-page utility
   components/
-    layout/
-      Navbar.tsx                             # server component
-      Footer.tsx                             # server component
-      LanguageSwitcher.tsx                   # "use client" — router.replace with locale
-    sections/
-      HeroSection.tsx
-      WelcomeSection.tsx
-      AwardsSection.tsx
-      TestimonialSection.tsx
-      AboutSection.tsx
-      PracticeAreasGrid.tsx
-      PracticeAreaDetail.tsx
-      ContactForm.tsx                        # "use client"
-    ui/                                      # shadcn primitives (only button.tsx so far)
+    layout/{Navbar,Footer,LanguageSwitcher,PageHeader,SectionDivider}.tsx
+    sections/                                # All section components are pure props-driven views
+    ui/button.tsx                            # shadcn primitive
   i18n/
-    routing.ts                               # defineRouting + pathnames + PRACTICE_AREA_SLUGS
-    navigation.ts                            # Link, redirect, usePathname, useRouter
+    routing.ts                               # defineRouting + pathnames (PRACTICE_AREA_SLUGS retained for legacy/TR restore)
+    navigation.ts                            # typed Link, redirect, usePathname, useRouter
     request.ts                               # message loader
+  sanity/
+    env.ts                                   # projectId/dataset/apiVersion from env
+    structure.ts                             # Studio left-rail (singletons + collections)
+    schemaTypes/
+      index.ts                               # registers all types
+      objects/seo.ts
+      documents/{homePage,aboutPage,practiceAreasPage,practiceArea,teamPage,teamMember,contactPage,siteSettings}.ts
+    lib/
+      client.ts                              # next-sanity client (useCdn: true, perspective: "published")
+      image.ts                               # SanityImage type + imageSrc helper (URL builder + auto format)
+      queries.ts                             # All GROQ queries + result types + fetch* helpers (revalidate: 10s)
   lib/utils.ts                               # shadcn cn() helper
   middleware.ts                              # next-intl middleware
-  types/content.ts                           # Award, PracticeAreaSummary, PracticeAreaDetailContent, NavLink, ContactInfo
+  types/content.ts                           # Award, PracticeAreaSummary, TeamMember, NavLink (consumed by section components)
 messages/
-  tr.json                                    # TR copy (canonical content shape)
-  en.json                                    # EN copy (verbatim from Figma metadata)
+  en.json                                    # UI labels only (nav, buttons, form fields, eyebrows)
+  tr.json                                    # preserved for future TR restore — NOT in active use
+scripts/
+  migrate-to-sanity.mjs                      # ⚠️ DESTRUCTIVE one-way seed from messages/en.json + /public to Sanity. Requires --i-know-this-overwrites-studio flag.
 public/
-  images/{logo,hero,awards,practice-areas}/  # downloaded from Figma MCP
+  images/{logo,hero,awards,practice-areas,team}/   # seed assets for migration (Sanity now hosts the live copies)
 ```
 
 ## Naming conventions
@@ -67,9 +89,9 @@ public/
 ## Component rules
 
 - **Server component by default.** Only add `"use client"` when state, event handlers, or browser APIs are needed.
-- **Props-driven.** No hardcoded copy inside JSX — text comes from `messages/{locale}.json` via `getTranslations()` (server) or `useTranslations()` (client) and is passed in as props.
-- Each section component takes its content as typed props so the page can compose / a CMS could later feed it.
-- `t.raw()` is used for arrays/objects (e.g. `t.raw("welcome.paragraphs") as string[]`).
+- **Props-driven.** No hardcoded copy inside JSX — content comes from Sanity via `src/sanity/lib/queries.ts` helpers (server-side `fetchHomePage()`, `fetchTeamMembers()` etc.), and UI labels come from next-intl via `getTranslations()`. Both are passed into section components as typed props.
+- Each section component takes its content as typed props — no section ever calls `client.fetch()` or `getTranslations()` directly. Composition lives in the page file.
+- For images, use `imageSrc(sanityImage)` from `src/sanity/lib/image.ts` to get a `cdn.sanity.io` URL (auto format). Pass to `<Image>` with `fill`. Hostname is already allowed in `next.config.ts`.
 
 ## Design tokens
 
@@ -143,46 +165,54 @@ npx shadcn@latest add <component-name>
 
 Lands under `src/components/ui/`. Components use `class-variance-authority` + `tailwind-merge`; the `cn()` helper is in `src/lib/utils.ts`.
 
-## Adding a new practice area
+## Adding content (practice area, team member, etc.)
 
-1. Add slug to `PRACTICE_AREA_SLUGS` in `src/i18n/routing.ts`
-2. Add `{ title, summary, paragraphs: [] }` under `practiceAreas.areas.<slug>` in both `messages/tr.json` and `messages/en.json`
-3. Drop a hero illustration into `public/images/practice-areas/<slug>.png` and pass it via `imageSrc` prop (sections fall back to gradient placeholders when no asset is provided)
+This is the editor's job in Sanity Studio at `/studio`. No code changes required:
 
-The detail page (`/calisma-alanlari/[slug]/page.tsx`) and grid (`/calisma-alanlari/page.tsx`) read the array dynamically — no further changes needed.
+1. Studio → "Practice Areas" → "+ Create new" → fill in title, slug, summary, paragraphs, hero image, sort order → **Publish**
+2. Within ~10–20 seconds, the new area appears in:
+   - the `/calisma-alanlari` grid
+   - sidebar on every other practice area detail page
+   - the footer's "Practice Areas" column
+   - the contact form's "practice area" dropdown
+3. The route `/calisma-alanlari/<new-slug>` is served on-demand (ISR), and on the next full build it gets statically generated.
+
+Same workflow for team members: Studio → "Team Members" → create → publish.
+
+⚠️ **Do not** add new entries by editing `messages/en.json` or running the migration script — that path is dead. Sanity is the source of truth.
 
 ## Assets
 
-All assets live in `public/images/` and are pulled from Figma via MCP. Current state (some still pending due to Figma MCP rate limit on Starter plan):
+All live assets now live in **Sanity** (asset library, served via `cdn.sanity.io`). The originals in `public/images/` are only seed copies used by the one-time migration script. Editors upload new versions in Studio with size+safe-area guidance shown below the upload widget (defined in each schema's `description` field, in Turkish).
 
-- ✅ `logo/ebb-logo-navbar.png` (Figma node 5895:351 — EBB Logo-01, horizontal)
-- ✅ `hero/istanbul-0819.png` (829 KB — warm sunset tones, main hero per Figma node 5910:195)
-- ✅ `hero/istanbul-0816.png` (46 KB — alt hero per node 5772:351)
-- ✅ `hero/istanbul-mask.png` (alpha mask)
-- ⏳ `logo/ebb-logo-footer.png` (EBB Logo-05 — pending)
-- ⏳ `awards/*.png` (5 Legal500 EMEA 2025 badges — pending)
-- ⏳ `practice-areas/<slug>.png` (10 illustration banners 1240×338 — pending)
+If a Sanity image is missing for some field, pages fall back to the matching `/public/images/...` path where applicable (Navbar/Footer logo, page heroes). Practice area + team photos have no fallback — they render with a gradient/icon placeholder.
 
 ## Dev workflow
 
 ```bash
-npm run dev     # http://localhost:3000 → redirects to /tr
-npm run build
+npm run dev     # http://localhost:3000 → redirects to /en
+npm run build   # requires Sanity env vars (NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET)
+npm run start   # serve production build
 npm run lint
 npx tsc --noEmit
 ```
 
-Routing smoke test:
+Env vars: see `.env.local.example` and `README.md`. The Studio at `/studio` is part of the same Next.js app — no separate deploy.
+
+Routing smoke test (post-redirect URLs):
 
 ```bash
-for p in /tr /tr/hakkimizda /tr/calisma-alanlari /tr/iletisim /en /en/about /en/practice-areas /en/contact; do
-  curl -sS -o /dev/null -w "%{http_code} ${p}\n" "http://localhost:3000${p}"
+for p in /en /en/about /en/practice-areas /en/practice-areas/aviation /en/team /en/team/seray-kaya /en/contact; do
+  curl -sSL -o /dev/null -w "%{http_code} ${p}\n" "http://localhost:3000${p}"
 done
 ```
 
 ## Things to know
 
-- **Locale: EN only (temporarily).** TR was disabled before the Monday 2026-05-18 presentation. `messages/tr.json` and `src/components/layout/LanguageSwitcher.tsx` are kept on disk; only `routing.ts` and `Navbar.tsx` reference EN. To restore TR: re-add "tr" to `locales`, set `defaultLocale: "tr"`, uncomment `// tr:` keys in `pathnames`, and re-import `LanguageSwitcher` in `Navbar.tsx`.
+- **Sanity is live; messages/en.json is UI-only.** Page content (titles, paragraphs, images, team, practice areas, address, etc.) is fetched server-side from Sanity with `revalidate: 10` in every `fetch*` helper. Editor publishes → site updates within ~10–20 sec. UI labels (nav, button text, eyebrows like "BIOGRAPHY") stay in `messages/en.json`.
+- **`PRACTICE_AREA_SLUGS` in `routing.ts` is legacy** — kept only because TR restore would need it for `pathnames`. Runtime no longer uses it; slugs come from Sanity at build time via `generateStaticParams`.
+- **Migration script is destructive.** `scripts/migrate-to-sanity.mjs` overwrites every page document via `createOrReplace`. After editorial handoff, running it would destroy client edits. The script refuses to run without `--i-know-this-overwrites-studio`.
+- **Locale: EN only (temporarily).** TR was disabled before the Monday 2026-05-18 presentation. `messages/tr.json` and `src/components/layout/LanguageSwitcher.tsx` are kept on disk; only `routing.ts` and `Navbar.tsx` reference EN. To restore TR: re-add "tr" to `locales`, set `defaultLocale: "tr"`, uncomment `// tr:` keys in `pathnames`, re-import `LanguageSwitcher` in `Navbar.tsx`. **Note:** Sanity is currently single-locale; TR restoration also needs schema fields like `titleTr` or a `language` document split.
 - **Navbar nav links at 18px / tracking-wide**, not Figma's 16px — sanctioned exception for legibility on transparent overlay. Don't "correct" back.
 - **Hero is viewport-bound (`md:h-screen`)**, not Figma's static 851px — sanctioned exception so hero stays above-the-fold across viewport sizes. Title is flex-centered (vertical), `md:pl-[160px]` preserved.
 - **Anasayfa tipografi 28px standardı, ritim daraltıldı** — Welcome ve Awards/Testimonial eyebrow başlıkları 28px/36px uppercase tracking-wide font-bold (Figma 40px idi). Section padding'leri kısaltıldı (pt-40/48, pb-48/64). Figma'dan sapma, UX kararı — pixel-perfect modu bu section'lar için pasif. Don't "correct" back.
