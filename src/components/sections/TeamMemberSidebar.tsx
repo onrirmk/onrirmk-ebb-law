@@ -13,22 +13,16 @@ function LinkedInIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-import { Link } from "@/i18n/navigation";
-import type { PracticeAreaSlug } from "@/i18n/routing";
 import type { TeamMember } from "@/types/content";
 
 type Props = {
   member: TeamMember;
-  expertiseLabel: string;
   linkedinLabel: string;
-  practiceAreaTitles: Record<PracticeAreaSlug, string>;
 };
 
 export function TeamMemberSidebar({
   member,
-  expertiseLabel,
   linkedinLabel,
-  practiceAreaTitles,
 }: Props) {
   return (
     <aside className="md:sticky md:top-[120px] md:self-start">
@@ -94,28 +88,6 @@ export function TeamMemberSidebar({
         ) : null}
       </div>
 
-      {member.practiceAreas.length > 0 ? (
-        <div className="mt-[24px] border-t border-[#1C1B1F]/10 pt-[24px]">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#1C1B1F]/60">
-            {expertiseLabel}
-          </p>
-          <ul className="mt-[12px] flex flex-wrap gap-[8px]">
-            {member.practiceAreas.map((slug) => (
-              <li key={slug}>
-                <Link
-                  href={{
-                    pathname: "/calisma-alanlari/[slug]",
-                    params: { slug },
-                  }}
-                  className="inline-flex items-center rounded-[2px] bg-[#212C60]/5 px-[12px] py-[6px] text-[13px] font-medium text-[#212C60] transition-colors hover:bg-[#212C60]/10"
-                >
-                  {practiceAreaTitles[slug]}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
     </aside>
   );
 }
