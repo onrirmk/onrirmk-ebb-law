@@ -32,7 +32,6 @@ export function ContactForm({ labels, practiceAreaOptions }: Props) {
     setStatus("submitting");
     const formData = new FormData(e.currentTarget);
     const payload = Object.fromEntries(formData.entries());
-    // eslint-disable-next-line no-console
     console.log("[contact-form] submission", payload);
     setTimeout(() => {
       setStatus("success");

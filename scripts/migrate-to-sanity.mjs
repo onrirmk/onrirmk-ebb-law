@@ -1,16 +1,44 @@
-// One-shot migration: messages/en.json + public/images -> Sanity.
+// ⚠️  DESTRUCTIVE — ONE-WAY MIGRATION (messages/en.json + public/images → Sanity)
 //
-// Usage:
-//   node --env-file=.env.local scripts/migrate-to-sanity.mjs
+// This script BOOTSTRAPS Sanity from the repo's seed data. It uses
+// createOrReplace, which means every document it touches is *overwritten
+// in full* — any edits the client/editor has made in Studio for those
+// documents are silently destroyed.
 //
-// Idempotent for documents (createOrReplace) but every run re-uploads
-// the image assets, so only re-run when you really want to refresh.
+// DO NOT RUN AFTER EDITORIAL HANDOFF unless you genuinely want to wipe
+// Studio back to the seed.
+//
+// To run anyway (you've been warned), pass --i-know-this-overwrites-studio:
+//
+//   node --env-file=.env.local scripts/migrate-to-sanity.mjs --i-know-this-overwrites-studio
+//
+// Image assets are re-uploaded every run too (duplicate copies in Sanity
+// asset library), so prefer not to.
 
 import { createClient } from "@sanity/client";
 import { readFileSync, createReadStream, existsSync } from "node:fs";
 import { basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
+
+const CONFIRM_FLAG = "--i-know-this-overwrites-studio";
+if (!process.argv.includes(CONFIRM_FLAG)) {
+  console.error(
+    [
+      "",
+      "⚠️  Refusing to run migrate-to-sanity.mjs without confirmation.",
+      "",
+      "    This script OVERWRITES every page document in Sanity with the seed",
+      "    data from messages/en.json. If the client has edited content in",
+      "    Studio since launch, those edits will be DESTROYED.",
+      "",
+      "    If you really want this, re-run with:",
+      `      ${CONFIRM_FLAG}`,
+      "",
+    ].join("\n"),
+  );
+  process.exit(1);
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
