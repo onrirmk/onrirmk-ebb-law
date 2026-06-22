@@ -3,12 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { PracticeAreaSummary } from "@/types/content";
 
-type StatItem = { value: string; label: string };
-
 type Props = {
   areas: PracticeAreaSummary[];
   readMoreLabel: string;
-  stats?: StatItem[];
 };
 
 const PLACEHOLDER_GRADIENTS = [
@@ -19,29 +16,9 @@ const PLACEHOLDER_GRADIENTS = [
   "from-primary/80 via-accent/90 to-primary",
 ];
 
-export function PracticeAreasGrid({ areas, readMoreLabel, stats }: Props) {
+export function PracticeAreasGrid({ areas, readMoreLabel }: Props) {
   return (
     <section className="container-page pb-20 pt-[48px] md:pb-28 md:pt-[72px]">
-      {stats && stats.length > 0 ? (
-        <div className="mb-12 grid grid-cols-1 gap-y-6 border-y border-[#1C1B1F]/10 py-8 sm:grid-cols-3 sm:divide-x sm:divide-[#1C1B1F]/10 md:mb-16 md:py-10">
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`flex flex-col items-start sm:items-center sm:text-center ${
-                i === 0 ? "sm:pl-0" : "sm:pl-6"
-              }`}
-            >
-              <p className="font-sans text-[36px] font-bold leading-[1] text-primary md:text-[44px]">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/60 md:text-[12px]">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      ) : null}
-
       <ul className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {areas.map((area, i) => (
           <li key={area.slug}>

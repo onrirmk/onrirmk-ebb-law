@@ -139,14 +139,6 @@
     },
     "sidebarLabel": "Tüm Çalışma Alanları",
     "backToPracticeAreas": "Çalışma Alanlarına Dön",
-    "stats": {
-      "areasValue": "10",
-      "areasLabel": "Çalışma Alanı",
-      "yearsValue": "20+",
-      "yearsLabel": "Yıllık Deneyim",
-      "scopeValue": "Uluslararası",
-      "scopeLabel": "Müvekkil Yelpazesi"
-    },
     "cta": {
       "title": "{area} konularını ekibimizle görüşün",
       "subtitle": "Bir konu veya vekalet için doğrudan bizimle iletişime geçebilirsiniz.",
@@ -206,16 +198,6 @@
           "Dava boyutunda lojistik sektöründeki deneyimimiz; liman, terminal ve depo sorumluluğu, sözleşmeden doğan uyuşmazlıklar, alt taşıyıcılara ve taşıma işleri organizatörlerine karşı rücu davaları ile vergi ve gümrük sorumluluklarından doğan uyuşmazlıkları kapsamaktadır."
         ]
       },
-      "finance": {
-        "title": "Finans",
-        "summary": "Gemi, yat, havacılık, yapılandırılmış ve ticaret finansmanı — sözleşme ve teminatların hazırlığı, müzakeresi ve icrası.",
-        "paragraphs": [
-          "Dilek Bektaşoğlu-Sanlı liderliğindeki finans ekibimiz; bankalar ve leasing şirketleri başta olmak üzere önde gelen uluslararası ve yerel finans kurumları, kurumsal müvekkiller ve tersaneler tarafından talimat almaktadır. Uzmanlık alanımız; kredi ve leasing sözleşmeleri ile teminat belgelerinin yapılandırılması, hazırlığı ve müzakeresini kapsamaktadır.",
-          "Büromuz, mevcut kredi işlemlerinin yeniden yapılandırılması ile temerrüde düşen kredilere ilişkin dava süreçlerinde — ipotek ve diğer teminatların paraya çevrilmesi dahil — müvekkillerine destek sunmaktadır.",
-          "Büromuz; gemi finansmanı, yat finansmanı, havacılık finansmanı, yapılandırılmış ve proje finansmanı ile ticaret finansmanı alanlarında kapsamlı uzmanlığa sahiptir.",
-          "Legal 500'ün 2010 baskısında şöyle yazılmıştır: \"Büromuzun gemi finansmanı uzmanı Dilek Bektaşoğlu-Sanlı 'mükemmel bir profesyonel' olarak öne çıkmaktadır.\""
-        ]
-      },
       "trade-and-commodities": {
         "title": "Ticaret ve Emtia",
         "summary": "Alım-satım sözleşmeleri, yaptırımlar, gümrük ve akreditifler konusunda tüccarlara ve bankalara danışmanlık.",
@@ -231,23 +213,6 @@
         "paragraphs": [
           "Şirketler ve ticaret hukuku, büromuzun geliştirdiği bir diğer uygulama alanıdır. Diğerlerinin yanı sıra; yabancı sermayeli şirketlerin kuruluşu, kurumsal yönetim konusunda genel danışmanlık, ortaklar arası uyuşmazlıklar, yöneticilerin sorumluluğu, borç yeniden yapılandırması ve kurumsal davalar konularında hizmet sunuyoruz.",
           "Büromuz; pay sahipleri sözleşmeleri, pay devri, pay rehni ve ortak girişim sözleşmeleri gibi çeşitli kurumsal işlemlerin sözleşme hazırlığı konusunda da deneyime sahiptir."
-        ]
-      },
-      "real-estate-and-property": {
-        "title": "Gayrimenkul Hukuku",
-        "summary": "Yabancı uyrukluların Türkiye'de mülk edinmesi — durum tespiti, izinler, satış sözleşmeleri ve miras işlemleri.",
-        "paragraphs": [
-          "Büromuzun son yıllarda daha aktif olduğu alanlardan biri gayrimenkul hukukudur. Erçin Bilgin Bektaşoğlu, birçok yabancı uyruklunun Türkiye'de mülk edinmesine destek olmuştur. Durum tespiti aşamasında destek sunmakta, gerekli izinlerin alınması sürecini yürütmekte ve satış sözleşmesini müzakere etmekteyiz.",
-          "Türkiye'nin yabancı uyruklulara ilişkin mevzuatı — belirli uyruklara ve bölgelere göre — sık sık değişmekte olduğundan, müvekkillerin planladıkları işlemin erken aşamalarında bir avukattan destek almayı değerlendirmeleri yerinde olur. Büromuz, ülke genelinde çeşitli emlak danışmanlarıyla iş birliği yaparak verileri doğrulamakta ve müvekkillere alternatifler sunmaktadır.",
-          "Büromuz; doğabilecek tüm vergi yükümlülükleri dahil olmak üzere miras ve tapu devri süreçlerinin gerektirdiği işlemleri yürütebilmektedir."
-        ]
-      },
-      "employment-and-labour": {
-        "title": "İş ve Çalışma Hukuku",
-        "summary": "İş sözleşmeleri, çalışma hukuku danışmanlığı ve işten doğan davalar — büyük ve orta ölçekli kuruluşlar için.",
-        "paragraphs": [
-          "Büromuz; iş sözleşmelerinin hazırlanması, çalışma hukukuna ilişkin meselelerde danışmanlık ve işten doğan davaların yürütülmesi konularında deneyim sahibidir.",
-          "Çeşitli sektörlerde faaliyet gösteren büyük ve orta ölçekli kuruluşlara hizmet veriyoruz."
         ]
       }
     }
