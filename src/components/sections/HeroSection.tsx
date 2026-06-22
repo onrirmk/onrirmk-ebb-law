@@ -56,7 +56,7 @@ export function HeroSection({
           />
         ))}
 
-        <div className="absolute inset-0 flex flex-col items-start justify-start px-6 pt-[250px] md:pl-[205px] md:pr-[96px] md:pt-[calc(38vh-10px)]">
+        <div className="absolute inset-0 flex flex-col items-start justify-start px-6 pt-[240px] md:pl-[205px] md:pr-[96px] md:pt-[calc(38vh-20px)]">
           <h1 className="font-sans font-semibold tracking-[-0.2px] text-white">
             <span className="block max-w-[760px] text-[28px] leading-[40px] md:text-[36px] md:leading-[52px]">
               {titleLine1}
