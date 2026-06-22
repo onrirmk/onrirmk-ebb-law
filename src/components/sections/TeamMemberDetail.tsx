@@ -34,10 +34,6 @@ export function TeamMemberDetail({
           sizes="100vw"
           className="object-cover"
         />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-[#212C60]/90 via-[#212C60]/55 to-transparent"
-        />
         <div className="relative mx-auto max-w-[1280px] px-[24px] pb-[40px] pt-[140px] md:px-[100px] md:pb-[56px] md:pt-[160px]">
           <Link
             href="/team"
