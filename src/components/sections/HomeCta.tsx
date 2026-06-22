@@ -6,7 +6,6 @@ type Props = {
   title: string;
   description: string;
   primaryButton: string;
-  secondaryButton: string;
 };
 
 export function HomeCta({
@@ -14,7 +13,6 @@ export function HomeCta({
   title,
   description,
   primaryButton,
-  secondaryButton,
 }: Props) {
   return (
     <section className="mt-[64px] w-full bg-[#212C60] text-white md:mt-[96px]">
@@ -35,13 +33,6 @@ export function HomeCta({
             className="inline-flex items-center gap-[10px] rounded-[2px] bg-white px-[32px] py-[14px] text-[13px] font-semibold uppercase tracking-[0.18em] text-[#212C60] transition-colors hover:bg-white/90"
           >
             {primaryButton}
-            <ArrowRight className="h-[16px] w-[16px]" aria-hidden />
-          </Link>
-          <Link
-            href="/calisma-alanlari"
-            className="inline-flex items-center gap-[10px] rounded-[2px] border border-white/40 px-[32px] py-[14px] text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white/60 hover:bg-white/10"
-          >
-            {secondaryButton}
             <ArrowRight className="h-[16px] w-[16px]" aria-hidden />
           </Link>
         </div>
