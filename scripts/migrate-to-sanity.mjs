@@ -68,17 +68,13 @@ async function run() {
   // ---------- siteSettings ----------
   log("siteSettings");
   const navbarLogo = await uploadImage("/images/logo/ebb-logo-navbar.png");
+  const footerLogo = await uploadImage("/images/logo/ebb-logo-footer.png");
   await client.createOrReplace({
     _id: "siteSettings",
     _type: "siteSettings",
     firmName: "Erçin Bilgin Bektaşoğlu Law Firm",
     logoNavbar: navbarLogo ?? undefined,
-    navLinks: Object.entries(messages.nav).map(([key, label]) => ({
-      _key: key,
-      _type: "navLink",
-      key,
-      label,
-    })),
+    logoFooter: footerLogo ?? undefined,
     address: {
       line1: messages.footer.address.line1,
       line2: messages.footer.address.line2,
@@ -267,8 +263,8 @@ async function run() {
     _id: "contactPage",
     _type: "contactPage",
     pageTitle: messages.contact.pageTitle,
-    heroEyebrow: messages.contact.eyebrow,
-    heroTitle: messages.contact.title,
+    heroEyebrow: messages.contact.hero?.eyebrow ?? messages.contact.eyebrow,
+    heroTitle: messages.contact.hero?.title ?? messages.contact.title,
     heroSubtitle: messages.contact.hero?.subtitle,
     heroImage: contactHero ?? undefined,
     formTitle: messages.contact.formEyebrow,
