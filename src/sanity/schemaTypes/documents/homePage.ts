@@ -31,6 +31,8 @@ export const homePage = defineType({
       title: "Hero slides",
       type: "array",
       group: "hero",
+      description:
+        "Full-screen hero carousel on the homepage. Each slide fills the viewport up to ~1680 px wide.",
       of: [
         {
           type: "object",
@@ -41,6 +43,8 @@ export const homePage = defineType({
               title: "Image",
               type: "image",
               options: { hotspot: true },
+              description:
+                "Recommended: 2880×1620 px JPG (16:9, < 800 KB). Displayed full-bleed and cropped to viewport — the title sits top-left (roughly the left 35% × top 50%), slider dots at bottom-center, arrows on the left/right edges. Safe area: keep the subject right-of-center and vertically middle. Use the focal hotspot to mark what must stay visible when cropped on narrow screens.",
             }),
             defineField({ name: "alt", title: "Alt text", type: "string" }),
           ],
@@ -109,6 +113,8 @@ export const homePage = defineType({
               title: "Badge icon",
               type: "image",
               options: { hotspot: true },
+              description:
+                "Recommended: 200×220 px PNG with transparent background. Displayed at 97×107 px using 'contain' — no cropping, whole badge always visible.",
             }),
           ],
           preview: { select: { title: "label", media: "icon" } },
