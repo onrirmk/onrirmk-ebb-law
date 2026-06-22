@@ -38,6 +38,8 @@ export const practiceAreasPage = defineType({
       type: "image",
       group: "hero",
       options: { hotspot: true },
+      description:
+        "Recommended: 2400×1400 px JPG (< 600 KB). Displayed as a full-bleed band at ~82vh tall (min 560–630 px). Title + eyebrow are centered. Safe area: keep the subject from filling the center vertical band so it doesn't fight the headline; the left/right ~200 px and top/bottom can be cropped on narrow viewports. Use the focal hotspot to mark what must stay visible.",
     }),
     defineField({
       name: "ctaTitle",

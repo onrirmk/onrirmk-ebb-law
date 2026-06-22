@@ -26,6 +26,8 @@ export const teamMember = defineType({
       title: "Photo",
       type: "image",
       options: { hotspot: true },
+      description:
+        "Portrait shot, displayed at 3:4 (taller than wide) in both the team grid card and the detail-page sidebar. Recommended: 900×1200 px JPG (< 400 KB). Safe area: face + shoulders in the top two-thirds of the frame, centered horizontally. Use the focal hotspot to mark the face — it stays in view when the image is cropped on smaller screens.",
     }),
     defineField({ name: "email", title: "Email", type: "string" }),
     defineField({ name: "phone", title: "Phone", type: "string" }),

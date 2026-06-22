@@ -32,6 +32,8 @@ export const practiceArea = defineType({
       title: "Hero image",
       type: "image",
       options: { hotspot: true },
+      description:
+        "Used in two places. (1) Practice areas grid card: cropped to 4:3 — keep the subject centered. (2) Detail page top band: full-bleed at 360 px tall (480 px on desktop) — title + breadcrumb sit on the BOTTOM-LEFT, so keep that corner uncluttered. Recommended: 2400×1800 px JPG (< 600 KB). Use the focal hotspot to mark what must stay visible.",
     }),
     defineField({
       name: "paragraphs",
