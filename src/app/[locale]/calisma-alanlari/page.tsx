@@ -34,21 +34,6 @@ export default async function PracticeAreasPage({
     imageSrc: `/images/practice-areas/${slug}.png`,
   }));
 
-  const stats = [
-    {
-      value: t("practiceAreas.stats.areasValue"),
-      label: t("practiceAreas.stats.areasLabel"),
-    },
-    {
-      value: t("practiceAreas.stats.yearsValue"),
-      label: t("practiceAreas.stats.yearsLabel"),
-    },
-    {
-      value: t("practiceAreas.stats.scopeValue"),
-      label: t("practiceAreas.stats.scopeLabel"),
-    },
-  ];
-
   return (
     <>
       <PracticeAreasHero
@@ -63,7 +48,6 @@ export default async function PracticeAreasPage({
       <PracticeAreasGrid
         areas={areas}
         readMoreLabel={t("common.readMore")}
-        stats={stats}
       />
     </>
   );

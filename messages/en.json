@@ -139,14 +139,6 @@
     },
     "sidebarLabel": "All Practice Areas",
     "backToPracticeAreas": "Back to Practice Areas",
-    "stats": {
-      "areasValue": "10",
-      "areasLabel": "Practice Areas",
-      "yearsValue": "20+",
-      "yearsLabel": "Years of Experience",
-      "scopeValue": "International",
-      "scopeLabel": "Client Base"
-    },
     "cta": {
       "title": "Discuss {area} with our team",
       "subtitle": "Please contact us directly to discuss a matter or instruction.",
@@ -206,16 +198,6 @@
           "On the litigation side, our experience in the logistics sector covers port, terminal and warehouse liability, contractual disputes, recourse actions against sub-carriers and freight forwarders as well as disputes arising from tax and custom liabilities."
         ]
       },
-      "finance": {
-        "title": "Finance",
-        "summary": "Ship, yacht, aviation, structured and trade finance — drafting, negotiating and enforcing security.",
-        "paragraphs": [
-          "The finance team led by Dilek Bektaşoğlu-Sanlı is instructed by leading international and local finance institutions, including banks and leasing companies, corporate bodies and shipyards. Our expertise covers structuring, drafting and negotiating loan and leasing contracts and security documents.",
-          "The firm assists clients in relation to the restructuring of the existing loan transactions and litigation of defaulted facilities, including foreclosure of mortgage and other securities.",
-          "The Firm has extensive expertise in ship finance, yacht finance, aviation finance, structured and project finance, and trade finance.",
-          "The 2010 edition of Legal 500 wrote: \"The firm's ship finance specialist, Dilek Bektaşoğlu-Sanlı, is singled out as an 'excellent professional'.\""
-        ]
-      },
       "trade-and-commodities": {
         "title": "Trade and Commodities",
         "summary": "Sale and purchase agreements, sanctions, customs and letters of credit advice for traders and banks.",
@@ -231,23 +213,6 @@
         "paragraphs": [
           "Corporate and commercial matters are another practice of our firm developed. Among others, we provide services on the following main areas: founding of companies with foreign capital, general advice in corporate management, shareholders disputes, directors' liability, debt restructuring and corporate litigation.",
           "Our firm has also experience in drafting contracts of various corporate transactions; such as shareholders' agreements, share transfer, share pledge, and joint venture agreements."
-        ]
-      },
-      "real-estate-and-property": {
-        "title": "Real Estate and Property",
-        "summary": "Acquisition and transfer of property for foreign nationals — due diligence, permits, sale agreements and inheritance.",
-        "paragraphs": [
-          "One of the areas that the Firm has been more active in the recent years is real estate and property law. Erçin Bilgin Bektaşoğlu has assisted various foreign nationals to acquire property in Turkey. We provide assistance in the due diligence stage, carry out the process to obtain required permits and negotiate the sales agreement.",
-          "Turkey's laws with respect to foreign nationals frequently change, also with respect to specific nationalities and locations, wherefore Clients should consider asking for the assistance of a lawyer from early stages of their intended transaction. The Firm has contacts with various Real Estate agents all over the country to validate data and offer Clients alternatives.",
-          "The Firm is able to carry out the required procedures for inheritance and transfer of title, including all tax obligations that may arise."
-        ]
-      },
-      "employment-and-labour": {
-        "title": "Employment and Labour",
-        "summary": "Employment contracts, labour law advice and employment-related litigation for large and medium organisations.",
-        "paragraphs": [
-          "The firm has experience in drafting employment contracts, advising on labour law issues and dealing with employment related litigation.",
-          "We act for clients ranging from large to medium sized organisations in various industry sectors."
         ]
       }
     }

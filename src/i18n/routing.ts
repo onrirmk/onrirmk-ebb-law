@@ -6,11 +6,8 @@ export const PRACTICE_AREA_SLUGS = [
   "aviation",
   "shipping",
   "logistics-and-transport",
-  "finance",
   "trade-and-commodities",
   "corporate-and-commercial",
-  "real-estate-and-property",
-  "employment-and-labour",
 ] as const;
 
 export type PracticeAreaSlug = (typeof PRACTICE_AREA_SLUGS)[number];
