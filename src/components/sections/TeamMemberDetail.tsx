@@ -1,6 +1,5 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import type { PracticeAreaSlug } from "@/i18n/routing";
 import type { TeamMember } from "@/types/content";
 import { TeamMemberSidebar } from "./TeamMemberSidebar";
 import { TeamMemberContent } from "./TeamMemberContent";
@@ -10,13 +9,11 @@ type Props = {
   backToTeamLabel: string;
   linkedinLabel: string;
   eyebrows: {
-    expertise: string;
     biography: string;
     education: string;
     memberships: string;
     languages: string;
   };
-  practiceAreaTitles: Record<PracticeAreaSlug, string>;
 };
 
 export function TeamMemberDetail({
@@ -24,37 +21,27 @@ export function TeamMemberDetail({
   backToTeamLabel,
   linkedinLabel,
   eyebrows,
-  practiceAreaTitles,
 }: Props) {
   return (
-    <div className="mx-auto max-w-[1280px] px-[24px] md:px-[100px]">
-      <div className="mb-[40px] mt-[24px]">
-        <Link
-          href="/team"
-          className="inline-flex items-center gap-[8px] text-[14px] font-medium text-[#212C60]/70 transition-colors hover:text-[#212C60]"
-        >
-          <ArrowLeft className="h-[16px] w-[16px]" aria-hidden />
-          {backToTeamLabel}
-        </Link>
+    <>
+      <div className="bg-[#212C60] text-white">
+        <div className="mx-auto max-w-[1280px] px-[24px] pb-[20px] pt-[136px] md:px-[100px] md:pb-[24px] md:pt-[140px]">
+          <Link
+            href="/team"
+            className="inline-flex items-center gap-[8px] text-[14px] font-medium text-white/80 transition-colors hover:text-white"
+          >
+            <ArrowLeft className="h-[16px] w-[16px]" aria-hidden />
+            {backToTeamLabel}
+          </Link>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-[48px] md:grid-cols-[400px_1fr]">
-        <TeamMemberSidebar
-          member={member}
-          expertiseLabel={eyebrows.expertise}
-          linkedinLabel={linkedinLabel}
-          practiceAreaTitles={practiceAreaTitles}
-        />
-        <TeamMemberContent
-          member={member}
-          eyebrows={{
-            biography: eyebrows.biography,
-            education: eyebrows.education,
-            memberships: eyebrows.memberships,
-            languages: eyebrows.languages,
-          }}
-        />
+      <div className="mx-auto max-w-[1280px] px-[24px] py-[40px] md:px-[100px] md:py-[56px]">
+        <div className="grid grid-cols-1 gap-[48px] md:grid-cols-[400px_1fr]">
+          <TeamMemberSidebar member={member} linkedinLabel={linkedinLabel} />
+          <TeamMemberContent member={member} eyebrows={eyebrows} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
