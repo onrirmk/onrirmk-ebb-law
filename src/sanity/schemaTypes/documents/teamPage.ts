@@ -32,7 +32,7 @@ export const teamPage = defineType({
       group: "hero",
       options: { hotspot: true },
       description:
-        "Recommended: 2400×1400 px JPG (< 600 KB). Displayed as a full-bleed band at ~82vh tall (min 560–630 px). Title + eyebrow are centered. Safe area: keep the subject from filling the center vertical band so it doesn't fight the headline; the left/right ~200 px and top/bottom can be cropped on narrow viewports. Use the focal hotspot to mark what must stay visible.",
+        "Önerilen: 2400×1400 px JPG (dosya boyutu 600 KB altı). Sayfanın üstünde ekran yüksekliğinin yaklaşık %82'si kadar (en az 560–630 px) tam genişlikte bir bant olarak gösterilir. Başlık ve üst etiket görselin üzerinde ortalıdır. Güvenli alan: ana konunun, yazıyla çakışmaması için görselin orta dikey bandını doldurmamasına dikkat edin; sağ/sol kenardan yaklaşık 200 px ile alt-üst kısımlar dar ekranlarda kırpılabilir. Mutlaka görünmesi gereken yeri Sanity'nin odak noktası (hotspot) aracıyla işaretleyin.",
     }),
     defineField({
       name: "detailHeroImage",
@@ -41,7 +41,7 @@ export const teamPage = defineType({
       group: "hero",
       options: { hotspot: true },
       description:
-        "Used as the band image on /team/[slug]. Recommended: 2400×600 px JPG (4:1 panoramic, < 400 KB). Displayed at ~280–340 px tall full-bleed. The member name + back link sit on the LEFT side, so keep the subject right-of-center.",
+        "Her bir avukatın detay sayfasında (/team/[slug]) üstteki panoramik bant olarak kullanılır. Önerilen: 2400×600 px JPG (4:1 panoramik oran, dosya boyutu 400 KB altı). Yaklaşık 280–340 px yükseklikte tam genişlikte gösterilir. Avukatın adı ve geri dönüş bağlantısı SOL tarafta yer aldığı için ana konuyu görselin sağ yarısına yerleştirin.",
     }),
     defineField({
       name: "intro",

@@ -27,7 +27,7 @@ export const teamMember = defineType({
       type: "image",
       options: { hotspot: true },
       description:
-        "Portrait shot, displayed at 3:4 (taller than wide) in both the team grid card and the detail-page sidebar. Recommended: 900×1200 px JPG (< 400 KB). Safe area: face + shoulders in the top two-thirds of the frame, centered horizontally. Use the focal hotspot to mark the face — it stays in view when the image is cropped on smaller screens.",
+        "Dikey (portre) çekim. Ekibimiz sayfasındaki kartta ve detay sayfasının yan panelinde 3:4 oranında (eninden uzun) gösterilir. Önerilen: 900×1200 px JPG (dosya boyutu 400 KB altı). Güvenli alan: yüz ve omuzlar çerçevenin üst üçte ikilik bölümünde, yatayda ortalanmış olmalı. Yüzü Sanity'nin odak noktası (hotspot) aracıyla işaretleyin — küçük ekranlarda görsel kırpıldığında yüzün her zaman görünür kalmasını sağlar.",
     }),
     defineField({ name: "email", title: "Email", type: "string" }),
     defineField({ name: "phone", title: "Phone", type: "string" }),
