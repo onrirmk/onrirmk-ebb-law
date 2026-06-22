@@ -1,4 +1,5 @@
 import type { StructureResolver } from "sanity/structure";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 const SINGLETONS: Array<{ id: string; title: string }> = [
   { id: "siteSettings", title: "Site Settings" },
@@ -9,7 +10,7 @@ const SINGLETONS: Array<{ id: string; title: string }> = [
   { id: "contactPage", title: "Contact Page" },
 ];
 
-export const structure: StructureResolver = (S) =>
+export const structure: StructureResolver = (S, context) =>
   S.list()
     .title("Content")
     .items([
@@ -20,8 +21,18 @@ export const structure: StructureResolver = (S) =>
           .child(S.document().schemaType(id).documentId(id).title(title)),
       ),
       S.divider(),
-      S.documentTypeListItem("practiceArea").title("Practice Areas"),
-      S.documentTypeListItem("teamMember").title("Team Members"),
+      orderableDocumentListDeskItem({
+        type: "practiceArea",
+        title: "Practice Areas",
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: "teamMember",
+        title: "Team Members",
+        S,
+        context,
+      }),
     ]);
 
 export const SINGLETON_IDS = SINGLETONS.map((s) => s.id);

@@ -1,12 +1,15 @@
 import { DocumentTextIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
+import { orderRankField, orderRankOrdering } from "@sanity/orderable-document-list";
 
 export const practiceArea = defineType({
   name: "practiceArea",
   title: "Practice Area",
   type: "document",
   icon: DocumentTextIcon,
+  orderings: [orderRankOrdering],
   fields: [
+    orderRankField({ type: "practiceArea" }),
     defineField({
       name: "title",
       title: "Title",
@@ -41,19 +44,6 @@ export const practiceArea = defineType({
       type: "array",
       of: [{ type: "text", rows: 4 }],
     }),
-    defineField({
-      name: "order",
-      title: "Sort order",
-      type: "number",
-      description: "Lower numbers appear first. Use 10, 20, 30 to leave room.",
-    }),
-  ],
-  orderings: [
-    {
-      title: "Manual order",
-      name: "manualOrder",
-      by: [{ field: "order", direction: "asc" }],
-    },
   ],
   preview: {
     select: { title: "title", subtitle: "slug.current", media: "heroImage" },

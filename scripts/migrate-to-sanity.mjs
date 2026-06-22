@@ -16,6 +16,7 @@
 // asset library), so prefer not to.
 
 import { createClient } from "@sanity/client";
+import { LexoRank } from "lexorank";
 import { readFileSync, createReadStream, existsSync } from "node:fs";
 import { basename } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -205,6 +206,7 @@ async function run() {
   // ---------- practiceArea (collection) ----------
   log("practiceArea documents");
   const areaIdBySlug = {};
+  let practiceAreaRank = LexoRank.middle();
   for (let i = 0; i < PRACTICE_AREA_SLUGS.length; i++) {
     const slug = PRACTICE_AREA_SLUGS[i];
     const area = messages.practiceAreas.areas[slug];
@@ -223,8 +225,9 @@ async function run() {
       summary: area.summary,
       heroImage: image ?? undefined,
       paragraphs: area.paragraphs,
-      order: (i + 1) * 10,
+      orderRank: practiceAreaRank.toString(),
     });
+    practiceAreaRank = practiceAreaRank.genNext();
     log(`  • ${slug}`);
   }
 
@@ -246,6 +249,7 @@ async function run() {
   // ---------- teamMember (collection) ----------
   log("teamMember documents");
   const members = messages.team.members || [];
+  let memberRank = LexoRank.middle();
   for (let i = 0; i < members.length; i++) {
     const m = members[i];
     const photo = await uploadImage(`/images/team/${m.slug}.png`);
@@ -279,8 +283,9 @@ async function run() {
           _type: "reference",
           _ref: id,
         })),
-      order: (i + 1) * 10,
+      orderRank: memberRank.toString(),
     });
+    memberRank = memberRank.genNext();
     log(`  • ${m.slug}`);
   }
 

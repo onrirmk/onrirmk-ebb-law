@@ -60,14 +60,13 @@ const CONTACT_PAGE_QUERY = `*[_type == "contactPage"][0]{
   officeEyebrow, officeName
 }`;
 
-const PRACTICE_AREAS_QUERY = `*[_type == "practiceArea"] | order(order asc){
+const PRACTICE_AREAS_QUERY = `*[_type == "practiceArea"] | order(orderRank asc){
   _id,
   title,
   "slug": slug.current,
   summary,
   heroImage { ${IMAGE_PROJECTION} },
-  paragraphs,
-  order
+  paragraphs
 }`;
 
 const PRACTICE_AREA_BY_SLUG_QUERY = `*[_type == "practiceArea" && slug.current == $slug][0]{
@@ -76,11 +75,10 @@ const PRACTICE_AREA_BY_SLUG_QUERY = `*[_type == "practiceArea" && slug.current =
   "slug": slug.current,
   summary,
   heroImage { ${IMAGE_PROJECTION} },
-  paragraphs,
-  order
+  paragraphs
 }`;
 
-const TEAM_MEMBERS_QUERY = `*[_type == "teamMember"] | order(order asc){
+const TEAM_MEMBERS_QUERY = `*[_type == "teamMember"] | order(orderRank asc){
   _id,
   name,
   "slug": slug.current,
@@ -91,8 +89,7 @@ const TEAM_MEMBERS_QUERY = `*[_type == "teamMember"] | order(order asc){
   education[]{ _key, year, institution, degree },
   memberships,
   languages,
-  practiceAreas[]->{ "slug": slug.current, title },
-  order
+  practiceAreas[]->{ "slug": slug.current, title }
 }`;
 
 const TEAM_MEMBER_BY_SLUG_QUERY = `*[_type == "teamMember" && slug.current == $slug][0]{
@@ -106,8 +103,7 @@ const TEAM_MEMBER_BY_SLUG_QUERY = `*[_type == "teamMember" && slug.current == $s
   education[]{ _key, year, institution, degree },
   memberships,
   languages,
-  practiceAreas[]->{ "slug": slug.current, title },
-  order
+  practiceAreas[]->{ "slug": slug.current, title }
 }`;
 
 export type SiteSettings = {
@@ -195,7 +191,6 @@ export type PracticeAreaDoc = {
   summary?: string;
   heroImage?: SanityImage;
   paragraphs?: string[];
-  order?: number;
 };
 
 export type EducationEntry = {
@@ -220,7 +215,6 @@ export type TeamMemberDoc = {
   memberships?: string[];
   languages?: string[];
   practiceAreas?: { slug: string; title: string }[];
-  order?: number;
 };
 
 const FETCH_OPTS = { next: { revalidate: 10 } } as const;
