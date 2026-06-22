@@ -4,14 +4,12 @@ import { Link } from "@/i18n/navigation";
 import type { TeamMember } from "@/types/content";
 
 type Props = {
-  eyebrow: string;
   title: string;
   subtitle: string;
   founders: Pick<TeamMember, "slug" | "name" | "position" | "photoSrc">[];
 };
 
 export function AboutFoundersGrid({
-  eyebrow,
   title,
   subtitle,
   founders,
@@ -19,10 +17,7 @@ export function AboutFoundersGrid({
   return (
     <section className="mx-auto max-w-[1280px] px-[24px] pt-[64px] md:px-[100px] md:pt-[96px]">
       <div className="max-w-[820px]">
-        <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#212C60]/70 md:text-[13px]">
-          {eyebrow}
-        </p>
-        <h2 className="mt-[12px] font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
+        <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
           {title}
         </h2>
         <p className="mt-[12px] text-[16px] leading-[26px] text-[#1C1B1F]/75 md:text-[17px] md:leading-[28px]">
