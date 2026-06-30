@@ -81,6 +81,7 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
   const underlineColorClass = isSolid ? "after:bg-[#212C60]" : "after:bg-white";
 
   return (
+    <>
     <header className={headerClass}>
       <div className="relative mx-auto h-full w-full max-w-[1680px]">
         <Link
@@ -136,51 +137,52 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
           <Menu className="h-[24px] w-[24px]" aria-hidden="true" />
         </button>
       </div>
-
-      <div
-        id="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Site menu"
-        hidden={!isOpen}
-        className={`fixed inset-0 z-50 bg-white text-[#212C60] transition-opacity duration-300 ease-out md:hidden ${
-          isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      >
-        <button
-          ref={closeRef}
-          type="button"
-          onClick={() => setIsOpen(false)}
-          aria-label="Close menu"
-          className="absolute right-[16px] top-[43px] inline-flex h-[40px] w-[40px] items-center justify-center p-[8px] text-[#212C60]"
-        >
-          <X className="h-[24px] w-[24px]" aria-hidden="true" />
-        </button>
-
-        <nav aria-label="Mobile" className="px-[24px] pt-[80px]">
-          <ul className="flex flex-col gap-[24px]">
-            {NAV_LINKS.map((link) => {
-              const isActive = isActiveLink(link.href);
-              return (
-                <li key={link.key}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`font-sans text-[24px] font-medium leading-[32px] tracking-wide text-[#212C60] ${
-                      isActive
-                        ? "underline decoration-2 underline-offset-[8px]"
-                        : ""
-                    }`}
-                  >
-                    {t(link.key)}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
     </header>
+
+    <div
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+      hidden={!isOpen}
+      className={`fixed inset-0 z-[60] bg-white text-[#212C60] transition-opacity duration-300 ease-out md:hidden ${
+        isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+      }`}
+    >
+      <button
+        ref={closeRef}
+        type="button"
+        onClick={() => setIsOpen(false)}
+        aria-label="Close menu"
+        className="absolute right-[16px] top-[43px] inline-flex h-[40px] w-[40px] items-center justify-center p-[8px] text-[#212C60]"
+      >
+        <X className="h-[24px] w-[24px]" aria-hidden="true" />
+      </button>
+
+      <nav aria-label="Mobile" className="px-[24px] pt-[120px]">
+        <ul className="flex flex-col gap-[24px]">
+          {NAV_LINKS.map((link) => {
+            const isActive = isActiveLink(link.href);
+            return (
+              <li key={link.key}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`font-sans text-[24px] font-medium leading-[32px] tracking-wide text-[#212C60] ${
+                    isActive
+                      ? "underline decoration-2 underline-offset-[8px]"
+                      : ""
+                  }`}
+                >
+                  {t(link.key)}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+    </>
   );
 }
