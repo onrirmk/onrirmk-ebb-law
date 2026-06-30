@@ -80,15 +80,15 @@ export async function Footer() {
 
           <nav aria-label={t("footer.practiceAreasTitle")}>
             <h3 className={PILL_CLASS}>{t("footer.practiceAreasTitle")}</h3>
-            <ul className="md:columns-2 md:[column-gap:40px]">
+            <ul>
               {practiceAreas.map((area) => (
-                <li key={area.slug} className="break-inside-avoid">
+                <li key={area.slug}>
                   <Link
                     href={{
                       pathname: "/calisma-alanlari/[slug]",
                       params: { slug: area.slug },
                     }}
-                    className={LINK_CLASS}
+                    className={`${LINK_CLASS} whitespace-nowrap`}
                   >
                     {area.title}
                   </Link>
