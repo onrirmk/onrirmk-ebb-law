@@ -49,6 +49,8 @@ export default async function HomePage({
       <WelcomeSection
         title={home?.welcomeTitle ?? ""}
         paragraphs={home?.welcomeParagraphs ?? []}
+        ctaLabel={t("about.previewReadMore")}
+        ctaHref="/hakkimizda"
       />
       <SectionDivider />
       <AwardsTestimonialRow
