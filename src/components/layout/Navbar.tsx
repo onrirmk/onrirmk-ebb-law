@@ -56,11 +56,29 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
     setIsOpen(false);
   }, [pathname]);
 
-  const headerClass =
-    "absolute inset-x-0 top-0 z-30 h-[122px] w-full text-white";
+  // Pages that do not start with a dark hero band — navbar must be
+  // solid from the first paint or the white text vanishes on white.
+  const pageStartsSolid = /^\/team\/[^/]+/.test(pathname);
 
-  const linkColorClass = "text-white";
-  const toggleColorClass = "text-white";
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const isSolid = scrolled || pageStartsSolid;
+
+  const headerClass = `fixed inset-x-0 top-0 z-30 h-[122px] w-full transition-colors duration-300 ${
+    isSolid
+      ? "bg-white/95 shadow-[0_1px_0_rgba(28,27,31,0.08)] backdrop-blur"
+      : "bg-transparent"
+  } ${isSolid ? "text-[#212C60]" : "text-white"}`;
+
+  const linkColorClass = isSolid ? "text-[#212C60]" : "text-white";
+  const toggleColorClass = isSolid ? "text-[#212C60]" : "text-white";
+  const underlineColorClass = isSolid ? "after:bg-[#212C60]" : "after:bg-white";
 
   return (
     <header className={headerClass}>
@@ -93,8 +111,8 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
                   <Link
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
-                    className={`relative inline-block font-sans text-[18px] font-medium leading-[28px] tracking-wide ${linkColorClass}
-                      after:pointer-events-none after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-white after:origin-left
+                    className={`relative inline-block font-sans text-[18px] font-medium leading-[28px] tracking-wide ${linkColorClass} transition-colors duration-300
+                      after:pointer-events-none after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] ${underlineColorClass} after:origin-left
                       after:transition-transform after:duration-[450ms] after:ease-[cubic-bezier(0.16,1,0.3,1)]
                       ${isActive ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100"}`}
                   >
