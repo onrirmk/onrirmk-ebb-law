@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { UserCircle2, Mail, Phone } from "lucide-react";
+import type { TeamMember } from "@/types/content";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -13,72 +14,84 @@ function LinkedInIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-import type { TeamMember } from "@/types/content";
 
 type Props = {
   member: TeamMember;
   linkedinLabel: string;
 };
 
-export function TeamMemberSidebar({
-  member,
-  linkedinLabel,
-}: Props) {
+export function TeamMemberSidebar({ member, linkedinLabel }: Props) {
   return (
     <aside className="md:sticky md:top-[120px] md:self-start">
-      <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden bg-[#F5F5F5] md:mx-0 md:max-w-none">
-        {member.photoSrc ? (
-          <Image
-            src={member.photoSrc}
-            alt={member.name}
-            fill
-            sizes="(min-width: 768px) 400px, 300px"
-            className="object-cover"
-            priority
-          />
-        ) : (
+      <div className="mx-auto max-w-[360px] overflow-hidden rounded-[8px] bg-white shadow-[0_10px_36px_rgba(28,27,31,0.10)] ring-1 ring-[#1C1B1F]/[0.06] md:mx-0 md:max-w-none">
+        <div className="relative aspect-square w-full bg-[#EEF0F5]">
+          {member.photoSrc ? (
+            <Image
+              src={member.photoSrc}
+              alt={member.name}
+              fill
+              sizes="(min-width: 768px) 380px, 360px"
+              className="object-cover"
+              priority
+            />
+          ) : (
+            <div
+              aria-hidden
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <UserCircle2
+                className="h-[88px] w-[88px] text-[#1C1B1F]/25"
+                strokeWidth={1}
+              />
+            </div>
+          )}
+        </div>
+        <div className="px-[24px] pb-[22px] pt-[20px] md:px-[28px] md:pb-[24px] md:pt-[22px]">
+          <h1 className="font-sans text-[22px] font-bold leading-[28px] text-[#212C60] md:text-[24px] md:leading-[30px]">
+            {member.name}
+          </h1>
+          {member.position ? (
+            <p className="mt-[6px] font-sans text-[12px] font-semibold uppercase leading-[18px] tracking-[0.16em] text-[#1C1B1F]/60 md:text-[13px]">
+              {member.position}
+            </p>
+          ) : null}
           <div
             aria-hidden
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <UserCircle2
-              className="h-[80px] w-[80px] text-[#1C1B1F]/30"
-              strokeWidth={1}
-            />
+            className="my-[14px] h-px w-[40px] bg-[#1C1B1F]/20 md:my-[16px]"
+          />
+          <div className="flex items-center gap-[14px]">
+            {member.email ? (
+              <a
+                href={`mailto:${member.email}`}
+                aria-label={member.email}
+                className="text-[#1C1B1F]/55 transition-colors hover:text-[#212C60]"
+              >
+                <Mail className="h-[20px] w-[20px]" aria-hidden />
+              </a>
+            ) : null}
+            {member.phone ? (
+              <a
+                href={`tel:${member.phone.replace(/\s+/g, "")}`}
+                aria-label={member.phone}
+                className="text-[#1C1B1F]/55 transition-colors hover:text-[#212C60]"
+              >
+                <Phone className="h-[20px] w-[20px]" aria-hidden />
+              </a>
+            ) : null}
+            {member.linkedinUrl ? (
+              <a
+                href={member.linkedinUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={linkedinLabel}
+                className="text-[#1C1B1F]/55 transition-colors hover:text-[#212C60]"
+              >
+                <LinkedInIcon className="h-[20px] w-[20px]" />
+              </a>
+            ) : null}
           </div>
-        )}
+        </div>
       </div>
-
-      <div className="mt-[24px] flex flex-col gap-[12px]">
-        <a
-          href={`mailto:${member.email}`}
-          className="group inline-flex items-center gap-[12px] text-[15px] leading-[24px] text-[#1C1B1F] transition-colors hover:text-[#212C60]"
-        >
-          <Mail className="h-[18px] w-[18px] flex-shrink-0 text-[#1C1B1F]/60" aria-hidden />
-          <span className="truncate group-hover:underline">{member.email}</span>
-        </a>
-        {member.phone ? (
-          <a
-            href={`tel:${member.phone.replace(/\s+/g, "")}`}
-            className="group inline-flex items-center gap-[12px] text-[15px] leading-[24px] text-[#1C1B1F] transition-colors hover:text-[#212C60]"
-          >
-            <Phone className="h-[18px] w-[18px] flex-shrink-0 text-[#1C1B1F]/60" aria-hidden />
-            <span className="group-hover:underline">{member.phone}</span>
-          </a>
-        ) : null}
-        {member.linkedinUrl ? (
-          <a
-            href={member.linkedinUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="group inline-flex items-center gap-[12px] text-[15px] leading-[24px] text-[#1C1B1F] transition-colors hover:text-[#212C60]"
-          >
-            <LinkedInIcon className="h-[18px] w-[18px] flex-shrink-0 text-[#1C1B1F]/60" />
-            <span className="group-hover:underline">{linkedinLabel}</span>
-          </a>
-        ) : null}
-      </div>
-
     </aside>
   );
 }

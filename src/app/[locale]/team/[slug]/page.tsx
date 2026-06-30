@@ -6,7 +6,6 @@ import type { TeamMember } from "@/types/content";
 import {
   fetchTeamMemberBySlug,
   fetchTeamMembers,
-  fetchTeamPage,
 } from "@/sanity/lib/queries";
 import { imageSrc } from "@/sanity/lib/image";
 
@@ -36,10 +35,9 @@ export default async function TeamMemberPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const [t, m, page] = await Promise.all([
+  const [t, m] = await Promise.all([
     getTranslations(),
     fetchTeamMemberBySlug(slug),
-    fetchTeamPage(),
   ]);
 
   if (!m) notFound();
@@ -66,7 +64,6 @@ export default async function TeamMemberPage({
   return (
     <TeamMemberDetail
       member={member}
-      bandImageSrc={imageSrc(page?.detailHeroImage) ?? undefined}
       backToTeamLabel={t("team.backToTeam")}
       linkedinLabel={t("team.linkedinLabel")}
       eyebrows={{
