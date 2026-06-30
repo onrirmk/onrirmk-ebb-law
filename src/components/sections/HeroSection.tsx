@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 
-type Slide = { src: string; alt: string };
+type Slide = { src: string; alt: string; objectPosition?: string };
 
 type Props = {
   titleLine1: string;
@@ -41,7 +41,7 @@ export function HeroSection({
 
   return (
     <section className="relative isolate w-full overflow-hidden">
-      <div className="relative mx-auto h-[600px] w-full max-w-[1680px] md:h-screen md:min-h-[600px]">
+      <div className="relative mx-auto h-[70vh] min-h-[480px] w-full max-w-[1680px] md:h-screen md:min-h-[600px]">
         {slides.map((slide, i) => (
           <Image
             key={slide.src}
@@ -53,7 +53,7 @@ export function HeroSection({
             className={`object-cover transition-opacity duration-700 ease-out ${
               i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
-            style={{ objectPosition: "70% 22%" }}
+            style={{ objectPosition: slide.objectPosition ?? "50% 50%" }}
           />
         ))}
 

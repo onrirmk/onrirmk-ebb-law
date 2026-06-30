@@ -31,3 +31,16 @@ export function imageSrc(
 export function imageDimensions(image: SanityImage | null | undefined) {
   return image?.asset?.metadata?.dimensions ?? null;
 }
+
+// Convert the editor-set hotspot focal point into a CSS object-position
+// value so cropped images (object-cover) keep that point visible on every
+// viewport. Returns null when no hotspot has been placed in Studio.
+export function imageHotspotPosition(
+  image: SanityImage | null | undefined,
+): string | null {
+  const h = image?.hotspot;
+  if (!h) return null;
+  const x = Math.round(h.x * 100);
+  const y = Math.round(h.y * 100);
+  return `${x}% ${y}%`;
+}
