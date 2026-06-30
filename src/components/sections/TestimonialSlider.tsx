@@ -52,7 +52,7 @@ export function TestimonialSlider({ testimonials }: Props) {
       <p
         key={activeIndex}
         aria-live="polite"
-        className="font-sans text-[16px] font-normal leading-[28px] tracking-[0.06px] text-[#1C1B1F] animate-in fade-in duration-300 md:text-[18px] md:leading-[30px]"
+        className="min-h-[140px] font-sans text-[16px] font-normal leading-[28px] tracking-[0.06px] text-[#1C1B1F] animate-in fade-in duration-300 md:text-[18px] md:leading-[30px]"
       >
         {active.quote}
       </p>
