@@ -26,13 +26,13 @@ export function TeamMemberSidebar({
 }: Props) {
   return (
     <aside className="md:sticky md:top-[120px] md:self-start">
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F5F5F5]">
+      <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden bg-[#F5F5F5] md:mx-0 md:max-w-none">
         {member.photoSrc ? (
           <Image
             src={member.photoSrc}
             alt={member.name}
             fill
-            sizes="(min-width: 768px) 400px, 100vw"
+            sizes="(min-width: 768px) 400px, 300px"
             className="object-cover"
             priority
           />
@@ -49,16 +49,7 @@ export function TeamMemberSidebar({
         )}
       </div>
 
-      <div className="mt-[24px]">
-        <h1 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60]">
-          {member.name}
-        </h1>
-        <p className="mt-[4px] font-sans text-[16px] leading-[24px] text-[#1C1B1F]/70">
-          {member.position}
-        </p>
-      </div>
-
-      <div className="mt-[24px] flex flex-col gap-[12px] border-t border-[#1C1B1F]/10 pt-[24px]">
+      <div className="mt-[24px] flex flex-col gap-[12px]">
         <a
           href={`mailto:${member.email}`}
           className="group inline-flex items-center gap-[12px] text-[15px] leading-[24px] text-[#1C1B1F] transition-colors hover:text-[#212C60]"
