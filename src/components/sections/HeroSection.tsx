@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type TouchEvent } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -39,9 +39,29 @@ export function HeroSection({
   const goPrev = () => goTo(activeIndex - 1);
   const goNext = () => goTo(activeIndex + 1);
 
+  const touchStartX = useRef<number | null>(null);
+  const SWIPE_THRESHOLD = 50;
+
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = e.touches[0]?.clientX ?? null;
+  };
+  const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null) return;
+    const endX = e.changedTouches[0]?.clientX ?? touchStartX.current;
+    const delta = endX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+    if (delta < 0) goNext();
+    else goPrev();
+  };
+
   return (
     <section className="relative isolate w-full overflow-hidden">
-      <div className="relative mx-auto h-[70vh] min-h-[480px] w-full max-w-[1680px] md:h-screen md:min-h-[600px]">
+      <div
+        className="relative mx-auto h-[70vh] min-h-[480px] w-full max-w-[1680px] touch-pan-y md:h-screen md:min-h-[600px]"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {slides.map((slide, i) => (
           <Image
             key={slide.src}
