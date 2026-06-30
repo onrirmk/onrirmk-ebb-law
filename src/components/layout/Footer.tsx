@@ -15,10 +15,10 @@ const NAV_LINKS: NavLink[] = [
 ];
 
 const PILL_CLASS =
-  "mb-[16px] inline-block rounded-[4px] bg-[#DEA356] px-[16px] py-[6px] font-sans text-[14px] font-bold uppercase tracking-wide text-white";
+  "mb-[12px] inline-block rounded-[4px] bg-[#DEA356] px-[12px] py-[5px] font-sans text-[12px] font-bold uppercase tracking-wide text-white md:mb-[16px] md:px-[16px] md:py-[6px] md:text-[14px]";
 
 const LINK_CLASS =
-  `group relative inline-block text-[14px] font-medium leading-[28px] text-[#1C1B1F] transition-colors hover:text-[#212C60]
+  `group relative inline-block text-[13px] font-medium leading-[24px] text-[#1C1B1F] transition-colors hover:text-[#212C60] md:text-[14px] md:leading-[28px]
    after:pointer-events-none after:absolute after:bottom-[2px] after:left-0 after:right-0 after:h-[1.5px] after:bg-[#212C60] after:origin-left after:scale-x-0
    after:transition-transform after:duration-[450ms] after:ease-[cubic-bezier(0.16,1,0.3,1)]
    hover:after:scale-x-100`;
@@ -54,14 +54,14 @@ export async function Footer() {
       <div className="mx-auto max-w-[1680px] px-[24px] md:px-[87px]">
         <div className="h-px bg-[#1C1B1F]/15" />
 
-        <div className="grid grid-cols-1 gap-y-[32px] pt-[64px] md:grid-cols-[auto_1fr_2fr_auto_1.5fr] md:gap-x-[40px] md:gap-y-0">
+        <div className="grid grid-cols-1 gap-y-[24px] pt-[40px] md:grid-cols-[auto_1fr_2fr_auto_1.5fr] md:gap-x-[40px] md:gap-y-0 md:pt-[64px]">
           <div>
             <Image
               src={footerLogoSrc ?? "/images/logo/ebb-logo-footer.png"}
               alt={settings?.firmName ?? "Law Firm"}
               width={352}
               height={88}
-              className="block h-[80px] w-auto"
+              className="block h-[56px] w-auto md:h-[80px]"
             />
           </div>
 
@@ -103,7 +103,7 @@ export async function Footer() {
           />
 
           <address className="not-italic">
-            <div className="text-[14px] leading-[20px] text-[#1C1B1F]">
+            <div className="text-[13px] leading-[18px] text-[#1C1B1F] md:text-[14px] md:leading-[20px]">
               {phone ? (
                 <div className="flex items-start gap-[8px]">
                   <Phone className={ICON_CLASS} aria-hidden />
