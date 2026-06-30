@@ -7,7 +7,7 @@ import { SectionDivider } from "@/components/layout/SectionDivider";
 import type { TestimonialItem } from "@/components/sections/TestimonialSlider";
 import type { Award } from "@/types/content";
 import { fetchHomePage } from "@/sanity/lib/queries";
-import { imageSrc } from "@/sanity/lib/image";
+import { imageSrc, imageHotspotPosition } from "@/sanity/lib/image";
 
 export default async function HomePage({
   params,
@@ -18,12 +18,17 @@ export default async function HomePage({
   setRequestLocale(locale);
   const [t, home] = await Promise.all([getTranslations(), fetchHomePage()]);
 
-  const slides = (home?.heroSlides ?? [])
-    .map((s) => {
-      const src = imageSrc(s.image);
-      return src ? { src, alt: s.alt ?? "" } : null;
-    })
-    .filter((s): s is { src: string; alt: string } => s !== null);
+  type Slide = { src: string; alt: string; objectPosition?: string };
+  const slides: Slide[] = (home?.heroSlides ?? []).flatMap((s) => {
+    const src = imageSrc(s.image);
+    if (!src) return [];
+    const objectPosition = imageHotspotPosition(s.image);
+    return [{
+      src,
+      alt: s.alt ?? "",
+      ...(objectPosition ? { objectPosition } : {}),
+    }];
+  });
 
   const awards: Award[] = (home?.awards ?? []).map((a) => ({
     key: a._key,
