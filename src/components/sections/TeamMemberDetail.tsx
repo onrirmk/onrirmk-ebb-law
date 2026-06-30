@@ -27,7 +27,7 @@ export function TeamMemberDetail({
 }: Props) {
   return (
     <>
-      <section className="relative -mt-[122px] min-h-[280px] w-full overflow-hidden bg-[#212C60] md:min-h-[340px]">
+      <section className="relative -mt-[122px] min-h-[380px] w-full overflow-hidden bg-[#212C60] md:min-h-[440px]">
         <Image
           src={bandImageSrc}
           alt=""
@@ -36,7 +36,7 @@ export function TeamMemberDetail({
           sizes="100vw"
           className="object-cover"
         />
-        <div className="relative mx-auto flex max-w-[1280px] flex-col justify-end px-[24px] pb-[32px] pt-[140px] md:min-h-[340px] md:px-[100px] md:pb-[48px] md:pt-[160px]">
+        <div className="relative mx-auto flex min-h-[380px] max-w-[1280px] flex-col justify-end px-[24px] pb-[32px] pt-[140px] md:min-h-[440px] md:px-[100px] md:pb-[48px] md:pt-[160px]">
           <h1 className="font-sans text-[32px] font-bold leading-[40px] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] md:text-[44px] md:leading-[52px]">
             {member.name}
           </h1>
