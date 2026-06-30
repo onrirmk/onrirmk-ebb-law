@@ -19,7 +19,7 @@ export function AwardsTestimonialRow({
   const visibleAward = awards[0];
 
   return (
-    <section id="awards-testimonial" className="w-full py-[48px] md:py-[64px]">
+    <section id="awards-testimonial" className="w-full py-[20px] md:py-[28px]">
       <div className="mx-auto max-w-[1680px] px-[24px] md:pl-[100px] md:pr-[260px]">
         <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
           {testimonialTitle}
