@@ -22,7 +22,7 @@ type Props = {
 
 export function TeamMemberSidebar({ member, linkedinLabel }: Props) {
   return (
-    <aside className="md:sticky md:top-[120px] md:self-start">
+    <aside className="md:sticky md:top-[140px] md:self-start">
       <div className="mx-auto max-w-[360px] overflow-hidden rounded-[8px] bg-white shadow-[0_10px_36px_rgba(28,27,31,0.10)] ring-1 ring-[#1C1B1F]/[0.06] md:mx-0 md:max-w-none">
         <div className="relative aspect-square w-full bg-[#EEF0F5]">
           {member.photoSrc ? (

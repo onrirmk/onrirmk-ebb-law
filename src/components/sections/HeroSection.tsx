@@ -78,7 +78,7 @@ export function HeroSection({
               type="button"
               onClick={goPrev}
               aria-label={previousLabel}
-              className="absolute left-[16px] top-1/2 z-10 -translate-y-1/2 inline-flex h-[44px] w-[44px] items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/55 md:left-[40px]"
+              className="absolute left-[16px] top-1/2 z-10 hidden h-[44px] w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/55 md:left-[40px] md:inline-flex"
             >
               <ChevronLeft className="h-[20px] w-[20px]" aria-hidden />
             </button>
@@ -86,7 +86,7 @@ export function HeroSection({
               type="button"
               onClick={goNext}
               aria-label={nextLabel}
-              className="absolute right-[16px] top-1/2 z-10 -translate-y-1/2 inline-flex h-[44px] w-[44px] items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/55 md:right-[40px]"
+              className="absolute right-[16px] top-1/2 z-10 hidden h-[44px] w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/55 md:right-[40px] md:inline-flex"
             >
               <ChevronRight className="h-[20px] w-[20px]" aria-hidden />
             </button>
