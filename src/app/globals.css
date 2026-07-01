@@ -141,3 +141,15 @@
     padding-inline: 6.25rem;
   }
 }
+@media (min-width: 640px) {
+  details.footer-accordion > ul {
+    display: block !important;
+  }
+  details.footer-accordion > summary {
+    cursor: default;
+    pointer-events: none;
+  }
+  details.footer-accordion > summary > svg {
+    display: none;
+  }
+}

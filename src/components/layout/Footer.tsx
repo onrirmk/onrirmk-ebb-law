@@ -67,7 +67,7 @@ export async function Footer() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-[32px] sm:gap-y-0 lg:contents">
             <details
-              className="group border-t border-[#1C1B1F]/10 sm:border-t-0 sm:[&>ul]:!block"
+              className="footer-accordion group border-t border-[#1C1B1F]/10 sm:border-t-0"
               aria-label={t("footer.exploreTitle")}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] sm:cursor-default sm:py-0 [&::-webkit-details-marker]:hidden">
@@ -91,7 +91,7 @@ export async function Footer() {
             </details>
 
             <details
-              className="group border-t border-[#1C1B1F]/10 sm:border-t-0 sm:[&>ul]:!block"
+              className="footer-accordion group border-t border-[#1C1B1F]/10 sm:border-t-0"
               aria-label={t("footer.practiceAreasTitle")}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] sm:cursor-default sm:py-0 [&::-webkit-details-marker]:hidden">
