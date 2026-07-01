@@ -32,14 +32,14 @@ export function AwardsTestimonialRow({
                 <Image
                   src={visibleAward.iconSrc}
                   alt={visibleAward.label}
-                  width={97}
-                  height={107}
-                  className="block h-[107px] w-[97px] object-contain"
+                  width={127}
+                  height={140}
+                  className="block h-[140px] w-[127px] object-contain"
                 />
               ) : (
                 <div
                   aria-label={visibleAward?.label ?? awardsTitle}
-                  className="flex h-[107px] w-[97px] items-center justify-center rounded-sm bg-[#212C60]/5 text-[#212C60]"
+                  className="flex h-[140px] w-[127px] items-center justify-center rounded-sm bg-[#212C60]/5 text-[#212C60]"
                 >
                   <LucideAward className="h-10 w-10" aria-hidden />
                 </div>
