@@ -58,7 +58,7 @@ export function HeroSection({
   return (
     <section className="relative isolate w-full overflow-hidden">
       <div
-        className="relative mx-auto h-[70vh] min-h-[480px] w-full max-w-[1680px] touch-pan-y md:h-screen md:min-h-[600px]"
+        className="relative h-[70vh] min-h-[480px] w-full touch-pan-y md:h-screen md:min-h-[600px]"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -69,7 +69,7 @@ export function HeroSection({
             alt={slide.alt}
             fill
             priority={i === 0}
-            sizes="(max-width: 1440px) 100vw, 1440px"
+            sizes="100vw"
             className={`object-cover transition-opacity duration-700 ease-out ${
               i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
@@ -77,7 +77,7 @@ export function HeroSection({
           />
         ))}
 
-        <div className="absolute inset-0 flex flex-col items-start justify-start px-6 pt-[240px] md:pl-[205px] md:pr-[96px] md:pt-[calc(38vh-20px)]">
+        <div className="absolute inset-0 mx-auto flex max-w-[1680px] flex-col items-start justify-start px-6 pt-[240px] md:pl-[205px] md:pr-[96px] md:pt-[calc(38vh-20px)]">
           <h1 className="font-sans font-semibold tracking-[-0.2px] text-white">
             <FadeIn variant="slideUp" immediate duration={900}>
               <span className="block max-w-[760px] text-[28px] leading-[40px] md:text-[36px] md:leading-[52px]">
