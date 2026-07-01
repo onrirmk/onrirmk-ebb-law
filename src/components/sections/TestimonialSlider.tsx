@@ -47,7 +47,7 @@ export function TestimonialSlider({ testimonials }: Props) {
       aria-label={t("title")}
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className="flex min-h-[107px] flex-col justify-between rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+      className="flex min-h-[140px] flex-col justify-between rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
     >
       <p
         key={activeIndex}
