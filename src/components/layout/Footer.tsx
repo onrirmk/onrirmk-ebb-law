@@ -65,21 +65,19 @@ export async function Footer() {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-[32px] sm:gap-y-0 lg:contents">
-            <details
-              className="footer-accordion group border-t border-[#1C1B1F]/10 sm:border-t-0"
-              aria-label={t("footer.exploreTitle")}
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] sm:cursor-default sm:py-0 [&::-webkit-details-marker]:hidden">
-                <h3 className={`${PILL_CLASS} !mb-0 sm:!mb-[16px]`}>
+          {/* Mobile only: accordion */}
+          <div className="sm:hidden">
+            <details className="group border-t border-[#1C1B1F]/10">
+              <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] [&::-webkit-details-marker]:hidden">
+                <h3 className={`${PILL_CLASS} !mb-0`}>
                   {t("footer.exploreTitle")}
                 </h3>
                 <ChevronDown
-                  className="h-[18px] w-[18px] text-[#212C60] transition-transform duration-200 group-open:rotate-180 sm:hidden"
+                  className="h-[18px] w-[18px] text-[#212C60] transition-transform duration-200 group-open:rotate-180"
                   aria-hidden
                 />
               </summary>
-              <ul className="pb-[8px] sm:pb-0">
+              <ul className="pb-[8px]">
                 {NAV_LINKS.map((link) => (
                   <li key={link.key}>
                     <Link href={link.href} className={LINK_CLASS}>
@@ -90,20 +88,17 @@ export async function Footer() {
               </ul>
             </details>
 
-            <details
-              className="footer-accordion group border-t border-[#1C1B1F]/10 sm:border-t-0"
-              aria-label={t("footer.practiceAreasTitle")}
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] sm:cursor-default sm:py-0 [&::-webkit-details-marker]:hidden">
-                <h3 className={`${PILL_CLASS} !mb-0 sm:!mb-[16px]`}>
+            <details className="group border-t border-[#1C1B1F]/10">
+              <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] [&::-webkit-details-marker]:hidden">
+                <h3 className={`${PILL_CLASS} !mb-0`}>
                   {t("footer.practiceAreasTitle")}
                 </h3>
                 <ChevronDown
-                  className="h-[18px] w-[18px] text-[#212C60] transition-transform duration-200 group-open:rotate-180 sm:hidden"
+                  className="h-[18px] w-[18px] text-[#212C60] transition-transform duration-200 group-open:rotate-180"
                   aria-hidden
                 />
               </summary>
-              <ul className="pb-[8px] sm:pb-0">
+              <ul className="pb-[8px]">
                 {practiceAreas.map((area) => (
                   <li key={area.slug}>
                     <Link
@@ -119,6 +114,41 @@ export async function Footer() {
                 ))}
               </ul>
             </details>
+          </div>
+
+          {/* sm+ : plain nav blocks, side-by-side at sm/md, flattened into parent grid at lg */}
+          <div className="hidden sm:grid sm:grid-cols-2 sm:gap-x-[32px] lg:contents">
+            <nav aria-label={t("footer.exploreTitle")}>
+              <h3 className={PILL_CLASS}>{t("footer.exploreTitle")}</h3>
+              <ul>
+                {NAV_LINKS.map((link) => (
+                  <li key={link.key}>
+                    <Link href={link.href} className={LINK_CLASS}>
+                      {t(`nav.${link.key}`)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav aria-label={t("footer.practiceAreasTitle")}>
+              <h3 className={PILL_CLASS}>{t("footer.practiceAreasTitle")}</h3>
+              <ul>
+                {practiceAreas.map((area) => (
+                  <li key={area.slug}>
+                    <Link
+                      href={{
+                        pathname: "/calisma-alanlari/[slug]",
+                        params: { slug: area.slug },
+                      }}
+                      className={`${LINK_CLASS} whitespace-nowrap`}
+                    >
+                      {area.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           <div
