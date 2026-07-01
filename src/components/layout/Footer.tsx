@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Globe, Mail, MapPin, Phone } from "lucide-react";
+import { ChevronDown, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { NavLink } from "@/types/content";
 import { fetchPracticeAreas, fetchSiteSettings } from "@/sanity/lib/queries";
@@ -65,10 +65,21 @@ export async function Footer() {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-y-[24px] sm:grid-cols-2 sm:gap-x-[32px] sm:gap-y-0 lg:contents">
-            <nav aria-label={t("footer.exploreTitle")}>
-              <h3 className={PILL_CLASS}>{t("footer.exploreTitle")}</h3>
-              <ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-[32px] sm:gap-y-0 lg:contents">
+            <details
+              className="group border-t border-[#1C1B1F]/10 sm:border-t-0 sm:[&>ul]:!block"
+              aria-label={t("footer.exploreTitle")}
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] sm:cursor-default sm:py-0 [&::-webkit-details-marker]:hidden">
+                <h3 className={`${PILL_CLASS} !mb-0 sm:!mb-[16px]`}>
+                  {t("footer.exploreTitle")}
+                </h3>
+                <ChevronDown
+                  className="h-[18px] w-[18px] text-[#212C60] transition-transform duration-200 group-open:rotate-180 sm:hidden"
+                  aria-hidden
+                />
+              </summary>
+              <ul className="pb-[8px] sm:pb-0">
                 {NAV_LINKS.map((link) => (
                   <li key={link.key}>
                     <Link href={link.href} className={LINK_CLASS}>
@@ -77,11 +88,22 @@ export async function Footer() {
                   </li>
                 ))}
               </ul>
-            </nav>
+            </details>
 
-            <nav aria-label={t("footer.practiceAreasTitle")}>
-              <h3 className={PILL_CLASS}>{t("footer.practiceAreasTitle")}</h3>
-              <ul>
+            <details
+              className="group border-t border-[#1C1B1F]/10 sm:border-t-0 sm:[&>ul]:!block"
+              aria-label={t("footer.practiceAreasTitle")}
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between py-[14px] sm:cursor-default sm:py-0 [&::-webkit-details-marker]:hidden">
+                <h3 className={`${PILL_CLASS} !mb-0 sm:!mb-[16px]`}>
+                  {t("footer.practiceAreasTitle")}
+                </h3>
+                <ChevronDown
+                  className="h-[18px] w-[18px] text-[#212C60] transition-transform duration-200 group-open:rotate-180 sm:hidden"
+                  aria-hidden
+                />
+              </summary>
+              <ul className="pb-[8px] sm:pb-0">
                 {practiceAreas.map((area) => (
                   <li key={area.slug}>
                     <Link
@@ -96,7 +118,7 @@ export async function Footer() {
                   </li>
                 ))}
               </ul>
-            </nav>
+            </details>
           </div>
 
           <div
