@@ -9,7 +9,7 @@ type Props = {
 
 export function AboutCta({ title, subtitle, button }: Props) {
   return (
-    <section className="mx-auto max-w-[1280px] px-[24px] pb-[80px] pt-[64px] md:px-[100px] md:pb-[120px] md:pt-[96px]">
+    <section className="mx-auto max-w-[1680px] px-[24px] pb-[80px] pt-[64px] md:pl-[100px] md:pr-[100px] md:pb-[120px] md:pt-[96px]">
       <div className="rounded-sm bg-[#212C60] px-[28px] py-[40px] text-white md:px-[56px] md:py-[56px]">
         <p className="max-w-[680px] font-sans text-[26px] font-bold leading-[34px] md:text-[32px] md:leading-[40px]">
           {title}

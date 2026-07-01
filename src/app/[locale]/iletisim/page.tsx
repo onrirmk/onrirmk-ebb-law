@@ -64,7 +64,7 @@ export default async function ContactPage({
         }}
       />
 
-      <section className="mx-auto max-w-[1280px] px-[24px] pb-[64px] md:px-[100px] md:pb-[80px]">
+      <section className="mx-auto max-w-[1680px] px-[24px] pb-[64px] md:pl-[100px] md:pr-[100px] md:pb-[80px]">
         <div className="mt-[32px] grid grid-cols-1 gap-[48px] md:mt-[48px] md:grid-cols-[1fr_1.2fr] md:gap-[64px]">
           <OfficeCard
             officeEyebrow={page?.officeEyebrow ?? ""}

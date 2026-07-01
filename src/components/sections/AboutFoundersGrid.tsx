@@ -16,7 +16,7 @@ export function AboutFoundersGrid({
   founders,
 }: Props) {
   return (
-    <section className="mx-auto max-w-[1280px] px-[24px] pt-[64px] md:px-[100px] md:pt-[96px]">
+    <section className="mx-auto max-w-[1680px] px-[24px] pt-[64px] md:pl-[100px] md:pr-[100px] md:pt-[96px]">
       <FadeIn variant="slideUp">
         <div className="max-w-[820px]">
           <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
