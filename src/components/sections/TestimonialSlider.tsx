@@ -47,12 +47,12 @@ export function TestimonialSlider({ testimonials }: Props) {
       aria-label={t("title")}
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className="rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+      className="flex min-h-[107px] flex-col justify-between rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
     >
       <p
         key={activeIndex}
         aria-live="polite"
-        className="min-h-[140px] font-sans text-[16px] font-normal leading-[28px] tracking-[0.06px] text-[#1C1B1F] animate-in fade-in duration-300 md:text-[18px] md:leading-[30px]"
+        className="font-sans text-[16px] font-normal leading-[28px] tracking-[0.06px] text-[#1C1B1F] animate-in fade-in duration-300 md:text-[18px] md:leading-[30px]"
       >
         {active.quote}
       </p>
