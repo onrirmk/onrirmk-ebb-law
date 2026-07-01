@@ -21,6 +21,7 @@ export function AwardsTestimonialRow({
   return (
     <section id="awards-testimonial" className="w-full py-[20px] md:py-[28px]">
       <div className="mx-auto max-w-[1680px] px-[24px] md:pl-[100px] md:pr-[260px]">
+        <div className="md:max-w-[1188px]">
         <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
           {testimonialTitle}
         </h2>
@@ -49,6 +50,7 @@ export function AwardsTestimonialRow({
           <div className="md:ml-[30px] md:flex-1">
             <TestimonialSlider testimonials={testimonials} />
           </div>
+        </div>
         </div>
       </div>
     </section>
