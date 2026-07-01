@@ -7,7 +7,7 @@ type Props = {
 
 export function AboutNarrative({ title, paragraphs }: Props) {
   return (
-    <section className="mx-auto max-w-[1280px] px-[24px] pt-[64px] md:px-[100px] md:pt-[96px]">
+    <section className="mx-auto max-w-[1680px] px-[24px] pt-[64px] md:pl-[100px] md:pr-[260px] md:pt-[96px]">
       <div className="max-w-[820px]">
         <FadeIn variant="slideUp">
           <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">

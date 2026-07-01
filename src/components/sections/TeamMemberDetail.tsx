@@ -23,7 +23,7 @@ export function TeamMemberDetail({
   eyebrows,
 }: Props) {
   return (
-    <div className="mx-auto max-w-[1280px] px-[24px] pb-[48px] pt-[140px] md:px-[100px] md:pb-[72px] md:pt-[160px]">
+    <div className="mx-auto max-w-[1680px] px-[24px] pb-[48px] pt-[140px] md:pl-[100px] md:pr-[100px] md:pb-[72px] md:pt-[160px]">
       <Link
         href="/team"
         className="inline-flex items-center gap-[8px] text-[14px] font-medium text-[#1C1B1F]/70 transition-colors hover:text-[#212C60]"
