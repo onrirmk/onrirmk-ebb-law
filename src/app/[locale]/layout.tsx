@@ -26,6 +26,8 @@ export default async function LocaleLayout({
 
   const settings = await fetchSiteSettings();
   const navbarLogoSrc = imageSrc(settings?.logoNavbar) ?? "/images/logo/ebb-logo-navbar.png";
+  const navbarLogoSolidSrc =
+    imageSrc(settings?.logoFooter) ?? "/images/logo/ebb-logo-footer.png";
   const firmName = settings?.firmName ?? "Law Firm";
 
   return (
@@ -37,7 +39,11 @@ export default async function LocaleLayout({
         >
           Skip to main content
         </a>
-        <Navbar logoSrc={navbarLogoSrc} firmName={firmName} />
+        <Navbar
+          logoSrc={navbarLogoSrc}
+          logoSolidSrc={navbarLogoSolidSrc}
+          firmName={firmName}
+        />
         <main id="main" className="flex-1">
           {children}
         </main>

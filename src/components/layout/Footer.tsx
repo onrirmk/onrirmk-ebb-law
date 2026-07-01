@@ -15,7 +15,7 @@ const NAV_LINKS: NavLink[] = [
 ];
 
 const PILL_CLASS =
-  "mb-[12px] inline-block rounded-[4px] bg-[#DEA356] px-[12px] py-[5px] font-sans text-[12px] font-bold uppercase tracking-wide text-white md:mb-[16px] md:px-[16px] md:py-[6px] md:text-[14px]";
+  "mb-[12px] inline-block whitespace-nowrap rounded-[4px] bg-[#DEA356] px-[12px] py-[5px] font-sans text-[12px] font-bold uppercase tracking-wide text-white md:mb-[16px] md:px-[16px] md:py-[6px] md:text-[14px]";
 
 const LINK_CLASS =
   `group relative inline-block text-[13px] font-medium leading-[24px] text-[#1C1B1F] transition-colors hover:text-[#212C60] md:text-[14px] md:leading-[28px]
@@ -54,7 +54,7 @@ export async function Footer() {
       <div className="mx-auto max-w-[1680px] px-[24px] md:px-[87px]">
         <div className="h-px bg-[#1C1B1F]/15" />
 
-        <div className="grid grid-cols-1 gap-y-[24px] pt-[40px] md:grid-cols-[auto_1fr_2fr_auto_1.5fr] md:gap-x-[40px] md:gap-y-0 md:pt-[64px]">
+        <div className="grid grid-cols-1 gap-y-[24px] pt-[40px] lg:grid-cols-[auto_1fr_2fr_auto_1.5fr] lg:gap-x-[40px] lg:gap-y-0 lg:pt-[64px]">
           <div>
             <Image
               src={footerLogoSrc ?? "/images/logo/ebb-logo-footer.png"}
@@ -98,7 +98,7 @@ export async function Footer() {
           </nav>
 
           <div
-            className="hidden md:block md:w-px md:bg-[#1C1B1F]/15"
+            className="hidden lg:block lg:w-px lg:bg-[#1C1B1F]/15"
             aria-hidden
           />
 
