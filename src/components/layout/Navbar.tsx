@@ -86,7 +86,7 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
       <div className="relative mx-auto h-full w-full max-w-[1680px]">
         <Link
           href="/"
-          className="absolute left-[24px] top-[31px] block md:left-[79px] md:top-[46px]"
+          className="absolute left-[24px] top-[31px] block lg:left-[79px] lg:top-[46px]"
           aria-label={firmName}
         >
           <Image
@@ -95,14 +95,14 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
             width={482}
             height={120}
             priority
-            sizes="(min-width: 768px) 322px, 240px"
-            className="block h-[60px] w-auto md:h-[80px]"
+            sizes="(min-width: 1024px) 322px, 240px"
+            className="block h-[60px] w-auto lg:h-[80px]"
           />
         </Link>
 
         <nav
           aria-label="Primary"
-          className="absolute right-[100px] top-[59px] hidden h-[24px] items-center md:flex"
+          className="absolute right-[100px] top-[59px] hidden h-[24px] items-center lg:flex"
         >
           <ul className="flex items-center gap-[36px]">
             {NAV_LINKS.map((link) => {
@@ -132,7 +132,7 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
           aria-label="Open menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
-          className={`absolute right-[16px] top-[43px] inline-flex h-[40px] w-[40px] items-center justify-center p-[8px] md:hidden ${toggleColorClass}`}
+          className={`absolute right-[16px] top-[43px] inline-flex h-[40px] w-[40px] items-center justify-center p-[8px] lg:hidden ${toggleColorClass}`}
         >
           <Menu className="h-[24px] w-[24px]" aria-hidden="true" />
         </button>
@@ -145,7 +145,7 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
       aria-modal="true"
       aria-label="Site menu"
       hidden={!isOpen}
-      className={`fixed inset-0 z-[60] bg-white text-[#212C60] transition-opacity duration-300 ease-out md:hidden ${
+      className={`fixed inset-0 z-[60] bg-white text-[#212C60] transition-opacity duration-300 ease-out lg:hidden ${
         isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
