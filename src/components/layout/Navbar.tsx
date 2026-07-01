@@ -17,10 +17,11 @@ const NAV_LINKS: NavLink[] = [
 
 type NavbarProps = {
   logoSrc: string;
+  logoSolidSrc?: string;
   firmName: string;
 };
 
-export function Navbar({ logoSrc, firmName }: NavbarProps) {
+export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
   const t = useTranslations("nav");
   const pathname = usePathname();
 
@@ -90,7 +91,7 @@ export function Navbar({ logoSrc, firmName }: NavbarProps) {
           aria-label={firmName}
         >
           <Image
-            src={logoSrc}
+            src={isSolid && logoSolidSrc ? logoSolidSrc : logoSrc}
             alt={firmName}
             width={482}
             height={120}
