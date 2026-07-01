@@ -65,37 +65,39 @@ export async function Footer() {
             />
           </div>
 
-          <nav aria-label={t("footer.exploreTitle")}>
-            <h3 className={PILL_CLASS}>{t("footer.exploreTitle")}</h3>
-            <ul>
-              {NAV_LINKS.map((link) => (
-                <li key={link.key}>
-                  <Link href={link.href} className={LINK_CLASS}>
-                    {t(`nav.${link.key}`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="grid grid-cols-1 gap-y-[24px] sm:grid-cols-2 sm:gap-x-[32px] sm:gap-y-0 lg:contents">
+            <nav aria-label={t("footer.exploreTitle")}>
+              <h3 className={PILL_CLASS}>{t("footer.exploreTitle")}</h3>
+              <ul>
+                {NAV_LINKS.map((link) => (
+                  <li key={link.key}>
+                    <Link href={link.href} className={LINK_CLASS}>
+                      {t(`nav.${link.key}`)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          <nav aria-label={t("footer.practiceAreasTitle")}>
-            <h3 className={PILL_CLASS}>{t("footer.practiceAreasTitle")}</h3>
-            <ul>
-              {practiceAreas.map((area) => (
-                <li key={area.slug}>
-                  <Link
-                    href={{
-                      pathname: "/calisma-alanlari/[slug]",
-                      params: { slug: area.slug },
-                    }}
-                    className={`${LINK_CLASS} whitespace-nowrap`}
-                  >
-                    {area.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+            <nav aria-label={t("footer.practiceAreasTitle")}>
+              <h3 className={PILL_CLASS}>{t("footer.practiceAreasTitle")}</h3>
+              <ul>
+                {practiceAreas.map((area) => (
+                  <li key={area.slug}>
+                    <Link
+                      href={{
+                        pathname: "/calisma-alanlari/[slug]",
+                        params: { slug: area.slug },
+                      }}
+                      className={`${LINK_CLASS} whitespace-nowrap`}
+                    >
+                      {area.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
           <div
             className="hidden lg:block lg:w-px lg:bg-[#1C1B1F]/15"
