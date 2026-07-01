@@ -80,12 +80,12 @@ export function HeroSection({
         <div className="absolute inset-0 mx-auto flex max-w-[1680px] flex-col items-start justify-start px-6 pt-[240px] md:pl-[205px] md:pr-[96px] md:pt-[calc(38vh-20px)]">
           <h1 className="font-sans font-semibold tracking-[-0.2px] text-white">
             <FadeIn variant="slideUp" immediate duration={900}>
-              <span className="block max-w-[760px] text-[28px] leading-[40px] md:text-[36px] md:leading-[52px]">
+              <span className="block max-w-[760px] text-[clamp(24px,2.5vw,40px)] leading-[1.4]">
                 {titleLine1}
               </span>
             </FadeIn>
             <FadeIn variant="slideUp" immediate duration={900} delay={180}>
-              <span className="mt-[8px] block max-w-[760px] text-[28px] leading-[40px] md:mt-[12px] md:text-[36px] md:leading-[52px]">
+              <span className="mt-[8px] block max-w-[760px] text-[clamp(24px,2.5vw,40px)] leading-[1.4] md:mt-[12px]">
                 {titleLine2}
               </span>
             </FadeIn>
