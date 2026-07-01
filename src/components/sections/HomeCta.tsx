@@ -16,7 +16,7 @@ export function HomeCta({
   primaryButton,
 }: Props) {
   return (
-    <section className="mt-[64px] w-full bg-[#212C60] text-white md:mt-[96px]">
+    <section className="mt-[32px] w-full bg-[#212C60] text-white md:mt-[48px]">
       <div className="mx-auto max-w-[1680px] px-[24px] py-[64px] text-center md:px-[100px] md:py-[112px]">
         <FadeIn variant="slideUp">
           <p className="mx-auto max-w-[800px] text-[12px] font-semibold uppercase tracking-[0.28em] text-white/70 md:text-[14px]">
