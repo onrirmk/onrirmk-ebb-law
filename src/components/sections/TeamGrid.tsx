@@ -27,7 +27,7 @@ export function TeamGrid({ members, emailLabel }: Props) {
     const q = norm(query.trim());
     if (!q) return members;
     return members.filter((m) => {
-      const haystack = [m.name, m.position, ...(m.bio ?? [])]
+      const haystack = [m.name, m.position]
         .filter(Boolean)
         .map(norm)
         .join(" ");
