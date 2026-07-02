@@ -139,6 +139,8 @@
     },
     "sidebarLabel": "All Practice Areas",
     "backToPracticeAreas": "Back to Practice Areas",
+    "searchPlaceholder": "Search practice areas…",
+    "searchNoResults": "No practice areas match your search.",
     "cta": {
       "title": "Discuss {area} with our team",
       "subtitle": "Please contact us directly to discuss a matter or instruction.",
@@ -228,6 +230,8 @@
     "phoneLabel": "Phone",
     "linkedinLabel": "LinkedIn Profile",
     "backToTeam": "Back to Team",
+    "searchPlaceholder": "Search team members…",
+    "searchNoResults": "No team members match your search.",
     "eyebrows": {
       "expertise": "EXPERTISE",
       "biography": "BIOGRAPHY",
