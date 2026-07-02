@@ -139,6 +139,8 @@
     },
     "sidebarLabel": "Tüm Çalışma Alanları",
     "backToPracticeAreas": "Çalışma Alanlarına Dön",
+    "searchPlaceholder": "Çalışma alanlarında ara…",
+    "searchNoResults": "Aramanızla eşleşen bir çalışma alanı bulunamadı.",
     "cta": {
       "title": "{area} konularını ekibimizle görüşün",
       "subtitle": "Bir konu veya vekalet için doğrudan bizimle iletişime geçebilirsiniz.",
@@ -228,6 +230,8 @@
     "phoneLabel": "Telefon",
     "linkedinLabel": "LinkedIn Profili",
     "backToTeam": "Ekibe Geri Dön",
+    "searchPlaceholder": "Ekipte ara…",
+    "searchNoResults": "Aramanızla eşleşen bir ekip üyesi bulunamadı.",
     "eyebrows": {
       "expertise": "UZMANLIK ALANLARI",
       "biography": "BİYOGRAFİ",
