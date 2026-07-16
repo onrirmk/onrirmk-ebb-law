@@ -1,79 +1,11 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import {
-  PortableText,
-  type PortableTextComponents,
-  type PortableTextMarkComponentProps,
-} from "@portabletext/react";
 import { Link } from "@/i18n/navigation";
+import { RichText } from "@/components/ui/RichText";
 import type {
   PracticeAreaDetailContent,
   PracticeAreaSummary,
 } from "@/types/content";
-
-const portableTextComponents: PortableTextComponents = {
-  block: {
-    normal: ({ children }) => (
-      <p className="text-[18px] leading-[1.65] text-foreground/90 md:text-[19px] md:leading-[1.6]">
-        {children}
-      </p>
-    ),
-    h2: ({ children }) => (
-      <h2 className="mt-10 font-sans text-[26px] font-semibold leading-[1.25] text-primary first:mt-0 md:text-[30px]">
-        {children}
-      </h2>
-    ),
-    h3: ({ children }) => (
-      <h3 className="mt-8 font-sans text-[20px] font-semibold leading-[1.3] text-primary first:mt-0 md:text-[22px]">
-        {children}
-      </h3>
-    ),
-    blockquote: ({ children }) => (
-      <blockquote className="border-l-2 border-primary/40 pl-5 text-[18px] italic leading-[1.6] text-foreground/80 md:text-[19px]">
-        {children}
-      </blockquote>
-    ),
-  },
-  list: {
-    bullet: ({ children }) => (
-      <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[1.65] text-foreground/90 marker:text-primary md:text-[19px] md:leading-[1.6]">
-        {children}
-      </ul>
-    ),
-    number: ({ children }) => (
-      <ol className="list-decimal space-y-2 pl-6 text-[18px] leading-[1.65] text-foreground/90 marker:text-primary md:text-[19px] md:leading-[1.6]">
-        {children}
-      </ol>
-    ),
-  },
-  listItem: {
-    bullet: ({ children }) => <li className="pl-1">{children}</li>,
-    number: ({ children }) => <li className="pl-1">{children}</li>,
-  },
-  marks: {
-    strong: ({ children }) => (
-      <strong className="font-semibold text-foreground">{children}</strong>
-    ),
-    em: ({ children }) => <em className="italic">{children}</em>,
-    link: ({
-      value,
-      children,
-    }: PortableTextMarkComponentProps<{ _type: string; href?: string }>) => {
-      const href = value?.href ?? "#";
-      const external = /^https?:\/\//i.test(href);
-      return (
-        <a
-          href={href}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          className="text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary"
-        >
-          {children}
-        </a>
-      );
-    },
-  },
-};
 
 type CtaContent = {
   title: string;
@@ -143,10 +75,7 @@ export function PracticeAreaDetail({
         <article className="max-w-[920px]">
           {area.paragraphs.length > 0 ? (
             <div className="space-y-6">
-              <PortableText
-                value={area.paragraphs}
-                components={portableTextComponents}
-              />
+              <RichText value={area.paragraphs} size="large" />
             </div>
           ) : null}
         </article>

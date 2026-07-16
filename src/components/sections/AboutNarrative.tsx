@@ -1,8 +1,10 @@
+import type { PortableTextBlock } from "@portabletext/react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { RichText } from "@/components/ui/RichText";
 
 type Props = {
   title: string;
-  paragraphs: string[];
+  paragraphs: PortableTextBlock[];
 };
 
 export function AboutNarrative({ title, paragraphs }: Props) {
@@ -15,13 +17,9 @@ export function AboutNarrative({ title, paragraphs }: Props) {
           </h2>
         </FadeIn>
         <div className="mt-[20px] space-y-[24px] md:mt-[24px] md:space-y-[28px]">
-          {paragraphs.map((p, i) => (
-            <FadeIn key={i} variant="slideUp" delay={120 + i * 80}>
-              <p className="text-[17px] leading-[28px] text-[#1C1B1F] md:text-[18px] md:leading-[30px]">
-                {p}
-              </p>
-            </FadeIn>
-          ))}
+          <FadeIn variant="slideUp" delay={120}>
+            <RichText value={paragraphs} />
+          </FadeIn>
         </div>
       </div>
     </section>
