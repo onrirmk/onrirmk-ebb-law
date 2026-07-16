@@ -36,7 +36,11 @@ const HOME_PAGE_QUERY = `*[_type == "homePage"][0]{
 const ABOUT_PAGE_QUERY = `*[_type == "aboutPage"][0]{
   pageTitle, heroEyebrow, heroTitle,
   heroImage { ${IMAGE_PROJECTION} },
-  narrativeParagraphs,
+  narrativeParagraphs[]{
+    ...,
+    markDefs[]{ ... },
+    children[]{ ... }
+  },
   foundersTitle, foundersSubtitle,
   ctaTitle, ctaSubtitle, ctaButton
 }`;
@@ -153,7 +157,7 @@ export type AboutPageData = {
   heroEyebrow?: string;
   heroTitle?: string;
   heroImage?: SanityImage;
-  narrativeParagraphs?: string[];
+  narrativeParagraphs?: PortableTextBlock[];
   foundersTitle?: string;
   foundersSubtitle?: string;
   ctaTitle?: string;
