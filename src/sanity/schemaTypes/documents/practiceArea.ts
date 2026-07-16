@@ -40,9 +40,47 @@ export const practiceArea = defineType({
     }),
     defineField({
       name: "paragraphs",
-      title: "Body paragraphs",
+      title: "Body content",
       type: "array",
-      of: [{ type: "text", rows: 4 }],
+      description:
+        "Zengin metin editörü. Alt başlık için satırın başında \"Başlık 2\" veya \"Başlık 3\" seçin; madde işaretli veya numaralı liste, kalın/italik ve bağlantı ekleyebilirsiniz. Enter tuşu yeni paragraf açar.",
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "Başlık 2", value: "h2" },
+            { title: "Başlık 3", value: "h3" },
+            { title: "Alıntı", value: "blockquote" },
+          ],
+          lists: [
+            { title: "Madde işaretli", value: "bullet" },
+            { title: "Numaralı", value: "number" },
+          ],
+          marks: {
+            decorators: [
+              { title: "Kalın", value: "strong" },
+              { title: "İtalik", value: "em" },
+            ],
+            annotations: [
+              {
+                name: "link",
+                type: "object",
+                title: "Bağlantı",
+                fields: [
+                  {
+                    name: "href",
+                    type: "url",
+                    title: "URL",
+                    validation: (r) =>
+                      r.uri({ scheme: ["http", "https", "mailto", "tel"] }),
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
     }),
   ],
   preview: {

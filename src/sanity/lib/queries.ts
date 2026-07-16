@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from "@portabletext/react";
 import { client } from "./client";
 import type { SanityImage } from "./image";
 
@@ -66,7 +67,11 @@ const PRACTICE_AREAS_QUERY = `*[_type == "practiceArea"] | order(orderRank asc){
   "slug": slug.current,
   summary,
   heroImage { ${IMAGE_PROJECTION} },
-  paragraphs
+  paragraphs[]{
+    ...,
+    markDefs[]{ ... },
+    children[]{ ... }
+  }
 }`;
 
 const PRACTICE_AREA_BY_SLUG_QUERY = `*[_type == "practiceArea" && slug.current == $slug][0]{
@@ -75,7 +80,11 @@ const PRACTICE_AREA_BY_SLUG_QUERY = `*[_type == "practiceArea" && slug.current =
   "slug": slug.current,
   summary,
   heroImage { ${IMAGE_PROJECTION} },
-  paragraphs
+  paragraphs[]{
+    ...,
+    markDefs[]{ ... },
+    children[]{ ... }
+  }
 }`;
 
 const TEAM_MEMBERS_QUERY = `*[_type == "teamMember"] | order(orderRank asc){
@@ -190,7 +199,7 @@ export type PracticeAreaDoc = {
   slug: string;
   summary?: string;
   heroImage?: SanityImage;
-  paragraphs?: string[];
+  paragraphs?: PortableTextBlock[];
 };
 
 export type EducationEntry = {

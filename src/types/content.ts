@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from "@portabletext/react";
+
 export type Award = {
   key: string;
   label: string;
@@ -12,7 +14,7 @@ export type PracticeAreaSummary = {
 };
 
 export type PracticeAreaDetailContent = PracticeAreaSummary & {
-  paragraphs: string[];
+  paragraphs: PortableTextBlock[];
 };
 
 export type ContactInfo = {
