@@ -18,10 +18,18 @@ const NAV_LINKS: NavLink[] = [
 type NavbarProps = {
   logoSrc: string;
   logoSolidSrc?: string;
+  logoSquareSrc?: string;
+  logoSquareLightSrc?: string;
   firmName: string;
 };
 
-export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
+export function Navbar({
+  logoSrc,
+  logoSolidSrc,
+  logoSquareSrc,
+  logoSquareLightSrc,
+  firmName,
+}: NavbarProps) {
   const t = useTranslations("nav");
   const pathname = usePathname();
 
@@ -71,6 +79,17 @@ export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
 
   const isSolid = scrolled || pageStartsSolid;
 
+  // On non-home pages, prefer the square EBB monogram — full wordmark
+  // is hard to read over hero photos. Falls back to the wordmark if the
+  // editor hasn't uploaded a square variant yet.
+  const isHome = pathname === "/";
+  const useSquare = !isHome && Boolean(logoSquareSrc || logoSquareLightSrc);
+  const solidLogo =
+    (useSquare ? logoSquareSrc : undefined) ?? logoSolidSrc ?? logoSrc;
+  const transparentLogo =
+    (useSquare ? logoSquareLightSrc ?? logoSquareSrc : undefined) ?? logoSrc;
+  const activeLogo = isSolid ? solidLogo : transparentLogo;
+
   const headerClass = `fixed inset-x-0 top-0 z-30 h-[122px] w-full transition-colors duration-300 ${
     isSolid
       ? "bg-white/95 shadow-[0_1px_0_rgba(28,27,31,0.08)] backdrop-blur"
@@ -91,13 +110,17 @@ export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
           aria-label={firmName}
         >
           <Image
-            src={isSolid && logoSolidSrc ? logoSolidSrc : logoSrc}
+            src={activeLogo}
             alt={firmName}
-            width={482}
-            height={120}
+            width={useSquare ? 200 : 482}
+            height={useSquare ? 200 : 120}
             priority
-            sizes="(min-width: 1024px) 322px, 240px"
-            className="block h-[60px] w-auto lg:h-[80px]"
+            sizes={useSquare ? "80px" : "(min-width: 1024px) 322px, 240px"}
+            className={
+              useSquare
+                ? "block h-[60px] w-[60px] object-contain lg:h-[80px] lg:w-[80px]"
+                : "block h-[60px] w-auto lg:h-[80px]"
+            }
           />
         </Link>
 

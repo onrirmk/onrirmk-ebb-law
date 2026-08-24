@@ -28,6 +28,10 @@ export default async function LocaleLayout({
   const navbarLogoSrc = imageSrc(settings?.logoNavbar) ?? "/images/logo/ebb-logo-navbar.png";
   const navbarLogoSolidSrc =
     imageSrc(settings?.logoFooter) ?? "/images/logo/ebb-logo-footer.png";
+  // Square EBB monogram used on interior (non-home) pages. When neither
+  // uploaded, we fall back to the wordmark so nothing breaks visually.
+  const logoSquareSrc = imageSrc(settings?.logoSquare) ?? undefined;
+  const logoSquareLightSrc = imageSrc(settings?.logoSquareLight) ?? undefined;
   const firmName = settings?.firmName ?? "Law Firm";
 
   return (
@@ -42,6 +46,8 @@ export default async function LocaleLayout({
         <Navbar
           logoSrc={navbarLogoSrc}
           logoSolidSrc={navbarLogoSolidSrc}
+          logoSquareSrc={logoSquareSrc}
+          logoSquareLightSrc={logoSquareLightSrc}
           firmName={firmName}
         />
         <main id="main" className="flex-1">
