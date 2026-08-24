@@ -13,12 +13,12 @@ const components: PortableTextComponents = {
       </p>
     ),
     h2: ({ children }) => (
-      <h2 className="mt-10 font-sans text-[24px] font-semibold leading-[1.25] text-primary first:mt-0 md:text-[28px]">
+      <h2 className="mt-10 font-sans text-[24px] font-semibold leading-[1.25] text-[#212C60] first:mt-0 md:text-[28px]">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-8 font-sans text-[19px] font-semibold leading-[1.3] text-primary first:mt-0 md:text-[21px]">
+      <h3 className="mt-8 font-sans text-[19px] font-semibold leading-[1.3] text-[#212C60] first:mt-0 md:text-[21px]">
         {children}
       </h3>
     ),
@@ -78,12 +78,12 @@ const largeComponents: PortableTextComponents = {
       </p>
     ),
     h2: ({ children }) => (
-      <h2 className="mt-10 font-sans text-[26px] font-semibold leading-[1.25] text-primary first:mt-0 md:text-[30px]">
+      <h2 className="mt-10 font-sans text-[26px] font-semibold leading-[1.25] text-[#212C60] first:mt-0 md:text-[30px]">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-8 font-sans text-[20px] font-semibold leading-[1.3] text-primary first:mt-0 md:text-[22px]">
+      <h3 className="mt-8 font-sans text-[20px] font-semibold leading-[1.3] text-[#212C60] first:mt-0 md:text-[22px]">
         {children}
       </h3>
     ),
