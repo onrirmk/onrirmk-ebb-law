@@ -111,17 +111,22 @@ export function ContactForm({ labels, practiceAreaOptions }: Props) {
           </label>
         </div>
 
-        <label className="mt-[20px] flex items-start gap-[10px] text-[13px] leading-[18px] text-[#1C1B1F]/80">
-          <input
-            type="checkbox"
-            name="consent"
-            required
-            className="mt-[2px] h-[16px] w-[16px] flex-shrink-0 cursor-pointer accent-[#212C60]"
-          />
-          <span>
-            {labels.consent} *
-          </span>
-        </label>
+        {/*
+         * KVKK / privacy consent checkbox is temporarily removed at
+         * the customer's request. The `consent` label and string
+         * translations are kept in messages/en.json + tr.json so we
+         * can restore this block later without re-adding schema.
+         *
+         *   <label className="mt-[20px] flex items-start gap-[10px] text-[13px] leading-[18px] text-[#1C1B1F]/80">
+         *     <input
+         *       type="checkbox"
+         *       name="consent"
+         *       required
+         *       className="mt-[2px] h-[16px] w-[16px] flex-shrink-0 cursor-pointer accent-[#212C60]"
+         *     />
+         *     <span>{labels.consent} *</span>
+         *   </label>
+         */}
 
         <button
           type="submit"
