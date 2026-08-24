@@ -141,3 +141,26 @@
     padding-inline: 6.25rem;
   }
 }
+
+/*
+ * The site is designed against a 1680 px Figma canvas. On mid-size /
+ * large monitors (27"+ 1440p, ultrawides, 4K without OS scaling) the
+ * layout centres at 1680 and everything reads as a small block in the
+ * middle. Bump the whole page's zoom above 1920 px viewport so text,
+ * logos and images scale up together while the design stays intact.
+ */
+@media (min-width: 1921px) {
+  html {
+    zoom: 1.08;
+  }
+}
+@media (min-width: 2400px) {
+  html {
+    zoom: 1.16;
+  }
+}
+@media (min-width: 3200px) {
+  html {
+    zoom: 1.24;
+  }
+}
