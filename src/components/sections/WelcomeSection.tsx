@@ -22,7 +22,7 @@ export function WelcomeSection({
   return (
     <section className="mx-auto max-w-[1680px] px-[24px] pb-[24px] pt-[40px] md:pb-[32px] md:pl-[100px] md:pr-[260px] md:pt-[48px]">
       <FadeIn variant="slideUp">
-        <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-primary">
+        <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
           {renderMultiline(title)}
         </h2>
       </FadeIn>
