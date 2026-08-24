@@ -37,24 +37,6 @@ export const siteSettings = defineType({
         "Önerilen: 960×320 px ölçülerinde, şeffaf arka planlı PNG dosyası. Sitenin alt bilgi (footer) bölümünde 80 px yüksekliğinde gösterilir; kırpılma olmaz, logonun tamamı her zaman görünür.",
     }),
     defineField({
-      name: "logoSquare",
-      title: "Kare logo (koyu — iç sayfalarda)",
-      type: "image",
-      group: "branding",
-      options: { hotspot: true },
-      description:
-        "Önerilen: 400×400 px ölçülerinde, şeffaf arka planlı PNG dosyası. Sadece EBB harflerini içeren kare (lacivert) logo. Anasayfa dışındaki sayfaların üst menüsünde, menü beyaz zemine geçtiğinde gösterilir. Bu alan boş bırakılırsa iç sayfalarda tam adlı navbar logosu kullanılır.",
-    }),
-    defineField({
-      name: "logoSquareLight",
-      title: "Kare logo (açık — iç sayfa hero fotoğrafları üzerinde)",
-      type: "image",
-      group: "branding",
-      options: { hotspot: true },
-      description:
-        "Önerilen: 400×400 px ölçülerinde, şeffaf arka planlı PNG dosyası. Yukarıdaki kare logonun beyaz (veya açık renk) versiyonu. İç sayfalarda menü hero fotoğrafı üzerinde şeffaf haldeyken gösterilir. Bu alan boş bırakılırsa koyu kare logo kullanılır (fotoğraf üzerinde okunmayabilir).",
-    }),
-    defineField({
       name: "address",
       title: "Office address",
       type: "object",
