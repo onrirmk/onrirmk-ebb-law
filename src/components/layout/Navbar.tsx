@@ -95,7 +95,7 @@ export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
         <Link
           href="/"
           className={`absolute left-[24px] top-[31px] block overflow-hidden lg:left-[79px] lg:top-[46px] ${
-            clipToSquare ? "h-[60px] w-[60px] lg:h-[80px] lg:w-[80px]" : "h-[60px] lg:h-[80px]"
+            clipToSquare ? "h-[60px] w-[52px] lg:h-[80px] lg:w-[70px]" : "h-[60px] lg:h-[80px]"
           }`}
           aria-label={firmName}
         >
