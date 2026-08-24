@@ -29,8 +29,11 @@ export const aboutPage = defineType({
     defineField({
       name: "heroTitle",
       title: "Hero title",
-      type: "string",
+      type: "text",
+      rows: 2,
       group: "hero",
+      description:
+        "Uzun başlıkların bölünecek yerini kontrol etmek için istediğiniz noktada Enter tuşuna basıp satır sonu koyabilirsiniz. Örn. \"Specialists in\" [Enter] \"Transport and Insurance Law\" yazarsanız başlık iki satırlı olarak görünür. Satır sonu koymazsanız otomatik bölünür.",
     }),
     defineField({
       name: "heroImage",
