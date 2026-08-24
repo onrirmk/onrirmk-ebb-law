@@ -62,6 +62,7 @@ const CONTACT_PAGE_QUERY = `*[_type == "contactPage"][0]{
   pageTitle, heroEyebrow, heroTitle, heroSubtitle,
   heroImage { ${IMAGE_PROJECTION} },
   formTitle, formSubtitle,
+  showConsent, consentText,
   officeEyebrow, officeName
 }`;
 
@@ -194,6 +195,8 @@ export type ContactPageData = {
   heroImage?: SanityImage;
   formTitle?: string;
   formSubtitle?: string;
+  showConsent?: boolean;
+  consentText?: string;
   officeEyebrow?: string;
   officeName?: string;
 };

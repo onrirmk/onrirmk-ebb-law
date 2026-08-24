@@ -83,6 +83,8 @@ export default async function ContactPage({
           />
 
           <ContactForm
+            showConsent={page?.showConsent ?? false}
+            consentText={page?.consentText}
             labels={{
               eyebrow: page?.formTitle ?? "",
               description: page?.formSubtitle ?? "",
