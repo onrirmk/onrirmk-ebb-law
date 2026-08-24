@@ -116,7 +116,8 @@ const TEAM_MEMBER_BY_SLUG_QUERY = `*[_type == "teamMember" && slug.current == $s
   education[]{ _key, year, institution, degree },
   memberships,
   languages,
-  practiceAreas[]->{ "slug": slug.current, title }
+  practiceAreas[]->{ "slug": slug.current, title },
+  testimonials[]{ _key, quote, source }
 }`;
 
 export type SiteSettings = {
@@ -213,6 +214,12 @@ export type EducationEntry = {
   degree?: string;
 };
 
+export type TeamMemberTestimonialDoc = {
+  _key: string;
+  quote?: string;
+  source?: string;
+};
+
 export type TeamMemberDoc = {
   _id: string;
   name: string;
@@ -228,6 +235,7 @@ export type TeamMemberDoc = {
   memberships?: string[];
   languages?: string[];
   practiceAreas?: { slug: string; title: string }[];
+  testimonials?: TeamMemberTestimonialDoc[];
 };
 
 const FETCH_OPTS = { next: { revalidate: 10 } } as const;

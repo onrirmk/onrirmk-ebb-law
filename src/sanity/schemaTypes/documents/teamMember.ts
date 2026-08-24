@@ -103,6 +103,47 @@ export const teamMember = defineType({
       type: "array",
       of: [{ type: "reference", to: [{ type: "practiceArea" }] }],
     }),
+    defineField({
+      name: "testimonials",
+      title: "Testimonials",
+      type: "array",
+      description:
+        "Bu avukat için müvekkil veya yayın alıntıları. Detay sayfasında \"TESTIMONIALS\" başlığı altında alt alta gösterilir. İstediğiniz sayıda ekleyebilirsiniz; boş bırakırsanız sayfada bölüm görünmez.",
+      of: [
+        {
+          type: "object",
+          name: "memberTestimonial",
+          fields: [
+            defineField({
+              name: "quote",
+              title: "Alıntı",
+              type: "text",
+              rows: 4,
+              description:
+                "Alıntının kendisi. Sayfada italik ve dikey ince şeritli olarak gösterilir. Tırnak eklemenize gerek yok — otomatik eklenmez, olduğu gibi yazın.",
+              validation: (r) => r.required().min(10),
+            }),
+            defineField({
+              name: "source",
+              title: "Kaynak (opsiyonel)",
+              type: "string",
+              description:
+                "Örn. \"Legal 500 EMEA 2025\", \"Chambers Global 2025\", bir müvekkil ismi veya yayın adı. Boş bırakırsanız alıntının altında kaynak satırı görünmez.",
+            }),
+          ],
+          preview: {
+            select: { title: "quote", subtitle: "source" },
+            prepare({ title, subtitle }) {
+              const trimmed =
+                typeof title === "string" && title.length > 80
+                  ? `${title.slice(0, 77)}…`
+                  : (title as string) ?? "(alıntı yok)";
+              return { title: trimmed, subtitle: (subtitle as string) ?? "" };
+            },
+          },
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
