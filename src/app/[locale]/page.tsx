@@ -33,7 +33,11 @@ export default async function HomePage({
   const awards: Award[] = (home?.awards ?? []).map((a) => ({
     key: a._key,
     label: a.label ?? "",
-    iconSrc: imageSrc(a.icon) ?? undefined,
+    // Ask Sanity for a source ≥2x the rendered 127 px so next/image
+    // has enough pixels to serve a crisp retina asset (the previous
+    // default URL returned whatever the editor uploaded, which often
+    // came out soft when Sanity's auto-compression kicked in).
+    iconSrc: imageSrc(a.icon, 400) ?? undefined,
   }));
 
   const testimonials: TestimonialItem[] = (home?.testimonials ?? []).map((tm) => ({
