@@ -18,18 +18,10 @@ const NAV_LINKS: NavLink[] = [
 type NavbarProps = {
   logoSrc: string;
   logoSolidSrc?: string;
-  logoSquareSrc?: string;
-  logoSquareLightSrc?: string;
   firmName: string;
 };
 
-export function Navbar({
-  logoSrc,
-  logoSolidSrc,
-  logoSquareSrc,
-  logoSquareLightSrc,
-  firmName,
-}: NavbarProps) {
+export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
   const t = useTranslations("nav");
   const pathname = usePathname();
 
@@ -79,16 +71,12 @@ export function Navbar({
 
   const isSolid = scrolled || pageStartsSolid;
 
-  // On non-home pages, prefer the square EBB monogram — full wordmark
-  // is hard to read over hero photos. Falls back to the wordmark if the
-  // editor hasn't uploaded a square variant yet.
+  // On interior pages, hide the wordmark portion of the logo while the
+  // navbar is transparent over a hero photo. Only the leftmost square
+  // (EBB monogram) stays visible. Once the user scrolls and the navbar
+  // becomes solid, the full wordmark comes back.
   const isHome = pathname === "/";
-  const useSquare = !isHome && Boolean(logoSquareSrc || logoSquareLightSrc);
-  const solidLogo =
-    (useSquare ? logoSquareSrc : undefined) ?? logoSolidSrc ?? logoSrc;
-  const transparentLogo =
-    (useSquare ? logoSquareLightSrc ?? logoSquareSrc : undefined) ?? logoSrc;
-  const activeLogo = isSolid ? solidLogo : transparentLogo;
+  const clipToSquare = !isHome && !isSolid;
 
   const headerClass = `fixed inset-x-0 top-0 z-30 h-[122px] w-full transition-colors duration-300 ${
     isSolid
@@ -106,21 +94,19 @@ export function Navbar({
       <div className="relative mx-auto h-full w-full max-w-[1680px]">
         <Link
           href="/"
-          className="absolute left-[24px] top-[31px] block lg:left-[79px] lg:top-[46px]"
+          className={`absolute left-[24px] top-[31px] block overflow-hidden lg:left-[79px] lg:top-[46px] ${
+            clipToSquare ? "h-[60px] w-[60px] lg:h-[80px] lg:w-[80px]" : "h-[60px] lg:h-[80px]"
+          }`}
           aria-label={firmName}
         >
           <Image
-            src={activeLogo}
+            src={isSolid && logoSolidSrc ? logoSolidSrc : logoSrc}
             alt={firmName}
-            width={useSquare ? 200 : 482}
-            height={useSquare ? 200 : 120}
+            width={482}
+            height={120}
             priority
-            sizes={useSquare ? "80px" : "(min-width: 1024px) 322px, 240px"}
-            className={
-              useSquare
-                ? "block h-[60px] w-[60px] object-contain lg:h-[80px] lg:w-[80px]"
-                : "block h-[60px] w-auto lg:h-[80px]"
-            }
+            sizes="(min-width: 1024px) 322px, 240px"
+            className="block h-full w-auto max-w-none"
           />
         </Link>
 
