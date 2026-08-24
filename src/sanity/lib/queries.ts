@@ -117,7 +117,7 @@ const TEAM_MEMBER_BY_SLUG_QUERY = `*[_type == "teamMember" && slug.current == $s
   memberships,
   languages,
   practiceAreas[]->{ "slug": slug.current, title },
-  testimonials[]{ _key, quote, source }
+  testimonials[]{ _key, quote, source, logo { ${IMAGE_PROJECTION} } }
 }`;
 
 export type SiteSettings = {
@@ -218,6 +218,7 @@ export type TeamMemberTestimonialDoc = {
   _key: string;
   quote?: string;
   source?: string;
+  logo?: SanityImage;
 };
 
 export type TeamMemberDoc = {
