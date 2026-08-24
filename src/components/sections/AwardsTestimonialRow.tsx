@@ -32,8 +32,10 @@ export function AwardsTestimonialRow({
                 <Image
                   src={visibleAward.iconSrc}
                   alt={visibleAward.label}
-                  width={127}
-                  height={140}
+                  width={254}
+                  height={280}
+                  quality={95}
+                  sizes="127px"
                   className="block h-[140px] w-[127px] object-contain"
                 />
               ) : (
