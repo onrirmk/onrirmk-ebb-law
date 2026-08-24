@@ -17,8 +17,10 @@ export const aboutPage = defineType({
     defineField({
       name: "pageTitle",
       title: "Page title",
-      type: "string",
-      description: "Used as the narrative section heading.",
+      type: "text",
+      rows: 2,
+      description:
+        "Anlatı bölümünün başlığı olarak kullanılır. Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
     }),
     defineField({
       name: "heroEyebrow",
@@ -92,8 +94,11 @@ export const aboutPage = defineType({
     defineField({
       name: "foundersTitle",
       title: "Founders title",
-      type: "string",
+      type: "text",
+      rows: 2,
       group: "founders",
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
     }),
     defineField({
       name: "foundersSubtitle",
@@ -105,8 +110,11 @@ export const aboutPage = defineType({
     defineField({
       name: "ctaTitle",
       title: "CTA title",
-      type: "string",
+      type: "text",
+      rows: 2,
       group: "cta",
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
     }),
     defineField({
       name: "ctaSubtitle",

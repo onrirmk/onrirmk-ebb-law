@@ -12,7 +12,14 @@ export const practiceAreasPage = defineType({
     { name: "seo", title: "SEO" },
   ],
   fields: [
-    defineField({ name: "pageTitle", title: "Page title", type: "string" }),
+    defineField({
+      name: "pageTitle",
+      title: "Page title",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
+    }),
     defineField({
       name: "heroEyebrow",
       title: "Hero eyebrow",
@@ -22,7 +29,10 @@ export const practiceAreasPage = defineType({
     defineField({
       name: "heroTitle",
       title: "Hero title",
-      type: "string",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
       group: "hero",
     }),
     defineField({
@@ -44,9 +54,11 @@ export const practiceAreasPage = defineType({
     defineField({
       name: "ctaTitle",
       title: "CTA title",
-      type: "string",
+      type: "text",
+      rows: 2,
       group: "cta",
-      description: "Shown on each practice area detail page. Use {area} as placeholder.",
+      description:
+        "Her uzmanlık alanı detay sayfasında gösterilir. Değişken alanı için {area} kullanabilirsiniz. Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
     }),
     defineField({
       name: "ctaSubtitle",

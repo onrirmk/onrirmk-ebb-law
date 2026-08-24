@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { renderMultiline } from "@/lib/text";
 
 type Props = {
   eyebrow: string;
@@ -25,7 +26,7 @@ export function HomeCta({
         </FadeIn>
         <FadeIn variant="slideUp" delay={120}>
           <h2 className="mx-auto mt-[16px] max-w-[820px] font-sans text-[28px] font-bold leading-[36px] text-white md:mt-[20px] md:text-[36px] md:leading-[46px]">
-            {title}
+            {renderMultiline(title)}
           </h2>
         </FadeIn>
         <FadeIn variant="slideUp" delay={240}>

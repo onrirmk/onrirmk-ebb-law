@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HeroBreadcrumb } from "./HeroBreadcrumb";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { renderMultiline } from "@/lib/text";
 
 type Props = {
   eyebrow: string;
@@ -43,12 +44,7 @@ export function AboutHero({
         </FadeIn>
         <FadeIn variant="slideUp" immediate duration={900} delay={150}>
           <h1 className="mt-[16px] max-w-[820px] font-sans text-[32px] font-bold leading-[40px] tracking-[-0.2px] text-white md:mt-[20px] md:text-[48px] md:leading-[58px]">
-            {title.split(/\r?\n/).map((line, i, arr) => (
-              <span key={i} className="block">
-                {line}
-                {i < arr.length - 1 ? null : null}
-              </span>
-            ))}
+            {renderMultiline(title)}
           </h1>
         </FadeIn>
         {subtitle ? (

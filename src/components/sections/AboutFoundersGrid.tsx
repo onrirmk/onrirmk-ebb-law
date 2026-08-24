@@ -3,6 +3,7 @@ import { UserCircle2, ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { TeamMember } from "@/types/content";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { renderMultiline } from "@/lib/text";
 
 type Props = {
   title: string;
@@ -20,7 +21,7 @@ export function AboutFoundersGrid({
       <FadeIn variant="slideUp">
         <div className="max-w-[820px]">
           <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
-            {title}
+            {renderMultiline(title)}
           </h2>
           <p className="mt-[12px] text-[16px] leading-[26px] text-[#1C1B1F]/75 md:text-[17px] md:leading-[28px]">
             {subtitle}

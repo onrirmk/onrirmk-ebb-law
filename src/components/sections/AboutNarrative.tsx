@@ -1,6 +1,7 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { RichText } from "@/components/ui/RichText";
+import { renderMultiline } from "@/lib/text";
 
 type Props = {
   title: string;
@@ -13,7 +14,7 @@ export function AboutNarrative({ title, paragraphs }: Props) {
       <div className="md:max-w-[1188px]">
         <FadeIn variant="slideUp">
           <h2 className="font-sans text-[28px] font-bold leading-[36px] text-[#212C60] md:text-[32px] md:leading-[40px]">
-            {title}
+            {renderMultiline(title)}
           </h2>
         </FadeIn>
         <div className="mt-[20px] space-y-[24px] md:mt-[24px] md:space-y-[28px]">
