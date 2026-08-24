@@ -46,7 +46,10 @@ const components: PortableTextComponents = {
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold text-foreground">{children}</strong>
+      // No explicit colour — inherits from the parent block. Otherwise a
+      // bold span inside a heading gets forced back to text-foreground
+      // (near-black) and hides the navy heading colour.
+      <strong className="font-semibold">{children}</strong>
     ),
     em: ({ children }) => <em className="italic">{children}</em>,
     link: ({
