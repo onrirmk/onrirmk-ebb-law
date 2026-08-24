@@ -69,6 +69,25 @@ export const contactPage = defineType({
       group: "form",
     }),
     defineField({
+      name: "showConsent",
+      title: "KVKK onay kutusu göster",
+      type: "boolean",
+      group: "form",
+      initialValue: false,
+      description:
+        "Açarsanız formun altında zorunlu bir onay kutusu (\"Gizlilik ve KVKK koşullarını okudum ve kabul ediyorum\") görünür ve kullanıcı işaretlemeden gönderemez. Kapalıyken hiç görünmez.",
+    }),
+    defineField({
+      name: "consentText",
+      title: "KVKK onay metni (opsiyonel)",
+      type: "text",
+      rows: 2,
+      group: "form",
+      description:
+        "Yukarıdaki kutu açıkken checkbox'ın yanında görünecek metin. Boş bırakırsanız varsayılan çeviri (İngilizce: \"I have read and agree to the privacy and KVKK terms.\") kullanılır.",
+      hidden: ({ parent }) => !parent?.showConsent,
+    }),
+    defineField({
       name: "officeEyebrow",
       title: "Office eyebrow",
       type: "string",

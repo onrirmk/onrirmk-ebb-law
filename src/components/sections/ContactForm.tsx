@@ -22,9 +22,16 @@ type Labels = {
 type Props = {
   labels: Labels;
   practiceAreaOptions: { value: string; label: string }[];
+  showConsent?: boolean;
+  consentText?: string;
 };
 
-export function ContactForm({ labels, practiceAreaOptions }: Props) {
+export function ContactForm({
+  labels,
+  practiceAreaOptions,
+  showConsent = false,
+  consentText,
+}: Props) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -111,22 +118,17 @@ export function ContactForm({ labels, practiceAreaOptions }: Props) {
           </label>
         </div>
 
-        {/*
-         * KVKK / privacy consent checkbox is temporarily removed at
-         * the customer's request. The `consent` label and string
-         * translations are kept in messages/en.json + tr.json so we
-         * can restore this block later without re-adding schema.
-         *
-         *   <label className="mt-[20px] flex items-start gap-[10px] text-[13px] leading-[18px] text-[#1C1B1F]/80">
-         *     <input
-         *       type="checkbox"
-         *       name="consent"
-         *       required
-         *       className="mt-[2px] h-[16px] w-[16px] flex-shrink-0 cursor-pointer accent-[#212C60]"
-         *     />
-         *     <span>{labels.consent} *</span>
-         *   </label>
-         */}
+        {showConsent ? (
+          <label className="mt-[20px] flex items-start gap-[10px] text-[13px] leading-[18px] text-[#1C1B1F]/80">
+            <input
+              type="checkbox"
+              name="consent"
+              required
+              className="mt-[2px] h-[16px] w-[16px] flex-shrink-0 cursor-pointer accent-[#212C60]"
+            />
+            <span>{consentText?.trim() ? consentText : labels.consent} *</span>
+          </label>
+        ) : null}
 
         <button
           type="submit"
