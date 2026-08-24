@@ -47,6 +47,7 @@ export default async function TeamPage({
     })),
     memberships: m.memberships ?? [],
     languages: m.languages ?? [],
+    testimonials: [], // team-list view doesn't render testimonials
     photoSrc: imageSrc(m.photo) ?? undefined,
   }));
 

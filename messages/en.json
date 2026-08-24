@@ -237,7 +237,8 @@
       "biography": "BIOGRAPHY",
       "education": "EDUCATION",
       "memberships": "PROFESSIONAL MEMBERSHIPS",
-      "languages": "LANGUAGES"
+      "languages": "LANGUAGES",
+      "testimonials": "TESTIMONIALS"
     },
     "members": [
       {

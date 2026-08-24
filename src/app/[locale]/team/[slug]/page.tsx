@@ -58,6 +58,12 @@ export default async function TeamMemberPage({
     })),
     memberships: m.memberships ?? [],
     languages: m.languages ?? [],
+    testimonials: (m.testimonials ?? [])
+      .filter((tm) => tm.quote && tm.quote.trim().length > 0)
+      .map((tm) => ({
+        quote: tm.quote ?? "",
+        source: tm.source && tm.source.trim() ? tm.source : undefined,
+      })),
     photoSrc: imageSrc(m.photo) ?? undefined,
   };
 
@@ -71,6 +77,7 @@ export default async function TeamMemberPage({
         education: t("team.eyebrows.education"),
         memberships: t("team.eyebrows.memberships"),
         languages: t("team.eyebrows.languages"),
+        testimonials: t("team.eyebrows.testimonials"),
       }}
     />
   );

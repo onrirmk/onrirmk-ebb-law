@@ -7,6 +7,7 @@ type Props = {
     education: string;
     memberships: string;
     languages: string;
+    testimonials: string;
   };
 };
 
@@ -76,13 +77,40 @@ export function TeamMemberContent({ member, eyebrows }: Props) {
       ) : null}
 
       {member.languages.length > 0 ? (
-        <section className="mb-[80px] mt-[48px]">
+        <section className="mt-[48px]">
           <Eyebrow>{eyebrows.languages}</Eyebrow>
           <p className="mt-[16px] text-[16px] leading-[24px] text-[#1C1B1F]">
             {member.languages.join(" · ")}
           </p>
         </section>
       ) : null}
+
+      {member.testimonials.length > 0 ? (
+        <section className="mb-[80px] mt-[48px]">
+          <Eyebrow>{eyebrows.testimonials}</Eyebrow>
+          <div className="mt-[16px] space-y-[28px]">
+            {member.testimonials.map((testimonial, idx) => (
+              <blockquote
+                key={idx}
+                className="border-l-2 border-[#212C60]/30 pl-[20px] py-[4px]"
+              >
+                <p className="whitespace-pre-line text-[17px] italic leading-[28px] text-[#1C1B1F]">
+                  {testimonial.quote}
+                </p>
+                {testimonial.source ? (
+                  <cite className="mt-[10px] block text-[13px] font-medium not-italic uppercase tracking-[0.08em] text-[#1C1B1F]/60">
+                    — {testimonial.source}
+                  </cite>
+                ) : null}
+              </blockquote>
+            ))}
+          </div>
+        </section>
+      ) : (
+        // When no testimonials, keep the bottom spacing on the last
+        // rendered section (languages).
+        <div className="pb-[80px]" aria-hidden />
+      )}
     </div>
   );
 }

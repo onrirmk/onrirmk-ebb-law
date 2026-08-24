@@ -13,6 +13,7 @@ type Props = {
     education: string;
     memberships: string;
     languages: string;
+    testimonials: string;
   };
 };
 

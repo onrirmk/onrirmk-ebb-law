@@ -43,6 +43,11 @@ export type TeamMemberEducation = {
   degree: string;
 };
 
+export type TeamMemberTestimonial = {
+  quote: string;
+  source?: string;
+};
+
 export type TeamMember = {
   slug: string;
   name: string;
@@ -55,5 +60,6 @@ export type TeamMember = {
   education: TeamMemberEducation[];
   memberships: string[];
   languages: string[];
+  testimonials: TeamMemberTestimonial[];
   photoSrc?: string;
 };
