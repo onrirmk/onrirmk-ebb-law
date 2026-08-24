@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { TeamMember } from "@/types/content";
 
 type Props = {
@@ -92,15 +93,30 @@ export function TeamMemberContent({ member, eyebrows }: Props) {
             {member.testimonials.map((testimonial, idx) => (
               <blockquote
                 key={idx}
-                className="border-l-2 border-[#212C60]/30 pl-[20px] py-[4px]"
+                className="flex items-start gap-[20px] border-l-2 border-[#212C60]/30 pl-[20px] py-[4px]"
               >
-                <p className="whitespace-pre-line text-[17px] italic leading-[28px] text-[#1C1B1F]">
-                  {testimonial.quote}
-                </p>
-                {testimonial.source ? (
-                  <cite className="mt-[10px] block text-[13px] font-medium not-italic uppercase tracking-[0.08em] text-[#1C1B1F]/60">
-                    — {testimonial.source}
-                  </cite>
+                <div className="min-w-0 flex-1">
+                  <p className="whitespace-pre-line text-[17px] italic leading-[28px] text-[#1C1B1F]">
+                    {testimonial.quote}
+                  </p>
+                  {testimonial.source ? (
+                    <cite className="mt-[10px] block text-[13px] font-medium not-italic uppercase tracking-[0.08em] text-[#1C1B1F]/60">
+                      — {testimonial.source}
+                    </cite>
+                  ) : null}
+                </div>
+                {testimonial.logoSrc ? (
+                  <div className="hidden shrink-0 sm:block">
+                    <Image
+                      src={testimonial.logoSrc}
+                      alt={testimonial.source ?? ""}
+                      width={200}
+                      height={250}
+                      quality={95}
+                      sizes="80px"
+                      className="block h-[100px] w-auto object-contain"
+                    />
+                  </div>
                 ) : null}
               </blockquote>
             ))}

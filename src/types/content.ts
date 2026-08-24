@@ -46,6 +46,7 @@ export type TeamMemberEducation = {
 export type TeamMemberTestimonial = {
   quote: string;
   source?: string;
+  logoSrc?: string;
 };
 
 export type TeamMember = {

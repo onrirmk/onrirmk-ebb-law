@@ -130,15 +130,27 @@ export const teamMember = defineType({
               description:
                 "Örn. \"Legal 500 EMEA 2025\", \"Chambers Global 2025\", bir müvekkil ismi veya yayın adı. Boş bırakırsanız alıntının altında kaynak satırı görünmez.",
             }),
+            defineField({
+              name: "logo",
+              title: "Rozet / Logo (opsiyonel)",
+              type: "image",
+              options: { hotspot: true },
+              description:
+                "Alıntının yanında gösterilecek küçük rozet veya yayın logosu. Örn. Legal 500 EMEA 2025 badge, Chambers Global etiketi vb. Önerilen: dikey PNG, ~160×200 px, şeffaf zemin. Boş bırakırsanız alıntının yanında görsel alan gösterilmez.",
+            }),
           ],
           preview: {
-            select: { title: "quote", subtitle: "source" },
-            prepare({ title, subtitle }) {
+            select: { title: "quote", subtitle: "source", media: "logo" },
+            prepare({ title, subtitle, media }) {
               const trimmed =
                 typeof title === "string" && title.length > 80
                   ? `${title.slice(0, 77)}…`
                   : (title as string) ?? "(alıntı yok)";
-              return { title: trimmed, subtitle: (subtitle as string) ?? "" };
+              return {
+                title: trimmed,
+                subtitle: (subtitle as string) ?? "",
+                media,
+              };
             },
           },
         },

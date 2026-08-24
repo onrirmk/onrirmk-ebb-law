@@ -63,6 +63,7 @@ export default async function TeamMemberPage({
       .map((tm) => ({
         quote: tm.quote ?? "",
         source: tm.source && tm.source.trim() ? tm.source : undefined,
+        logoSrc: imageSrc(tm.logo, 400) ?? undefined,
       })),
     photoSrc: imageSrc(m.photo) ?? undefined,
   };
