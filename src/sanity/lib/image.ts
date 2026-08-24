@@ -22,10 +22,13 @@ export function urlFor(source: Parameters<typeof builder.image>[0]) {
 export function imageSrc(
   image: SanityImage | null | undefined,
   width?: number,
+  quality?: number,
 ): string | null {
   if (!image?.asset?._id) return null;
-  const b = urlFor(image).auto("format");
-  return (width ? b.width(width) : b).url();
+  let b = urlFor(image).auto("format");
+  if (width) b = b.width(width);
+  if (quality) b = b.quality(quality);
+  return b.url();
 }
 
 export function imageDimensions(image: SanityImage | null | undefined) {

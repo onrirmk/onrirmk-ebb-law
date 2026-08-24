@@ -102,9 +102,10 @@ export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
           <Image
             src={isSolid && logoSolidSrc ? logoSolidSrc : logoSrc}
             alt={firmName}
-            width={482}
-            height={120}
+            width={964}
+            height={240}
             priority
+            quality={95}
             sizes="(min-width: 1024px) 322px, 240px"
             className="block h-full w-auto max-w-none"
           />
