@@ -25,9 +25,15 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const settings = await fetchSiteSettings();
-  const navbarLogoSrc = imageSrc(settings?.logoNavbar) ?? "/images/logo/ebb-logo-navbar.png";
+  // Request a ~2× source (rendered wordmark ≈ 322 px wide on desktop) with
+  // quality 95 so retina screens get a crisp asset instead of Sanity's
+  // default auto-compressed pick.
+  const navbarLogoSrc =
+    imageSrc(settings?.logoNavbar, 720, 95) ??
+    "/images/logo/ebb-logo-navbar.png";
   const navbarLogoSolidSrc =
-    imageSrc(settings?.logoFooter) ?? "/images/logo/ebb-logo-footer.png";
+    imageSrc(settings?.logoFooter, 720, 95) ??
+    "/images/logo/ebb-logo-footer.png";
   const firmName = settings?.firmName ?? "Law Firm";
 
   return (

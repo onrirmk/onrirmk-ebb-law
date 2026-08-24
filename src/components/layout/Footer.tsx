@@ -41,7 +41,9 @@ export async function Footer() {
   const email = settings?.email ?? "";
   const web = settings?.web ?? "";
   const address = settings?.address ?? {};
-  const footerLogoSrc = imageSrc(settings?.logoFooter);
+  // Rendered at 80 px tall (~320 px wide); request a ~2× source with
+  // quality 95 so it stays crisp on retina.
+  const footerLogoSrc = imageSrc(settings?.logoFooter, 720, 95);
 
   const phoneHref = phone ? `tel:${phone.replace(/\s/g, "")}` : undefined;
   const copyrightText = (settings?.footerCopy ?? "").replace(
@@ -59,8 +61,10 @@ export async function Footer() {
             <Image
               src={footerLogoSrc ?? "/images/logo/ebb-logo-footer.png"}
               alt={settings?.firmName ?? "Law Firm"}
-              width={352}
-              height={88}
+              width={704}
+              height={176}
+              quality={95}
+              sizes="(min-width: 768px) 320px, 224px"
               className="block h-[56px] w-auto md:h-[80px]"
             />
           </div>
