@@ -55,7 +55,10 @@ export const homePage = defineType({
     defineField({
       name: "welcomeTitle",
       title: "Welcome title",
-      type: "string",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
       group: "welcome",
     }),
     defineField({
@@ -68,7 +71,10 @@ export const homePage = defineType({
     defineField({
       name: "testimonialTitle",
       title: "Testimonial section title",
-      type: "string",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
       group: "awardsTestimonial",
     }),
     defineField({
@@ -94,8 +100,11 @@ export const homePage = defineType({
     defineField({
       name: "awardsTitle",
       title: "Awards section title",
-      type: "string",
+      type: "text",
+      rows: 2,
       group: "awardsTestimonial",
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
     }),
     defineField({
       name: "awards",
@@ -130,8 +139,11 @@ export const homePage = defineType({
     defineField({
       name: "ctaTitle",
       title: "CTA title",
-      type: "string",
+      type: "text",
+      rows: 2,
       group: "cta",
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
     }),
     defineField({
       name: "ctaDescription",

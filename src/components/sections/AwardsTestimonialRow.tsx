@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Award as LucideAward } from "lucide-react";
 import type { Award } from "@/types/content";
 import { TestimonialSlider, type TestimonialItem } from "./TestimonialSlider";
+import { renderMultiline } from "@/lib/text";
 
 type Props = {
   awardsTitle: string;
@@ -23,7 +24,7 @@ export function AwardsTestimonialRow({
       <div className="mx-auto max-w-[1680px] px-[24px] md:pl-[100px] md:pr-[260px]">
         <div className="md:max-w-[1188px]">
         <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-[#212C60]">
-          {testimonialTitle}
+          {renderMultiline(testimonialTitle)}
         </h2>
         <div className="mt-[24px] flex flex-col gap-y-[40px] md:mt-[32px] md:flex-row md:items-start md:gap-y-0">
           <div className="md:w-auto md:shrink-0">

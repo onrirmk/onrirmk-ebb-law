@@ -13,7 +13,14 @@ export const contactPage = defineType({
     { name: "seo", title: "SEO" },
   ],
   fields: [
-    defineField({ name: "pageTitle", title: "Page title", type: "string" }),
+    defineField({
+      name: "pageTitle",
+      title: "Page title",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
+    }),
     defineField({
       name: "heroEyebrow",
       title: "Hero eyebrow",
@@ -23,7 +30,10 @@ export const contactPage = defineType({
     defineField({
       name: "heroTitle",
       title: "Hero title",
-      type: "string",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
       group: "hero",
     }),
     defineField({
@@ -45,7 +55,10 @@ export const contactPage = defineType({
     defineField({
       name: "formTitle",
       title: "Form section title",
-      type: "string",
+      type: "text",
+      rows: 2,
+      description:
+        "Uzun başlıklarda satır sonu istediğiniz yere Enter tuşuyla koyabilirsiniz.",
       group: "form",
     }),
     defineField({

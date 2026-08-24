@@ -2,6 +2,7 @@ import type { ComponentProps } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { renderMultiline } from "@/lib/text";
 
 type LinkHref = ComponentProps<typeof Link>["href"];
 
@@ -22,7 +23,7 @@ export function WelcomeSection({
     <section className="mx-auto max-w-[1680px] px-[24px] pb-[24px] pt-[40px] md:pb-[32px] md:pl-[100px] md:pr-[260px] md:pt-[48px]">
       <FadeIn variant="slideUp">
         <h2 className="font-sans text-[28px] font-bold uppercase leading-[36px] tracking-wide text-primary">
-          {title}
+          {renderMultiline(title)}
         </h2>
       </FadeIn>
       <div className="mt-[20px] space-y-6 text-[16px] font-normal leading-[26px] text-foreground/90 md:max-w-[1188px] md:text-[18px] md:leading-[30px]">
