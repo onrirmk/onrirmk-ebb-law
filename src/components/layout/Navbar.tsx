@@ -94,8 +94,8 @@ export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
       <div className="relative mx-auto h-full w-full max-w-[1680px]">
         <Link
           href="/"
-          className={`absolute left-[24px] top-[31px] block overflow-hidden lg:left-[79px] lg:top-[46px] ${
-            clipToSquare ? "h-[60px] w-[52px] lg:h-[80px] lg:w-[70px]" : "h-[60px] lg:h-[80px]"
+          className={`absolute left-[24px] top-[24px] block overflow-hidden lg:left-[79px] lg:top-[16px] ${
+            clipToSquare ? "h-[64px] w-[56px] lg:h-[100px] lg:w-[88px]" : "h-[64px] lg:h-[100px]"
           }`}
           aria-label={firmName}
         >
@@ -106,8 +106,10 @@ export function Navbar({ logoSrc, logoSolidSrc, firmName }: NavbarProps) {
             height={240}
             priority
             quality={95}
-            sizes="(min-width: 1024px) 322px, 240px"
-            className="block h-full w-auto max-w-none"
+            sizes="(min-width: 1024px) 400px, 256px"
+            className={`block h-full w-auto max-w-none ${
+              isSolid ? "" : "[filter:drop-shadow(0_2px_10px_rgba(0,0,0,0.35))]"
+            }`}
           />
         </Link>
 
