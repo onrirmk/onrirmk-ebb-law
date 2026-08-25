@@ -77,7 +77,7 @@ export function HeroSection({
           />
         ))}
 
-        <div className="absolute inset-0 mx-auto flex max-w-[1680px] flex-col items-start justify-start px-6 pt-[200px] md:pl-[180px] md:pr-[96px] md:pt-[calc(38vh-60px)] lg:pl-[220px] xl:pl-[280px]">
+        <div className="absolute inset-0 mx-auto flex max-w-[1680px] flex-col items-start justify-start px-6 pt-[220px] md:pl-[180px] md:pr-[96px] md:pt-[calc(38vh-40px)] lg:pl-[220px] xl:pl-[280px]">
           <h1 className="font-sans font-semibold tracking-[-0.2px] text-white">
             <FadeIn variant="slideUp" immediate duration={900}>
               <span className="block max-w-[1280px] text-[clamp(24px,2.5vw,40px)] leading-[1.4]">
