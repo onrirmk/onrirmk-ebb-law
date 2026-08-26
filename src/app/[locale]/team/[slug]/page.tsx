@@ -7,7 +7,7 @@ import {
   fetchTeamMemberBySlug,
   fetchTeamMembers,
 } from "@/sanity/lib/queries";
-import { imageSrc } from "@/sanity/lib/image";
+import { imageHotspotPosition, imageSrc } from "@/sanity/lib/image";
 
 type Params = { locale: string; slug: string };
 
@@ -66,6 +66,7 @@ export default async function TeamMemberPage({
         logoSrc: imageSrc(tm.logo, 400) ?? undefined,
       })),
     photoSrc: imageSrc(m.photo) ?? undefined,
+    photoObjectPosition: imageHotspotPosition(m.photo) ?? "50% 20%",
   };
 
   return (

@@ -32,6 +32,7 @@ export function TeamMemberSidebar({ member, linkedinLabel }: Props) {
               fill
               sizes="(min-width: 768px) 380px, 360px"
               className="object-cover"
+              style={{ objectPosition: member.photoObjectPosition ?? "50% 20%" }}
               priority
             />
           ) : (

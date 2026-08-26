@@ -5,7 +5,7 @@ import { TeamHero } from "@/components/sections/TeamHero";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import type { TeamMember } from "@/types/content";
 import { fetchTeamMembers, fetchTeamPage } from "@/sanity/lib/queries";
-import { imageSrc } from "@/sanity/lib/image";
+import { imageHotspotPosition, imageSrc } from "@/sanity/lib/image";
 
 export async function generateMetadata({
   params,
@@ -49,6 +49,7 @@ export default async function TeamPage({
     languages: m.languages ?? [],
     testimonials: [], // team-list view doesn't render testimonials
     photoSrc: imageSrc(m.photo) ?? undefined,
+    photoObjectPosition: imageHotspotPosition(m.photo) ?? "50% 20%",
   }));
 
   return (

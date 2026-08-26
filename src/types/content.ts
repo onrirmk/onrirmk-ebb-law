@@ -63,4 +63,5 @@ export type TeamMember = {
   languages: string[];
   testimonials: TeamMemberTestimonial[];
   photoSrc?: string;
+  photoObjectPosition?: string;
 };
