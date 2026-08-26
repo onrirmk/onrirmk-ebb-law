@@ -11,6 +11,7 @@ export type PracticeAreaSummary = {
   title: string;
   summary: string;
   imageSrc?: string;
+  imageObjectPosition?: string;
 };
 
 export type PracticeAreaDetailContent = PracticeAreaSummary & {

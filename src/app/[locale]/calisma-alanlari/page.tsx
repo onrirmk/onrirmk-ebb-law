@@ -7,7 +7,7 @@ import {
   fetchPracticeAreas,
   fetchPracticeAreasPage,
 } from "@/sanity/lib/queries";
-import { imageSrc } from "@/sanity/lib/image";
+import { imageHotspotPosition, imageSrc } from "@/sanity/lib/image";
 import type { PracticeAreaSlug } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -39,6 +39,7 @@ export default async function PracticeAreasPage({
     title: doc.title,
     summary: doc.summary ?? "",
     imageSrc: imageSrc(doc.heroImage) ?? undefined,
+    imageObjectPosition: imageHotspotPosition(doc.heroImage) ?? "70% 50%",
   }));
 
   return (
