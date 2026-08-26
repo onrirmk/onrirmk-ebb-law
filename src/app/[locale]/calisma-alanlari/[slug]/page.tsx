@@ -62,6 +62,7 @@ export default async function PracticeAreaDetailPage({
     title: a.title,
     summary: a.summary ?? "",
     imageSrc: imageSrc(a.heroImage) ?? undefined,
+    imageObjectPosition: imageHotspotPosition(a.heroImage) ?? "70% 50%",
   }));
 
   return (

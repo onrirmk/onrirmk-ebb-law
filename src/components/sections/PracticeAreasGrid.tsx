@@ -78,6 +78,7 @@ export function PracticeAreasGrid({ areas, readMoreLabel }: Props) {
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+                        style={{ objectPosition: area.imageObjectPosition ?? "70% 50%" }}
                       />
                     ) : (
                       <div
