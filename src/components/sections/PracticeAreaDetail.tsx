@@ -102,11 +102,13 @@ export function PracticeAreaDetail({
 
 export function PracticeAreaHero({
   imageSrc,
+  imageObjectPosition,
   alt,
   eyebrow,
   title,
 }: {
   imageSrc?: string;
+  imageObjectPosition?: string;
   alt: string;
   eyebrow: string;
   title: string;
@@ -121,6 +123,7 @@ export function PracticeAreaHero({
           sizes="100vw"
           priority
           className="object-cover"
+          style={{ objectPosition: imageObjectPosition ?? "70% 50%" }}
         />
       ) : (
         <div

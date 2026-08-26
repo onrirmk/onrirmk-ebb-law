@@ -14,7 +14,7 @@ import {
   fetchPracticeAreaBySlug,
   fetchPracticeAreasPage,
 } from "@/sanity/lib/queries";
-import { imageSrc } from "@/sanity/lib/image";
+import { imageHotspotPosition, imageSrc } from "@/sanity/lib/image";
 
 export async function generateStaticParams() {
   const areas = await fetchPracticeAreas();
@@ -68,6 +68,7 @@ export default async function PracticeAreaDetailPage({
     <>
       <PracticeAreaHero
         imageSrc={area.imageSrc}
+        imageObjectPosition={imageHotspotPosition(areaDoc.heroImage) ?? undefined}
         alt={area.title}
         eyebrow={t("practiceAreas.sectionEyebrow")}
         title={area.title}
