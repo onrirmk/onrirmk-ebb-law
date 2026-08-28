@@ -9,7 +9,7 @@ import {
   fetchPracticeAreas,
   fetchSiteSettings,
 } from "@/sanity/lib/queries";
-import { imageSrc } from "@/sanity/lib/image";
+import { imageHotspotPosition, imageSrc } from "@/sanity/lib/image";
 
 export async function generateMetadata({
   params,
@@ -80,6 +80,8 @@ export default async function ContactPage({
             directContactTitle={t("contact.directContactTitle")}
             email={settings?.email ?? ""}
             phone={settings?.phone ?? ""}
+            photoSrc={imageSrc(page?.officePhoto) ?? undefined}
+            photoObjectPosition={imageHotspotPosition(page?.officePhoto) ?? undefined}
           />
 
           <ContactForm

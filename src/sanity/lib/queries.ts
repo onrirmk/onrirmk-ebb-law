@@ -63,7 +63,8 @@ const CONTACT_PAGE_QUERY = `*[_type == "contactPage"][0]{
   heroImage { ${IMAGE_PROJECTION} },
   formTitle, formSubtitle,
   showConsent, consentText,
-  officeEyebrow, officeName
+  officeEyebrow, officeName,
+  officePhoto { ${IMAGE_PROJECTION} }
 }`;
 
 const PRACTICE_AREAS_QUERY = `*[_type == "practiceArea"] | order(orderRank asc){
@@ -199,6 +200,7 @@ export type ContactPageData = {
   consentText?: string;
   officeEyebrow?: string;
   officeName?: string;
+  officePhoto?: SanityImage;
 };
 
 export type PracticeAreaDoc = {
