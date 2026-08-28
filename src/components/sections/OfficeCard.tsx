@@ -12,6 +12,7 @@ type Props = {
   email: string;
   phone: string;
   photoSrc?: string;
+  photoObjectPosition?: string;
 };
 
 export function OfficeCard({
@@ -25,6 +26,7 @@ export function OfficeCard({
   email,
   phone,
   photoSrc,
+  photoObjectPosition,
 }: Props) {
   return (
     <div className="flex flex-col gap-[32px]">
@@ -36,6 +38,7 @@ export function OfficeCard({
             fill
             sizes="(min-width: 768px) 520px, 100vw"
             className="object-cover"
+            style={{ objectPosition: photoObjectPosition ?? "50% 50%" }}
             priority
           />
         ) : (

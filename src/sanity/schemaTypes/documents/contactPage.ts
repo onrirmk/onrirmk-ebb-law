@@ -99,6 +99,15 @@ export const contactPage = defineType({
       type: "string",
       group: "office",
     }),
+    defineField({
+      name: "officePhoto",
+      title: "Office photo",
+      type: "image",
+      group: "office",
+      options: { hotspot: true },
+      description:
+        "İletişim sayfasındaki ofis kartının üstünde görünen fotoğraf. Önerilen: 1600×1200 px (4:3 yatay) JPG. Yaklaşık 520×390 px olarak render edilir, retina için 2× kaynak istenir. Hotspot ile odak noktasını işaretleyerek dar ekranlarda kırpılmasını isteyeceğiniz alanı sabitleyebilirsiniz.",
+    }),
     defineField({ name: "seo", title: "SEO", type: "seo", group: "seo" }),
   ],
   preview: { prepare: () => ({ title: "Contact Page" }) },
