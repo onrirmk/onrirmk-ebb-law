@@ -33,6 +33,16 @@ export const structure: StructureResolver = (S, context) =>
         S,
         context,
       }),
+      S.divider(),
+      S.listItem()
+        .title("Contact Submissions")
+        .child(
+          S.documentTypeList("contactSubmission")
+            .title("Contact Submissions")
+            .defaultOrdering([
+              { field: "submittedAt", direction: "desc" },
+            ]),
+        ),
     ]);
 
 export const SINGLETON_IDS = SINGLETONS.map((s) => s.id);

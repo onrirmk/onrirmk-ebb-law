@@ -32,22 +32,58 @@ export function ContactForm({
   showConsent = false,
   consentText,
 }: Props) {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
-    const formData = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
-    console.log("[contact-form] submission", payload);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      surname: String(formData.get("surname") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      practiceArea: String(formData.get("practiceArea") ?? ""),
+      message: String(formData.get("message") ?? ""),
+      consent: formData.get("consent") === "on",
+      // Honeypot — must stay empty. Bots fill hidden fields.
+      website: String(formData.get("website") ?? ""),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        ok?: boolean;
+      };
+      if (!res.ok || !data.ok) {
+        setStatus("error");
+        setErrorMessage(
+          data?.error ?? "Mesajınız gönderilemedi. Lütfen tekrar deneyin.",
+        );
+        return;
+      }
       setStatus("success");
-      (e.target as HTMLFormElement).reset();
-    }, 400);
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage("Bağlantı hatası. Lütfen tekrar deneyin.");
+    }
   }
 
   const submitting = status === "submitting";
   const showSuccess = status === "success";
+  const showError = status === "error";
 
   return (
     <div className="rounded-[2px] bg-[#F8F8F6] p-[24px] sm:p-[32px] md:p-[40px]">
@@ -59,6 +95,30 @@ export function ContactForm({
       </p>
 
       <form onSubmit={handleSubmit} noValidate={false}>
+        {/* Honeypot — visually hidden, ARIA hidden, autocomplete off.
+            Real users never see or fill it; bots do. */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "-10000px",
+            top: "auto",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+          }}
+        >
+          <label>
+            Website
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </label>
+        </div>
+
         <div className="grid grid-cols-1 gap-[24px] sm:grid-cols-2 sm:gap-[16px]">
           <UnderlinedField name="name" label={labels.name} required />
           <UnderlinedField name="surname" label={labels.surname} required />
@@ -145,6 +205,14 @@ export function ContactForm({
           <p className="mt-[16px] inline-flex items-center gap-[8px] text-[14px] text-[#1f7a3e]">
             <Check className="h-[16px] w-[16px]" aria-hidden />
             {labels.successMessage}
+          </p>
+        ) : null}
+        {showError && errorMessage ? (
+          <p
+            role="alert"
+            className="mt-[16px] text-[14px] text-[#b42318]"
+          >
+            {errorMessage}
           </p>
         ) : null}
       </form>
