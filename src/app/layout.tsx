@@ -58,6 +58,9 @@ export const metadata: Metadata = {
       en: `${SITE_URL}/en`,
     },
   },
+  verification: {
+    google: "97IVjyfgL9OLxjCMn0qKhD3-XPM0Fl-IvXgsFA-MTJM",
+  },
 };
 
 export default function RootLayout({
