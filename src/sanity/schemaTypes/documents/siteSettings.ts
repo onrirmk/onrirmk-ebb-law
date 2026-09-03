@@ -37,6 +37,14 @@ export const siteSettings = defineType({
         "Önerilen: 960×320 px ölçülerinde, şeffaf arka planlı PNG dosyası. Sitenin alt bilgi (footer) bölümünde 80 px yüksekliğinde gösterilir; kırpılma olmaz, logonun tamamı her zaman görünür.",
     }),
     defineField({
+      name: "favicon",
+      title: "Favicon (tarayıcı sekmesi ikonu)",
+      type: "image",
+      group: "branding",
+      description:
+        "Tarayıcı sekmesinde ve yer imlerinde görünen küçük ikon. Önerilen: 512×512 px KARE, şeffaf ya da düz renk arka planlı PNG. En iyi sonucu EBB monogramı gibi sade, kenardan kenara dolan bir görsel verir — küçük boyutta detaylar zaten okunmaz. Boş bırakırsanız site varsayılan iconu kullanır.",
+    }),
+    defineField({
       name: "address",
       title: "Office address",
       type: "object",
