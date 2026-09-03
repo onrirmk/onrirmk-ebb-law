@@ -8,6 +8,7 @@ import { practiceArea } from "./documents/practiceArea";
 import { teamPage } from "./documents/teamPage";
 import { teamMember } from "./documents/teamMember";
 import { contactPage } from "./documents/contactPage";
+import { contactSubmission } from "./documents/contactSubmission";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   seo,
@@ -19,4 +20,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   teamPage,
   teamMember,
   contactPage,
+  contactSubmission,
 ];
