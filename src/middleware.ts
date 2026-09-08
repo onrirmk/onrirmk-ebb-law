@@ -4,16 +4,17 @@ import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-// Old Wix URLs whose target still exists on the new site — 301 to
-// the equivalent page so the old URL's SEO equity transfers, and
-// Google eventually replaces the old URL with the new one in
-// search results.
-const LEGACY_REDIRECTS: Array<{ from: RegExp; to: string }> = [
-  {
-    from: /^\/Content\/110\/417\/sarp_aziz_celikkanat\.html\/?$/i,
-    to: "/en/team/sarp-aziz-celikkanat",
-  },
-];
+// Old Wix team URLs follow /Content/110/<numeric-id>/<name>.html —
+// convert the name slug from underscore to hyphen and 301 to the
+// new team page. Lawyers still at the firm keep their SEO equity;
+// retired lawyers' URLs land on a natural 404 on the new site,
+// which Google eventually drops.
+const LEGACY_TEAM_PATTERN =
+  /^\/Content\/110\/\d+\/([a-z0-9_]+)\.html\/?$/i;
+
+// One-off explicit redirects for URLs that don't fit a generic
+// pattern (e.g. old homepage, misc landing pages).
+const LEGACY_REDIRECTS: Array<{ from: RegExp; to: string }> = [];
 
 // Legacy Wix / classic-ASPX URLs that Google is still crawling from
 // the old site and whose target no longer exists. Returning 410 Gone
@@ -27,6 +28,13 @@ const LEGACY_GONE_PATTERNS: RegExp[] = [
 
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const teamMatch = pathname.match(LEGACY_TEAM_PATTERN);
+  if (teamMatch) {
+    const slug = teamMatch[1].toLowerCase().replace(/_/g, "-");
+    const target = new URL(`/en/team/${slug}`, request.url);
+    return NextResponse.redirect(target, 301);
+  }
 
   for (const { from, to } of LEGACY_REDIRECTS) {
     if (from.test(pathname)) {
