@@ -61,5 +61,11 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|studio|_next|_vercel|.*\\..*).*)"],
+  // Exclude Next.js internals, /api and /studio, and common static
+  // asset extensions. Notably we do NOT exclude *.html — that's the
+  // extension legacy Wix URLs use, and we need the middleware to
+  // catch them for 301/410 handling.
+  matcher: [
+    "/((?!api|studio|_next|_vercel|.*\\.(?:png|jpe?g|gif|svg|webp|ico|css|js|mjs|map|txt|xml|json|woff2?|ttf|otf|eot|mp4|webm|pdf)).*)",
+  ],
 };
